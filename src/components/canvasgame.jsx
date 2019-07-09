@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {imageLinks} from '../resources/imageLinks'
+import {imageLinks, getCodeLinesForGame} from '../resources/languageCanvasResources'
 
-class LanguageCanvas extends Component {
+class CanvasGame extends Component {
     state = { 
         btnStatus: "Fun"
      }
@@ -21,6 +21,13 @@ class LanguageCanvas extends Component {
         interval: null,
     }
 
+    gameController = {
+        words: {text: "const platform = level 1", x: 200, y: 500},
+        playerSpeed: 5,
+        playerLogo: this.canvasInfo.logos.javascript,
+        playerScore: 0
+    }
+
     constructor(props){
         super(props);
         this.canvasRef = React.createRef();
@@ -31,6 +38,7 @@ class LanguageCanvas extends Component {
      *           them on the canvas */
     drawLogos() {
         const {logos, logoSize, logoKeys, windowSize} = this.canvasInfo;
+        const {words} = this.gameController;
         const canvas = this.canvasRef.current;
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0,0, windowSize, windowSize)
@@ -42,6 +50,8 @@ class LanguageCanvas extends Component {
             ctx.drawImage(img, x, y, logoSize, logoSize);
         }
 
+        ctx.font = "30px Arial"
+        ctx.fillText(words.text, words.x, words.y)
         ctx.stroke();
     }
 
@@ -62,24 +72,41 @@ class LanguageCanvas extends Component {
         }
     }
 
+    drawGameLogo()
+    {
+        const {words} = this.gameController;
+        const {x, y, img} = this.gameController.playerLogo;
+        const {logoSize, windowSize} = this.canvasInfo;
+        const canvas = this.canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0, windowSize, windowSize)
+
+        ctx.rect(0, 0, windowSize, windowSize);
+        ctx.drawImage(img, x, y, logoSize, logoSize);
+
+        ctx.font = "30px Arial"
+        ctx.fillText(words.text, words.x, words.y)
+        ctx.stroke();
+    }
+
     /** Function: unlockLogos 
      *  Purpose: Starts moving the logos along the canvas and changes the button text */
     unlockLogos = () => {
         let btnTest = "Fun"
         if(!this.canvasInfo.interval){
-            this.canvasInfo.interval = setInterval(()=>{this.dropLogos()}, 25);
+            this.canvasInfo.interval = setInterval(()=>{this.dropLogo()}, 25);
             btnTest="Stop";
         }
         else{ clearInterval(this.canvasInfo.interval); this.canvasInfo.interval = null; }
         this.setState({btnStatus:btnTest})
     }
 
-    dropLogos(){
-        const {logos, logoKeys} = this.canvasInfo;
-        for(let key of logoKeys){
-            logos[key].y += 5;
-        }
-        this.drawLogos();
+    dropLogo(){
+        const {words, playerSpeed} = this.gameController;
+        this.gameController.playerLogo.y += playerSpeed;
+        words.y += (playerSpeed*-1);
+        if(this.gameController.playerLogo.y > this.canvasInfo.windowSize){clearInterval(this.canvasInfo.interval); alert("Game Over");}
+        this.drawGameLogo();
     }
 
     componentDidMount() {
@@ -90,11 +117,11 @@ class LanguageCanvas extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <canvas ref={this.canvasRef} width="800" height="800"/>
+                <canvas ref={this.canvasRef} width={this.canvasInfo.windowSize} height={this.canvasInfo.windowSize}/>
                 <div></div>
                 <button className="btn btn-primary" onClick={this.unlockLogos}>{this.state.btnStatus}</button>       
             </React.Fragment>);
     }
 }
  
-export default LanguageCanvas;
+export default CanvasGame;

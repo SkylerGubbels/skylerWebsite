@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/navbar';
-import LanguageCanvas from './components/languagecanvas';
+import CanvasGame from './components/canvasgame';
 
 function App() {
   return (
     <React.Fragment>
       <NavBar/>
-      <LanguageCanvas/>
+      <CanvasGame/>
     </React.Fragment>
   );
 }
