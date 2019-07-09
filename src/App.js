@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/navbar';
+import LanguageCanvas from './components/languagecanvas';
 
 function App() {
   return (
-    <NavBar/>
+    <React.Fragment>
+      <NavBar/>
+      <LanguageCanvas/>
+    </React.Fragment>
   );
 }
 
