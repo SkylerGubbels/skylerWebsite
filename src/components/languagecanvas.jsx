@@ -3,6 +3,7 @@ import {imageLinks} from '../resources/imageLinks'
 
 class LanguageCanvas extends Component {
     state = { 
+        btnStatus: "Fun"
      }
 
     canvasInfo = {
@@ -16,7 +17,8 @@ class LanguageCanvas extends Component {
         },
         logoKeys: [],
         logoSize: 100,
-        windowSize: 800
+        windowSize: 800,
+        interval: null,
     }
 
     constructor(props){
@@ -28,12 +30,12 @@ class LanguageCanvas extends Component {
      *  Purpose: Takes the logo images loaded in this.state.logos.img and draws
      *           them on the canvas */
     drawLogos() {
-        
         const {logos, logoSize, logoKeys, windowSize} = this.canvasInfo;
         const canvas = this.canvasRef.current;
         const ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0, windowSize, windowSize)
 
-        ctx.rect(20, 20, windowSize, windowSize);
+        ctx.rect(0, 0, windowSize, windowSize);
 
         for(let key of logoKeys){
             let {x, y, img} = logos[key]
@@ -60,8 +62,24 @@ class LanguageCanvas extends Component {
         }
     }
 
-    unlockLogos(){
-        console.log("here")
+    /** Function: unlockLogos 
+     *  Purpose: Starts moving the logos along the canvas and changes the button text */
+    unlockLogos = () => {
+        let btnTest = "Fun"
+        if(!this.canvasInfo.interval){
+            this.canvasInfo.interval = setInterval(()=>{this.dropLogos()}, 25);
+            btnTest="Stop";
+        }
+        else{ clearInterval(this.canvasInfo.interval); this.canvasInfo.interval = null; }
+        this.setState({btnStatus:btnTest})
+    }
+
+    dropLogos(){
+        const {logos, logoKeys} = this.canvasInfo;
+        for(let key of logoKeys){
+            logos[key].y += 5;
+        }
+        this.drawLogos();
     }
 
     componentDidMount() {
@@ -72,9 +90,9 @@ class LanguageCanvas extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <canvas ref={this.canvasRef} width="1000" height="1000"/>
+                <canvas ref={this.canvasRef} width="800" height="800"/>
                 <div></div>
-                <button className="btn btn-primary" onClick={this.unlockLogos}>Fun</button>       
+                <button className="btn btn-primary" onClick={this.unlockLogos}>{this.state.btnStatus}</button>       
             </React.Fragment>);
     }
 }
