@@ -66,3 +66,7 @@
   background: rgb(0,0,0);
   background: rgba(0,0,0,0.7);
 }
+
+.anchor{
+  font-size: 0px;
+}

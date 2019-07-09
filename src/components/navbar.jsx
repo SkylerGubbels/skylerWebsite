@@ -5,7 +5,7 @@ import skylerImage from "../resources/SkylerImage.png"
 
 /** Creates the NavBar at the top of the website */
 class NavBar extends Component {
-    
+
     render() {    
         return(
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -15,8 +15,8 @@ class NavBar extends Component {
         </Link>
         <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
           <div className="navbar-nav"></div>
-            <NavLink className="nav-item nav-link" to="/english"> English </NavLink>
-            <NavLink className="nav-item nav-link" to="/french">Français</NavLink>
+            <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("english")}>English</button>
+            <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("french")}>Français</button>
             <NavLink className="nav-item nav-link" to="/contact"> Contact</NavLink>
             <NavLink className="nav-item nav-link" to="/projects"> Projects </NavLink>
           <li className="nav-item dropdown">
@@ -26,7 +26,7 @@ class NavBar extends Component {
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="#">Summary</Link>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">Technical Skills</Link>
+                <a className="dropdown-item" href="../App.js#canvasGame">Technical Skills</a>
                 <Link className="dropdown-item" to="#">Other Skills</Link>
                 <Link className="dropdown-item" to="#">Specialized Courses</Link>
                 <div className="dropdown-divider"></div>
