@@ -34,5 +34,35 @@
 
 .backgroundImage{
   max-width: 100%;
+  min-width: 50%;
+  min-height: 50%;
   height: auto;
+}
+
+.summaryTitle{
+  position: relative;
+}
+
+.summarySubtitle{
+  position: relative;
+  top: -9px;
+}
+
+.summaryText{
+  position: relative;
+  top: 50px;
+}
+
+.imageText{
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+
+.imageSpan{
+  color: white;
+  font: bold 45px Helvetica;
+  letter-spacing: px;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.7);
 }
