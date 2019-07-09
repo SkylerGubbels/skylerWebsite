@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.backgroundImage{
+  max-width: 100%;
+  height: auto;
+}
