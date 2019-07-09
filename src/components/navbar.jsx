@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import skylerImage from "../resources/SkylerImage.png"
+import skylerImage from "../resources/images/SkylerImage.png"
 
 
 /** Creates the NavBar at the top of the website */

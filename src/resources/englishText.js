@@ -5,8 +5,8 @@
 export function getEnglishText(){
     return {
         summary: {
-            frontEnd: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-            backEnd: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+            frontend: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+            backend: "Lorem ipsum dolor sit amet, consectetur adipiscing",
             softwareEngineering: "Lorem ipsum dolor sit amet, consectetur adipiscing",
             computerScience: "Lorem ipsum dolor sit amet, consectetur adipiscing"
         }

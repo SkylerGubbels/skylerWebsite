@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import horizon from "../resources/horizon.jpg"
-import { getEnglishText } from "../resources/englishText";
+import horizon from "../resources/images/horizon.jpg"
 import "animate.css"
 
 class Introduction extends Component {

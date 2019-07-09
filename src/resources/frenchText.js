@@ -5,8 +5,8 @@
 export function getFrenchText(){
     return {
         summary: {
-            frontEnd: "FRRRRRRRRRRRRAAAAAANNNNNCAIS",
-            backEnd: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+            frontend: "FRRRRRRRRRRRRAAAAAANNNNNCAIS",
+            backend: "Lorem ipsum dolor sit amet, consectetur adipiscing",
             softwareEngineering: "Lorem ipsum dolor sit amet, consectetur adipiscing",
             computerScience: "Lorem ipsum dolor sit amet, consectetur adipiscing"
         }
