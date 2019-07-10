@@ -8,11 +8,19 @@ class Introduction extends Component {
     constructor(props){
         super(props);
         this.imgRef = React.createRef();
-        console.log(this.imgRef)
     }
 
     componentDidMount(){
         window.addEventListener("resize", ()=>{this.props.onImageSizeChange(this.imgRef.current.height)})
+        this.handleImageLoad();
+    }
+
+    handleImageLoad(){
+        let interval;
+        interval = setInterval(() => {
+            if(this.imgRef.current.height) {
+                this.props.onImageLoad(this.imgRef.current.height);
+                clearInterval(interval)}}, 1000);
     }
 
     render() { 

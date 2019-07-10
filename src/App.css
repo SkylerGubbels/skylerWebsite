@@ -71,14 +71,10 @@
   font-size: 0px;
 }
 
-.col-md{
-  border: 1px solid green;
+#my-nav{
+  backround-color: rgba(0,0,0,0.1);
 }
 
-.row{
-  border: 1px solid red;
-}
-
-.my-col{
-  border: 1px solid blue;
+.navbar-background{
+  backround-color: rgba(0,0,0,1);
 }

@@ -33,6 +33,9 @@ class Summary extends Component{
     }
 
 
+    /** Function: loadtext()
+     *  Input: Language string for the language with which to display the website
+     *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
     loadText = language => {
         let text;
         if(language === "english"){ text = getEnglishText().summary; }
@@ -40,13 +43,18 @@ class Summary extends Component{
         this.setState({text, language});
     }
 
+    /** Function: createTextBlock
+     *  Input: Source code for the logo and the text beside the logo
+     *  Purpose: Creates on image with block of text next to it
+     * 
+     *  TODO: If language changes then the columns are no longer aligned */
     createTextBlock(imageSrc, text){
         return(
                 <React.Fragment>
-                    <div className="col-md-2 col-sm-2 col-2 my-col">
+                    <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
                         <img src={imageSrc} width={this.logoDetails.width}/>
                     </div>
-                    <div className="col-md-4 col-sm-10 col-10 my-col">
+                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-10 col-10">
                         <span>{text}</span>
                     </div>
                 </React.Fragment>
@@ -56,6 +64,7 @@ class Summary extends Component{
     render(){
         const { frontend: feText, backend: beText, softwareEngineering: seText, computerScience: csText } = this.state.text;
         const { width } = this.logoDetails;
+        
         return(
         <div className="container">
             <div className = "row">

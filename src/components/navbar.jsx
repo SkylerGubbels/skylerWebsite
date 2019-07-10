@@ -7,7 +7,8 @@ import skylerImage from "../resources/images/skylerImage.png"
 class NavBar extends Component {
 
     state = {
-      navbarClass: "navbar navbar-expand navbar-light fixed-top"
+      navbarClass: "navbar navbar-expand navbar-light fixed-top",
+      opacity: 0
     }
 
     componentDidMount(){
@@ -16,14 +17,16 @@ class NavBar extends Component {
 
     handleScroll = () => {
       console.log(this.props.imageHeight)
-      if(window.pageYOffset > this.props.imageHeight-100) { this.showNavbarBackground() }
+      if(window.pageYOffset > (this.props.imageHeight*1.5)) { this.showNavbarBackground() }
       else { this.hideNavbarBackground(); }
     }
 
     // TODO: Change navbar transparency depending on height of scrollbar
     showNavbarBackground(){
-      const navbarClass = "navbar navbar-expand navbar-light bg-light fixed-top"
-      this.setState({navbarClass});
+      const navbarClass = "navbar navbar-expand navbar-light fixed-top navbar-background";
+      const opacity = (window.pageYOffset/this.props.imageHeight)-0.5;
+      console.log(opacity);
+      this.setState({navbarClass, opacity});
     }
 
     hideNavbarBackground(){
@@ -32,8 +35,11 @@ class NavBar extends Component {
     }
 
     render() {   
+
+        const bg = {backgroundColor: `rgba(255,255,255,${this.state.opacity})`}
+
         return(
-        <nav className={this.state.navbarClass}>
+        <nav className={this.state.navbarClass} style={bg}>
         <img src={skylerImage} className="m-2" alt="" width="50"/>
         <Link className="navbar-brand" to="/">
           Skyler Gubbels

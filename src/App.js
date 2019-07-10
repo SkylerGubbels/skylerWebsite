@@ -22,13 +22,18 @@ class App extends Component {
     this.setState({imageHeight});
   }
 
+  handleLoadImage = image =>{
+    console.log(image)
+    this.setState({imageHeight: image})
+  }
+
   render() { 
     const { language } = this.state;
     
     return (
     <React.Fragment>
       <NavBar language={language} onLanguageChange={this.handleLanguageChange} imageHeight={this.state.imageHeight}/>
-      <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize}/>
+      <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
       <Summary language={language}/>
       <a className="anchor" href="#" id="education">a</a>
       <Education/>
