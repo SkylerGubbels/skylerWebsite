@@ -5,11 +5,12 @@ import javascript from "../resources/languageLogos/javascript.svg"
 import c from "../resources/languageLogos/c.svg"
 import cpp from "../resources/languageLogos/cpp.svg"
 import haskell from "../resources/languageLogos/haskell.png"
+import AnimatedLogos from './common/animatedlogos';
 
 class TechnicalSkills extends Component {
     
     state = { 
-        languages: [java, python, javascript, c, cpp, haskell],
+        languages: [[java, python, javascript], [c, cpp, haskell]],
     }
 
     logoSize = 100;
@@ -19,9 +20,7 @@ class TechnicalSkills extends Component {
         return ( 
         <React.Fragment>
             <h1>Technical Skills</h1>
-            <div className="row">
-            {languages.map(l => <img className="animated bounceInRight" src={l} alt="" width={this.logoSize} height={this.logoSize}/>)}
-            </div>
+            <AnimatedLogos logos={languages} logoSize={this.logoSize} displayTime={5000}/>
         </React.Fragment>
         );
     }
