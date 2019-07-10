@@ -18,7 +18,7 @@ class Summary extends Component{
     }
 
     logoDetails = {
-        width: "150",
+        width: "100",
     }
 
     componentDidUpdate(){
@@ -40,30 +40,32 @@ class Summary extends Component{
         this.setState({text, language});
     }
 
+
     render(){
         const { frontend, backend, softwareEngineering, computerScience } = this.state.text;
         const { width } = this.logoDetails;
         return(
         <div className="container">
             <div className = "row">
-            <div className="col-sm">
                 <div className="row">
-                    <img src={backendLogo} width={width}/>
-                    <span>{frontend}</span>
+                        <div className="col-2 my-col">
+                            <img src={backendLogo} width={width}/>
+                        </div>
+                        <div className="col-4 my-col">
+                            <span>{backend}</span>
+                        </div>
+                    <div className="col-md">
+                        <img src={frontendLogo} width={width}/><span>{frontend}</span>
+                    </div>
                 </div>
                 <div className="row">
-                    <img src={frontendLogo} width={width}/>
-                    <span>{backend}</span>
+                    <div className="col-md">
+                        <img src={softwareEngineeringLogo} width={width}/><span>{softwareEngineering}</span>
+                    </div>
+                    <div className="col-md">
+                        <img src={computerScienceLogo} width={width}/><span>{computerScience}</span>
+                    </div>
                 </div>
-            </div>
-            <div className="col-sm">
-                <div className="row">
-                    <img src={softwareEngineeringLogo} width={width}/><span>{softwareEngineering}</span>
-                </div>
-                <div className="row">
-                    <img src={computerScienceLogo} width={width}/><span>{computerScience}</span>
-                </div>
-            </div>
             </div>
         </div>);
     }
