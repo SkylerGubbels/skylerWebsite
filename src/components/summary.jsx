@@ -40,31 +40,32 @@ class Summary extends Component{
         this.setState({text, language});
     }
 
+    createTextBlock(imageSrc, text){
+        return(
+                <React.Fragment>
+                    <div className="col-md-2 col-sm-2 col-2 my-col">
+                        <img src={imageSrc} width={this.logoDetails.width}/>
+                    </div>
+                    <div className="col-md-4 col-sm-10 col-10 my-col">
+                        <span>{text}</span>
+                    </div>
+                </React.Fragment>
+        )
+    }
 
     render(){
-        const { frontend, backend, softwareEngineering, computerScience } = this.state.text;
+        const { frontend: feText, backend: beText, softwareEngineering: seText, computerScience: csText } = this.state.text;
         const { width } = this.logoDetails;
         return(
         <div className="container">
             <div className = "row">
                 <div className="row">
-                        <div className="col-2 my-col">
-                            <img src={backendLogo} width={width}/>
-                        </div>
-                        <div className="col-4 my-col">
-                            <span>{backend}</span>
-                        </div>
-                    <div className="col-md">
-                        <img src={frontendLogo} width={width}/><span>{frontend}</span>
-                    </div>
+                    {this.createTextBlock(frontendLogo, feText)}
+                    {this.createTextBlock(backendLogo, beText)}
                 </div>
                 <div className="row">
-                    <div className="col-md">
-                        <img src={softwareEngineeringLogo} width={width}/><span>{softwareEngineering}</span>
-                    </div>
-                    <div className="col-md">
-                        <img src={computerScienceLogo} width={width}/><span>{computerScience}</span>
-                    </div>
+                    {this.createTextBlock(softwareEngineeringLogo, seText)}
+                    {this.createTextBlock(computerScienceLogo, csText)}
                 </div>
             </div>
         </div>);
