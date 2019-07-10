@@ -16,16 +16,18 @@ class NavBar extends Component {
     }
 
     handleScroll = () => {
-      console.log(this.props.imageHeight)
-      if(window.pageYOffset > (this.props.imageHeight*1.5)) { this.showNavbarBackground() }
-      else { this.hideNavbarBackground(); }
+      // Checks if our scrolling is in the range of the top image. If it is then we
+      // handle fading the navbar in and out
+      if(window.pageYOffset < (this.props.imageHeight*1.1) && window.pageYOffset > (this.props.imageHeight/2)) { this.showNavbarBackground() }
+      else if (window.pageYOffset < (this.props.imageHeight/2)) { this.hideNavbarBackground(); }
     }
 
-    // TODO: Change navbar transparency depending on height of scrollbar
     showNavbarBackground(){
-      const navbarClass = "navbar navbar-expand navbar-light fixed-top navbar-background";
-      const opacity = (window.pageYOffset/this.props.imageHeight)-0.5;
-      console.log(opacity);
+      let navbarClass = "navbar navbar-expand navbar-light fixed-top navbar-background";
+      // Need to subtract 0.5 because it starts half way at the photo. This starts us at 0.
+      // We then double the total to have a smooth fade in from 0 to 1
+      let opacity = ((window.pageYOffset/this.props.imageHeight)-0.5)*2;
+      if(opacity < 0.1) opacity = 0;
       this.setState({navbarClass, opacity});
     }
 

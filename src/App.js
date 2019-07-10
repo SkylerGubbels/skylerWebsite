@@ -5,6 +5,7 @@ import CanvasGame from './components/canvasgame';
 import Education from './components/education';
 import Introduction from './components/introduction';
 import Summary from './components/summary';
+import TechnicalSkills from './components/technicalskills';
 
 
 class App extends Component {
@@ -37,7 +38,7 @@ class App extends Component {
       <Summary language={language}/>
       <a className="anchor" href="#" id="education">a</a>
       <Education/>
-      <CanvasGame/>
+      <TechnicalSkills/>
     </React.Fragment>
   );
   }
