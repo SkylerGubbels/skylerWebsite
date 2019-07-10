@@ -17,6 +17,10 @@ class Summary extends Component{
                 computerScience: ""}
     }
 
+    logoDetails = {
+        width: "150",
+    }
+
     componentDidUpdate(){
         // If the language has changed get new text
         if(this.state.language !== this.props.language){
@@ -38,13 +42,29 @@ class Summary extends Component{
 
     render(){
         const { frontend, backend, softwareEngineering, computerScience } = this.state.text;
-        console.log(this.state)
+        const { width } = this.logoDetails;
         return(
-        <div>
-        <img src={backendLogo}/><p>{frontend}</p>
-        <img src={frontendLogo}/><p>{backend}</p>
-        <img src={softwareEngineeringLogo}/><p>{softwareEngineering}</p>
-        <img src={computerScienceLogo}/><p>{computerScience}</p>
+        <div className="container">
+            <div className = "row">
+            <div className="col-sm">
+                <div className="row">
+                    <img src={backendLogo} width={width}/>
+                    <span>{frontend}</span>
+                </div>
+                <div className="row">
+                    <img src={frontendLogo} width={width}/>
+                    <span>{backend}</span>
+                </div>
+            </div>
+            <div className="col-sm">
+                <div className="row">
+                    <img src={softwareEngineeringLogo} width={width}/><span>{softwareEngineering}</span>
+                </div>
+                <div className="row">
+                    <img src={computerScienceLogo} width={width}/><span>{computerScience}</span>
+                </div>
+            </div>
+            </div>
         </div>);
     }
 }

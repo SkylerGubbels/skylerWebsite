@@ -10,11 +10,16 @@ import Summary from './components/summary';
 class App extends Component {
 
   state = {
-    language: 'english'
+    language: 'english',
+    imageHeight: 200
   }
 
   handleLanguageChange = newLanguage => {
     this.setState({language: newLanguage});
+  }
+
+  handleBackgroundImageResize = imageHeight =>{
+    this.setState({imageHeight});
   }
 
   render() { 
@@ -22,11 +27,12 @@ class App extends Component {
     
     return (
     <React.Fragment>
-      <NavBar language={language} onLanguageChange={this.handleLanguageChange}/>
-      <Introduction language={language}/>
+      <NavBar language={language} onLanguageChange={this.handleLanguageChange} imageHeight={this.state.imageHeight}/>
+      <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize}/>
       <Summary language={language}/>
       <a className="anchor" href="#" id="education">a</a>
       <Education/>
+      <CanvasGame/>
     </React.Fragment>
   );
   }

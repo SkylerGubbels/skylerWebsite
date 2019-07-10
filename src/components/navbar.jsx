@@ -1,22 +1,47 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import skylerImage from "../resources/images/SkylerImage.png"
+import skylerImage from "../resources/images/skylerImage.png"
 
 
 /** Creates the NavBar at the top of the website */
 class NavBar extends Component {
 
-    render() {    
+    state = {
+      navbarClass: "navbar navbar-expand navbar-light fixed-top"
+    }
+
+    componentDidMount(){
+      window.addEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll = () => {
+      console.log(this.props.imageHeight)
+      if(window.pageYOffset > this.props.imageHeight-100) { this.showNavbarBackground() }
+      else { this.hideNavbarBackground(); }
+    }
+
+    // TODO: Change navbar transparency depending on height of scrollbar
+    showNavbarBackground(){
+      const navbarClass = "navbar navbar-expand navbar-light bg-light fixed-top"
+      this.setState({navbarClass});
+    }
+
+    hideNavbarBackground(){
+      const navbarClass = "navbar navbar-expand navbar-light fixed-top"
+      this.setState({navbarClass});
+    }
+
+    render() {   
         return(
-        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <nav className={this.state.navbarClass}>
         <img src={skylerImage} className="m-2" alt="" width="50"/>
         <Link className="navbar-brand" to="/">
           Skyler Gubbels
         </Link>
         <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
           <div className="navbar-nav"></div>
-            <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("english")}>English</button>
-            <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("french")}>Français</button>
+            {(this.props.language === "french") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("english")}>English</button>}
+            {(this.props.language === "english") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("french")}>Français</button>}
             <NavLink className="nav-item nav-link" to="/contact"> Contact</NavLink>
             <NavLink className="nav-item nav-link" to="/projects"> Projects </NavLink>
           <li className="nav-item dropdown">
