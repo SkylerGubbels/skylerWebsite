@@ -30,12 +30,41 @@ class AnimatedLogos extends Component {
         this.currentIndex = this.currentIndex+1;
         this.setState({currentLogos: this.allLogos[this.currentIndex%this.maxIndex]});
     }
+
+    displayLogo(logo, index){
+        const { logoSize } = this.state;
+        console.log(index);
+        let delay = 1;
+        return (<React.Fragment>
+                    <img 
+                    key={logo} 
+                    className="animated bounceInRight bounceOutLeft" 
+                    src={logo} 
+                    alt="" 
+                    width={logoSize} 
+                    height={this.logoSize}
+                    style={{"animation-delay":`${this.calculateAnimationDelayEntrance(index)}s, ${this.calculateAnimationDelayLeave(index)}s`}}/>
+                </React.Fragment>);
+    }
+
+    calculateAnimationDelayEntrance(index){
+        const { currentLogos } = this.state;
+        // Divides display time in half so it has time to display then animate leaving
+        // Divides that by 1000 to convert miliseconds to seconds
+        // Divides that by the length of elements in currentLogos so each logo gets an equal chunk of time
+        return index * ((this.displayTime/2)/1000)/currentLogos.length;   
+    }
+
+    calculateAnimationDelayLeave(index){
+        const { currentLogos } = this.state;
+        return index * ((this.displayTime)/1000)/currentLogos.length;  
+    }
     
     render() { 
         const { currentLogos, logoSize } = this.state;
         return ( 
             <div className="row">
-                {currentLogos.map(l => <img key={l} className="animated bounceInRight" src={l} alt="" width={logoSize} height={this.logoSize}/>)}
+                {currentLogos.map((l,index) => this.displayLogo(l,index))}
             </div>
          );
     }
