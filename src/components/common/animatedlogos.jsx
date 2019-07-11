@@ -31,20 +31,38 @@ class AnimatedLogos extends Component {
         this.setState({currentLogos: this.allLogos[this.currentIndex%this.maxIndex]});
     }
 
+    /** Function: displayLogo()
+     *  In: Logo image variable, index of logo in list
+     *  Purpose: Displays logos with starting and ending animations based off
+     *           how many logos there are and the display time passed as a prop */
     displayLogo(logo, index){
         const { logoSize } = this.state;
-        console.log(index);
-        let delay = 1;
+        if(this.maxIndex < 2) { return this.displayStaticLogo(logo); }
         return (<React.Fragment>
                     <img 
                     key={logo} 
-                    className="myAnimation" 
                     src={logo} 
                     alt="" 
                     width={logoSize} 
-                    height={this.logoSize}
+                    height={logoSize}
                     style={{"animation":`fadeIn 1s ${this.calculateAnimationDelayEntrance(index)}s both,
-                                         fadeOut 1s 4s`}}/>
+                                         fadeOut 1s ${this.calculateAnimationDelayLeave()}s`,
+                            "min-height":`${logoSize}`}}/>
+                </React.Fragment>);
+    }
+
+    /** Function: displayStaticLogo()
+     *  In: Logo image variable
+     *  Purpose: To be called when there is only one list of elements. Doesn't bother fading
+     *           logos in and out */
+    displayStaticLogo(logo){
+        const { logoSize } = this.state;
+        return (<React.Fragment><img key={logo} 
+                    className="animated fadeIn" 
+                    src={logo} 
+                    alt="" 
+                    width={logoSize} 
+                    height={this.logoSize}/>
                 </React.Fragment>);
     }
 
@@ -57,7 +75,7 @@ class AnimatedLogos extends Component {
     }
 
     calculateAnimationDelayLeave(index){
-        return 6;
+        return this.displayTime/1000-1;
     }
     
     render() { 
