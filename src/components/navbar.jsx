@@ -86,15 +86,4 @@ class NavBar extends Component {
     }
 }
 
-/**
-<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="#">Summary</Link>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="../App.js#canvasGame">Technical Skills</a>
-                <Link className="dropdown-item" to="#">Other Skills</Link>
-                <Link className="dropdown-item" to="#">Specialized Courses</Link>
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">Education</Link>
-                <Link className="dropdown-item" to="#">Work Experience</Link> */
-
 export default NavBar;

@@ -21,7 +21,7 @@ class Footer extends Component {
 
     render() { 
         return (
-            <div style={{"background-color":"rgb(33,33,33)"}}>
+            <div style={{"backgroundColor":"rgb(33,33,33)"}}>
             <footer className="page-footer pt-4">
               <div className="container-fluid text-center text-md-left">
                 <div className="row">
@@ -45,7 +45,7 @@ class Footer extends Component {
             
               <div className="footer-copyright text-center py-3 footerText">
                 Copyright Skyler Gubbels 2019 ©
-                <Link className="footerText" href="#"> Source code</Link>
+                <Link className="footerText" to="#"> Source code</Link>
               </div>
             
             </footer></div>)

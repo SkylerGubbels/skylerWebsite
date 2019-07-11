@@ -6,6 +6,7 @@ import Introduction from './components/introduction';
 import Summary from './components/summary';
 import TechnicalSkills from './components/technicalskills';
 import Footer from './components/footer';
+import OtherSkills from './components/otherskills';
 
 
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
       <a className="anchor" href="#" id="education">a</a>
       <Education/>
       <TechnicalSkills language={language}/>
+      <OtherSkills language={language}/>
       <Footer/>
     </React.Fragment>
   );

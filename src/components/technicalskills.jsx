@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
 import AnimatedLogos from './common/animatedlogos';
 import { getLogos } from '../resources/logos';
+import Skills from './skills';
 
-class TechnicalSkills extends Component {
-    
-    state = { text: null,
-              language: "" }
+class TechnicalSkills extends Skills {
 
     logoSize = 100;
-    
-    componentDidUpdate(){
-        if(this.state.language !== this.props.language){
-            this.loadText(this.props.language);
-        }
-    }
-
-    componentDidMount(){
-        this.loadText(this.props.language);
-    }
 
     /** Function: loadtext()
      *  Input: Language string for the language with which to display the website
@@ -27,19 +15,9 @@ class TechnicalSkills extends Component {
         this.setState({text, language});
     }
 
-    /** Function: createSkillCategory()
-     *  Input: Title, text and (optional)key
-     *  Purpose: Creates a text section with a title and text content. Key param optional but
-     *           needed if using .map() function */
-    createSkillCategory = (title, text, key = "") => {
-        return (<React.Fragment key={`${key}container`}>
-                    <p key={`${key}title`}className="skillCategoryTitle">{title}</p>
-                    <p key={`${key}text`}className="skillCategoryText">{text}</p>
-                </React.Fragment>)
-    }
-
     render() { 
         const { text } = this.state;
+        
         // Because text is loaded asynchronously, render might be called before
         // the text is loaded. If this happens we don't load the text. Once the
         // async function returns the new text then it will be rendered
@@ -49,7 +27,7 @@ class TechnicalSkills extends Component {
         <React.Fragment>
             <h1>Technical Skills</h1>
             <AnimatedLogos logos={getLogos()} logoSize={this.logoSize} displayTime={7000}/>
-            {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, key))}
+            {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, "skillCategoryTitle", "skillCategoryText", key))}
         </React.Fragment>
         );
     }
