@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
+import { getDropDownItems } from '../resources/navLinks';
 import skylerImage from "../resources/images/skylerImage.png"
 
 
@@ -36,6 +37,14 @@ class NavBar extends Component {
       this.setState({navbarClass});
     }
 
+    createDropdown(item){
+      return (
+        <React.Fragment key={`${item.text}-fragment`}>
+          <Link className="dropdown-item" to={item.to}>{item.text}</Link>
+          { item.divider && <div className="dropdown-divider"/> }
+        </React.Fragment>)
+    }
+
     render() {   
 
         const bg = {backgroundColor: `rgba(255,255,255,${this.state.opacity})`}
@@ -57,14 +66,7 @@ class NavBar extends Component {
                 About
                 </Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="#">Summary</Link>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="../App.js#canvasGame">Technical Skills</a>
-                <Link className="dropdown-item" to="#">Other Skills</Link>
-                <Link className="dropdown-item" to="#">Specialized Courses</Link>
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">Education</Link>
-                <Link className="dropdown-item" to="#">Work Experience</Link>
+                  { getDropDownItems().links.map(i => this.createDropdown(i))}
                 </div>
             </li>
           </div>
@@ -72,4 +74,16 @@ class NavBar extends Component {
          );
     }
 }
+
+/**
+<div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link className="dropdown-item" to="#">Summary</Link>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item" href="../App.js#canvasGame">Technical Skills</a>
+                <Link className="dropdown-item" to="#">Other Skills</Link>
+                <Link className="dropdown-item" to="#">Specialized Courses</Link>
+                <div className="dropdown-divider"></div>
+                <Link className="dropdown-item" to="#">Education</Link>
+                <Link className="dropdown-item" to="#">Work Experience</Link> */
+
 export default NavBar;

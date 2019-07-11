@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { getDropDownItems } from '../resources/navLinks';
 
 class Footer extends Component {
     state = {  }
 
-    aboutLinks = {title: "About", links: [{text: "Link 1", to: "#"}, {text: "Link 2", to: "#"}, {text: "Link 3", to: "#"}, {text: "Link 4", to: "#"} ]}
+    aboutLinks = {title: "About", links: [{text: "Summary", to: "#"}, {text: "Education", to:"#"}, {text: "Technical Skills", to: "#"}]}
+    aboutLinks2 = {title: "About", links: [{text: "Link 1", to: "#"} ]}
 
-    createHeaderColumn = (links) => {
+    createHeaderColumn = (col) => {
         return (
-        <React.Fragment>
-            <h5 className="text-uppercase footerText">{links.title}</h5>    
+            <div className="col-md-3 mb-md-0 mb-3">
+            <h5 className="text-uppercase footerText">{col.title}</h5>    
             <ul className="list-unstyled">
-            {links.links.map(l => <li key={`${links.title}-${l.text}`}><Link className="footerText" to={l.to}>{l.text}</Link></li>)}
+            {col.links.map(l => <li key={`${col.title}-${l.text}`}><Link className="footerText" to={l.to}>{l.text}</Link></li>)}
             </ul>
-        </React.Fragment>
+            </div>
         )
     }
 
@@ -29,14 +31,13 @@ class Footer extends Component {
                     <p className="footerText">Here you can use rows and columns to organize your footer content.</p>
             
                   </div>
+                </div>
+                <div className="row">
                   <hr className="clearfix w-100 d-md-none pb-3"/>
-                  <div className="col-md-3 mb-md-0 mb-3">
-                        { this.createHeaderColumn(this.aboutLinks) }
-                  </div>
-                  <div className="col-md-3 mb-md-0 mb-3">
-                        { this.createHeaderColumn(this.aboutLinks) }
-            
-                  </div>
+                  { this.createHeaderColumn(getDropDownItems()) }
+                  { this.createHeaderColumn(this.aboutLinks2) }
+                  { this.createHeaderColumn(this.aboutLinks) }
+                  { this.createHeaderColumn(this.aboutLinks) }
             
                 </div>
             
