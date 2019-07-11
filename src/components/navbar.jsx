@@ -12,8 +12,19 @@ class NavBar extends Component {
       opacity: 0
     }
 
+    interval;
+
     componentDidMount(){
       window.addEventListener("scroll", this.handleScroll);
+      
+      // On page load we check where the user is scrolled. If they are passed the point where the image ends
+      // then we need to bring in the background
+      // TODO: Find better solution to the problem of the image size and pageYOffset loading after
+      //       this componentDidMount() function fires.
+      this.interval = setInterval(()=>{
+        if(window.pageYOffset > (this.props.imageHeight)) { 
+          this.showNavbarBackground(); clearInterval(this.interval) 
+      }}, 100)
     }
 
     handleScroll = () => {
