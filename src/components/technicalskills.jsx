@@ -54,10 +54,5 @@ class TechnicalSkills extends Component {
         );
     }
 }
-
-/**{this.createSkillCategory(text.languages.title, text.languages.text)}
-            {this.createSkillCategory(text.libraries.title, text.libraries.text)}
-            {this.createSkillCategory(text.webTechnologies.title, text.webTechnologies.text)}
-            {this.createSkillCategory()} */
  
 export default TechnicalSkills;
