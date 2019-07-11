@@ -38,12 +38,13 @@ class AnimatedLogos extends Component {
         return (<React.Fragment>
                     <img 
                     key={logo} 
-                    className="animated bounceInRight bounceOutLeft" 
+                    className="myAnimation" 
                     src={logo} 
                     alt="" 
                     width={logoSize} 
                     height={this.logoSize}
-                    style={{"animation-delay":`${this.calculateAnimationDelayEntrance(index)}s, ${this.calculateAnimationDelayLeave(index)}s`}}/>
+                    style={{"animation":`fadeIn 1s ${this.calculateAnimationDelayEntrance(index)}s both,
+                                         fadeOut 1s 4s`}}/>
                 </React.Fragment>);
     }
 
@@ -56,12 +57,11 @@ class AnimatedLogos extends Component {
     }
 
     calculateAnimationDelayLeave(index){
-        const { currentLogos } = this.state;
-        return index * ((this.displayTime)/1000)/currentLogos.length;  
+        return 6;
     }
     
     render() { 
-        const { currentLogos, logoSize } = this.state;
+        const { currentLogos } = this.state;
         return ( 
             <div className="row">
                 {currentLogos.map((l,index) => this.displayLogo(l,index))}
