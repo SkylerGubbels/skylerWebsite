@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import NavBar from './components/navbar';
-import CanvasGame from './components/canvasgame';
 import Education from './components/education';
 import Introduction from './components/introduction';
 import Summary from './components/summary';
@@ -38,7 +37,7 @@ class App extends Component {
       <Summary language={language}/>
       <a className="anchor" href="#" id="education">a</a>
       <Education/>
-      <TechnicalSkills/>
+      <TechnicalSkills language={language}/>
     </React.Fragment>
   );
   }

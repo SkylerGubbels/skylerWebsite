@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { getEnglishText } from '../resources/englishText';
-import { getFrenchText } from '../resources/frenchText';
 import backendLogo from '../resources/images/backendLogo.png';
 import frontendLogo from '../resources/images/frontendLogo.png';
 import softwareEngineeringLogo from '../resources/images/softwareEngineeringLogo.png';
@@ -36,10 +34,8 @@ class Summary extends Component{
     /** Function: loadtext()
      *  Input: Language string for the language with which to display the website
      *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
-    loadText = language => {
-        let text;
-        if(language === "english"){ text = getEnglishText().summary; }
-        else { text = getFrenchText().summary; }
+    loadText = async language => {
+        const text = (await import(`../resources/${language}Text`)).getSummaryText();
         this.setState({text, language});
     }
 

@@ -38,17 +38,16 @@ class AnimatedLogos extends Component {
     displayLogo(logo, index){
         const { logoSize } = this.state;
         if(this.maxIndex < 2) { return this.displayStaticLogo(logo); }
-        return (<React.Fragment>
-                    <img 
+        return (<img 
                     key={logo} 
                     src={logo} 
                     alt="" 
                     width={logoSize} 
                     height={logoSize}
-                    style={{"animation":`fadeIn 1s ${this.calculateAnimationDelayEntrance(index)}s both,
-                                         fadeOut 1s ${this.calculateAnimationDelayLeave()}s`,
-                            "min-height":`${logoSize}`}}/>
-                </React.Fragment>);
+                    style={{"animation":
+                                `fadeIn 1s ${this.calculateAnimationDelayEntrance(index)}s both,
+                                fadeOut 1s ${this.calculateAnimationDelayLeave()}s`,
+                "minHeight":`${logoSize}`}}/>);
     }
 
     /** Function: displayStaticLogo()
@@ -57,13 +56,13 @@ class AnimatedLogos extends Component {
      *           logos in and out */
     displayStaticLogo(logo){
         const { logoSize } = this.state;
-        return (<React.Fragment><img key={logo} 
+        return (<img 
+                    key={logo} 
                     className="animated fadeIn" 
                     src={logo} 
                     alt="" 
                     width={logoSize} 
-                    height={this.logoSize}/>
-                </React.Fragment>);
+                    height={this.logoSize}/>);
     }
 
     calculateAnimationDelayEntrance(index){

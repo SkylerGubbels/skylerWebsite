@@ -15,7 +15,7 @@ class Education extends Component{
         const { dimensions } = this.state;
         return(
             <React.Fragment>
-                <p>Education</p>
+                <h1>Education</h1>
                     <div className="row">
                         <div className="col-4">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
