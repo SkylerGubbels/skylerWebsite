@@ -31,7 +31,6 @@ class Summary extends Component{
         this.loadText(this.props.language);
     }
 
-
     /** Function: loadtext()
      *  Input: Language string for the language with which to display the website
      *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
@@ -40,52 +39,32 @@ class Summary extends Component{
         this.setState({text, language});
     }
 
-    /** Function: createTextBlock
-     *  Input: Source code for the logo and the text beside the logo
-     *  Purpose: Creates on image with block of text next to it
-     * 
-     *  TODO: If language changes then the columns are no longer aligned */
-    createTextBlock(imageSrc, text){
-        return(
-                <React.Fragment>
-                    <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                        <img src={imageSrc} width={this.logoDetails.width}/>
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-4 col-sm-10 col-10">
-                        <span>{text}</span>
-                    </div>
-                </React.Fragment>
-        )
-    }
-
     render(){
-        const { frontend: feText, backend: beText, softwareEngineering: seText, computerScience: csText } = this.state.text;
+        const { text} = this.state;
         const { width } = this.logoDetails;
         return(
             <React.Fragment>
-                <h1>Summary</h1>
-                <ImageAndText image={frontendLogo} text={feText} width={this.logoDetails.width}/>
-                <ImageAndText image={backendLogo} text={beText} width={this.logoDetails.width}/>
-                <ImageAndText image={softwareEngineeringLogo} text={seText} width={this.logoDetails.width}/>
-                <ImageAndText image={computerScienceLogo} text={csText} width={this.logoDetails.width}/>
-                
+                <div className="container">
+                <div className="row">
+                    <div className="col-6">
+                        <ImageAndText image={frontendLogo} title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
+                    </div>
+                    <div className="col-6">
+                        <ImageAndText image={backendLogo} title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <ImageAndText image={softwareEngineeringLogo} title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
+                    </div>
+                    <div className="col-6">
+                        <ImageAndText image={computerScienceLogo} title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
+                    </div>
+                </div>
+                </div>
+
             </React.Fragment>);
     }
 }
-
-/**
-return(
-    <div className="container">
-        <div className = "row">
-            <div className="row">
-                {this.createTextBlock(frontendLogo, feText)}
-                {this.createTextBlock(backendLogo, beText)}
-            </div>
-            <div className="row">
-                {this.createTextBlock(softwareEngineeringLogo, seText)}
-                {this.createTextBlock(computerScienceLogo, csText)}
-            </div>
-        </div>
-</div>); */
 
 export default Summary;

@@ -83,3 +83,7 @@
 .darkBackground{
   color: white;
 }
+
+.summaryTitle{
+  font-weight: bold;
+}

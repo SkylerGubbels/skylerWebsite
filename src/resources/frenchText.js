@@ -4,10 +4,10 @@
 
 export function getSummaryText(){
     return {
-            frontend: "FRRRRRRRRRRRRAAAAAANNNNNCAIS",
-            backend: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-            softwareEngineering: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-            computerScience: "Lorem ipsum dolor sit amet, consectetur adipiscing"
+        frontend: {title: "Front End", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
+        backend:  {title: "Back End", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
+        softwareEngineering:  {title: "Software Engineering", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
+        computerScience:  {title: "Computer Science", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"}
     }
 }
 
