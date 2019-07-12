@@ -3,31 +3,36 @@ import React, { Component } from 'react';
 class Table extends Component{
 
     cols = 0;
-    //TODO: Throw exception if headers and content don't line up
 
-    createRows(data){
+    /** Function: createRows()
+     *  In: Data object for the row
+     *  Purpose: Checks that the rows are valid then returns the entire row of data*/
+    createRows(data, index1){
         if(Object.keys(data).length !== this.cols){
             throw(new Error("Error: Number of data elements must match number of columns in header"));
         }
-        
         return(
-        <tr>
-            {Object.keys(data).map(key => this.createDataItem(data[key]))}
+        <tr key={index1}>
+            {Object.keys(data).map((key, index2) => this.createDataItem(data[key], `${index1}-${index2}`))}
         </tr>)
     }
 
-    createDataItem(item){
+    /** createDataItem() 
+     *  In: item to put in one space in the data row
+     *  Purpose: Takes the input for that one data point on the table.
+     *           Currently supports text, images and links */
+    createDataItem(item, index){
         if(item.image){
             // If we don't have a path, grey out the image
-            const className = item.path === "" ? "tableImageNoLink" : "tableImageWithLink";
-            return<td><img className={className} src={item.image} href={item.path}></img></td>
+            if(item.path === "") {return <td key={index}><img className="tableImageNoLink" src={item.image}/></td>}
+            else { return<td key={index}><a href={item.path}><img className="tableImageWithLink" src={item.image}/></a></td>}
         }
 
         if(item.text){
-            return<td><a href={item.path}>{item.text}</a></td>
+            return<td key={index}><a href={item.path}>{item.text}</a></td>
         }
 
-        return<td>{item}</td>
+        return<td key={index}>{item}</td>
     }
 
     render(){
@@ -42,7 +47,7 @@ class Table extends Component{
             </tr>
         </thead>
         <tbody>
-                {data.map(d => this.createRows(d))}
+                {data.map((d, i) => this.createRows(d,i))}
         </tbody>
         </table>)
     }
