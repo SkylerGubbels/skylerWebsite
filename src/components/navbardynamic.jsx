@@ -28,6 +28,11 @@ class NavBarDynamic extends NavBar {
       }}, 100)
     }
 
+    componentWillUnmount(){
+      clearInterval(this.interval);
+      window.removeEventListener("scroll", this.handleScroll);
+    }
+
     handleScroll = () => {
       // Checks if our scrolling is in the range of the top image. If it is then we
       // handle fading the navbar in and out

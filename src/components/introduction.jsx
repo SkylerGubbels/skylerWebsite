@@ -11,8 +11,16 @@ class Introduction extends Component {
     }
 
     componentDidMount(){
-        window.addEventListener("resize", ()=>{this.props.onImageSizeChange(this.imgRef.current.height)})
+        window.addEventListener("resize", this.imageSizeChange);
         this.handleImageLoad();
+    }
+
+    // Changed from anonymous function because removeEventListener needs a function to pass
+    // as the argument
+    imageSizeChange = () => {this.props.onImageSizeChange(this.imgRef.current.height)}
+
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.imageSizeChange);
     }
 
     /** Function: handleImageLoad()

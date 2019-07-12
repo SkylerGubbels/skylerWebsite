@@ -22,13 +22,13 @@ class Summary extends Component{
 
     componentDidUpdate(){
         // If the language has changed get new text
-        if(this.state.language !== this.props.language){
+        if(this.state.language !== this.props.language && this.props.language !== ""){
             this.loadText(this.props.language);
         }
     }
 
     componentDidMount(){
-        this.loadText(this.props.language);
+        if(this.props.language !== "") { this.loadText(this.props.language);}
     }
 
     /** Function: loadtext()

@@ -5,13 +5,13 @@ class Skills extends Component {
     state = { text: null, language: "", paragraph: "" }
     
     componentDidUpdate(){
-        if(this.state.language !== this.props.language){
+        if(this.state.language !== this.props.language && this.props.language !== ""){
             this.loadText(this.props.language);
         }
     }
 
     componentDidMount(){
-        this.loadText(this.props.language);
+        if(this.props.language !== "") { this.loadText(this.props.language);}
     }
 
     /** Function: createSkillCategory()

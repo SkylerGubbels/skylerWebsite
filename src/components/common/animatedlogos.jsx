@@ -11,6 +11,8 @@ class AnimatedLogos extends Component {
      maxIndex = 0; // Index of last list in allLogos
      displayTime = 0; // Miliseconds for how long to display each set of logos
      //interval = null;
+
+     interval;
     
     componentDidMount(){
         const {logoSize, displayTime} = this.props;
@@ -20,7 +22,13 @@ class AnimatedLogos extends Component {
         if (typeof(this.props.logos[0]) === "string") this.allLogos = [this.allLogos];
         this.maxIndex = this.allLogos.length;
         this.setState({logoSize, currentLogos: this.allLogos[0]})
-        if(this.maxIndex > 1) setInterval(()=>{this.loadNextLogos()}, this.displayTime);
+        if(this.maxIndex > 1){
+            this.interval = setInterval(()=>{this.loadNextLogos()}, this.displayTime);
+        }
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     /** Function: displayNextIcons()
