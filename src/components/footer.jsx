@@ -11,9 +11,9 @@ class Footer extends Component {
     createHeaderColumn = (col) => {
         return (
             <div className="col-md-3 mb-md-0 mb-3">
-            <h5 className="text-uppercase darkBackground">{col.title}</h5>    
+            <h5 className="text-uppercase whiteText">{col.title}</h5>    
             <ul className="list-unstyled">
-            {col.links.map(l => <li key={`${col.title}-${l.text}`}><Link className="darkBackground" to={l.to}>{l.text}</Link></li>)}
+            {col.links.map(l => <li key={`${col.title}-${l.text}`}><Link className="whiteText" to={l.to}>{l.text}</Link></li>)}
             </ul>
             </div>
         )
@@ -26,9 +26,9 @@ class Footer extends Component {
               <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
-                    <h5 className="text-uppercase darkBackground">Skyler Gubbels</h5>
-                    <p className="darkBackground">Skylermgubbels@gmail.com</p>
-                    <p className="darkBackground">Here you can use rows and columns to organize your footer content.</p>
+                    <h5 className="text-uppercase whiteText">Skyler Gubbels</h5>
+                    <p className="whiteText">Skylermgubbels@gmail.com</p>
+                    <p className="whiteText">Here is where I will write stuff about wanting to be hired.</p>
             
                   </div>
                 </div>
@@ -43,9 +43,9 @@ class Footer extends Component {
             
               </div>
             
-              <div className="footer-copyright text-center py-3 darkBackground">
+              <div className="footer-copyright text-center py-3 whiteText">
                 Copyright Skyler Gubbels 2019 ©
-                <Link className="darkBackground" to="#"> Source code</Link>
+                <Link className="whiteText" to="#"> Source code</Link>
               </div>
             
             </footer></div>)

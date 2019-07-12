@@ -36,8 +36,10 @@ class AboutPage extends Component {
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           <div className="container">
             <Summary language={language}/>
+            <hr/>
             <Education/>
             <SpecializedCourses language={language}/>
+            <hr/>
             <TechnicalSkills language={language}/>
             <OtherSkills language={language}/>
           </div>

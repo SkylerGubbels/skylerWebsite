@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class ImageAndText extends Component {
-    state = { image: null, width: null, height: null, text: "" }
+    state = { image: null, width: null, height: null, text: "", title: "", imageClass:"" }
     
     componentDidMount(){
-        const {image, width, height, text, title} = this.props;
+        const {image, width, height, text, title, imageClass} = this.props;
         console.log(text)
-        this.setState({image, width, height, text});
+        this.setState({image, width, height, text, title, imageClass});
     }
 
     componentDidUpdate(){
@@ -16,11 +16,11 @@ class ImageAndText extends Component {
     }
 
     render() { 
-        const {image, width, height, text, title} = this.state;
+        const {image, width, height, text, title, imageClass} = this.state;
         return ( 
         <div className="row">
             <div className="col-2">
-                <img src={image} width={width} height={height}/>
+                <img className={imageClass} src={image} width={width} height={height}/>
             </div>
             <div className="col-1"></div>
             <div className="col-8">

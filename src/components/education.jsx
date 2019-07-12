@@ -19,8 +19,11 @@ class Education extends Component{
                     <div className="row">
                         <div className="col-6">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
-                            </div>
-                        
+                        </div>
+                        <div className="col-6">
+                            <p className="summaryTitle">BA Criminology and Criminal Justice</p>
+                            <p className="summaryTitle">BS Computer Science</p>
+                        </div>
                     </div>
                 </div>
             </React.Fragment>

@@ -32,6 +32,10 @@
   }
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .backgroundImage{
   width: 100vw;
   height: 100vh;
@@ -89,10 +93,18 @@
   font-size: 14px;
 }
 
-.darkBackground{
+.whiteText{
   color: white;
+}
+
+.darkBackground{
+  background-color: black;
 }
 
 .summaryTitle{
   font-weight: bold;
+}
+
+.bwLogo{
+  filter: grayscale(100%);
 }
