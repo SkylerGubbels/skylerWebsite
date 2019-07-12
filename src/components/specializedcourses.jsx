@@ -15,7 +15,7 @@ class SpecializedCourses extends Component {
             <React.Fragment>
                 <h4>Specialized Courses</h4>
                 <ul>
-                    {this.state.courses.map(c => <li>{c}</li>)}
+                    {this.state.courses.map(c => <li key={c}>{c}</li>)}
                 </ul>
             </React.Fragment>
          );

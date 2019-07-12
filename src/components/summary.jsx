@@ -3,6 +3,7 @@ import backendLogo from '../resources/images/backendLogo.png';
 import frontendLogo from '../resources/images/frontendLogo.png';
 import softwareEngineeringLogo from '../resources/images/softwareEngineeringLogo.png';
 import computerScienceLogo from '../resources/images/computerScienceLogo.png';
+import ImageAndText from './imageandtext';
 
 // Icons from https://www.iconfinder.com/free_icons
 
@@ -60,21 +61,31 @@ class Summary extends Component{
     render(){
         const { frontend: feText, backend: beText, softwareEngineering: seText, computerScience: csText } = this.state.text;
         const { width } = this.logoDetails;
-        
         return(
-        <div className="container">
-            <div className = "row">
-                <div className="row">
-                    {this.createTextBlock(frontendLogo, feText)}
-                    {this.createTextBlock(backendLogo, beText)}
-                </div>
-                <div className="row">
-                    {this.createTextBlock(softwareEngineeringLogo, seText)}
-                    {this.createTextBlock(computerScienceLogo, csText)}
-                </div>
-            </div>
-        </div>);
+            <React.Fragment>
+                <h1>Summary</h1>
+                <ImageAndText image={frontendLogo} text={feText} width={this.logoDetails.width}/>
+                <ImageAndText image={backendLogo} text={beText} width={this.logoDetails.width}/>
+                <ImageAndText image={softwareEngineeringLogo} text={seText} width={this.logoDetails.width}/>
+                <ImageAndText image={computerScienceLogo} text={csText} width={this.logoDetails.width}/>
+                
+            </React.Fragment>);
     }
 }
+
+/**
+return(
+    <div className="container">
+        <div className = "row">
+            <div className="row">
+                {this.createTextBlock(frontendLogo, feText)}
+                {this.createTextBlock(backendLogo, beText)}
+            </div>
+            <div className="row">
+                {this.createTextBlock(softwareEngineeringLogo, seText)}
+                {this.createTextBlock(computerScienceLogo, csText)}
+            </div>
+        </div>
+</div>); */
 
 export default Summary;

@@ -24,11 +24,11 @@ class TechnicalSkills extends Skills {
         if(text === null) return "";
         
         return ( 
-        <React.Fragment>
+        <div>
             <h1>Technical Skills</h1>
             <AnimatedLogos logos={getLogos()} logoSize={this.logoSize} displayTime={7000}/>
             {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, "skillCategoryTitle", "skillCategoryText", key))}
-        </React.Fragment>
+        </div>
         );
     }
 }

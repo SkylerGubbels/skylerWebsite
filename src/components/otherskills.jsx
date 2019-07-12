@@ -23,7 +23,6 @@ class OtherSkills extends Skills {
         // async function returns the new text then it will be rendered
         if(text === null) return "";
 
-        console.log(this.state)
         return ( 
         <React.Fragment>
             <h1>Other Skills</h1>
