@@ -9,6 +9,10 @@ class ProjectsPage extends Component {
         language: 'english',
     }
 
+    componentDidMount(){
+        this.setState({language: this.props.language});
+    }
+
     projects = {
         headers: ["Name", "Description", "Github", "Link"],
         data: [
@@ -27,7 +31,7 @@ class ProjectsPage extends Component {
         const { language } = this.state;
         return ( 
             <div className="page-container">
-                <NavBar language={language} onLanguageChange={this.handleLanguageChange} imageHeight={0}/>
+                <NavBar language={language} onLanguageChange={this.props.handleLanguageChange} imageHeight={0}/>
                 <div className="container">
                     <Table className="table table-striped" content={this.projects}/>
                 </div>

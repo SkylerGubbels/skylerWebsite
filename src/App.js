@@ -24,8 +24,8 @@ class App extends Component {
     <React.Fragment>
       <Switch>
         <Route path="/about" component={() => <AboutPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
-        <Route path="/contact" component={ContactPage}/>
-        <Route path="/projects" component={ProjectsPage}/>
+        <Route path="/contact" component={() => <ContactPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
+        <Route path="/projects" component={() => <ProjectsPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
         <Redirect from="/" exact to="/about"/>
       </Switch>
     </React.Fragment>
