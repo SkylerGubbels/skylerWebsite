@@ -32,9 +32,9 @@ class Introduction extends Component {
         return ( 
         <div>
             <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
-            <div className="imageText">
-            <h1 className="animated bounceInRight summaryTitle"><span className="imageSpan">Skyler Gubbels</span></h1>
-            <h2 className="animated bounceInRight summarySubtitle"><span className="imageSpan">Software Developer</span></h2>
+            <div className="imageTextContainer">
+            <h1 className="introTitle imageSpan">Skyler Gubbels</h1>
+            <h2 className="introSubtitle imageSpan">Software Developer</h2>
             </div>
         </div> );
     }

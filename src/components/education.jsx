@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import ImageHover from './common/imagehover';
 import carleton1 from "../resources/images/carleton1.jpg";
-import carleton2 from "../resources/images/carleton2.jpg";
 import monash from "../resources/images/monash.jpg";
-import code from "../resources/images/code.png";
+
 
 class Education extends Component{
     
@@ -21,9 +20,7 @@ class Education extends Component{
                         <div className="col-6">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
                             </div>
-                        <div className="col-6">
-                            <ImageHover image={carleton2} imageHover={code} dimensions={dimensions}/>
-                        </div>
+                        
                     </div>
                 </div>
             </React.Fragment>

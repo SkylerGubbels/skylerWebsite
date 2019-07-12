@@ -33,15 +33,19 @@
 }
 
 .backgroundImage{
-  width:100%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
-.summaryTitle{
+.introTitle{
   position: relative;
+  text-align: center;
 }
 
-.summarySubtitle{
+.introSubtitle{
   position: relative;
+
   top: -9px;
 }
 
@@ -50,13 +54,21 @@
   top: 50px;
 }
 
-.imageText{
-  position: absolute;
-  top: 200px;
-  left: 50px;
+.imageTextContainer{
+  position: relative;
 }
 
 .imageSpan{
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.oldImageSpan{
   color: white;
   font: bold 45px Helvetica;
   letter-spacing: px;

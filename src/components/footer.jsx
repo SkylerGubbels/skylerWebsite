@@ -23,7 +23,7 @@ class Footer extends Component {
         return (
             <div style={{"backgroundColor":"rgb(33,33,33)"}}>
             <footer className="page-footer pt-4">
-              <div className="container-fluid text-center text-md-left">
+              <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
                     <h5 className="text-uppercase darkBackground">Skyler Gubbels</h5>
