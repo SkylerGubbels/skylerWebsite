@@ -114,3 +114,15 @@ body{
   bottom: 0;
   width: 100%;
 }
+
+.tableImageWithLink{
+  max-width: 50%;
+  cursor: pointer;
+}
+
+.tableImageNoLink{
+  max-width: 50%;
+  filter: grayscale;
+  opacity: 0.2;
+
+}
