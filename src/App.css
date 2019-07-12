@@ -33,10 +33,7 @@
 }
 
 .backgroundImage{
-  max-width: 100%;
-  min-width: 50%;
-  min-height: 50%;
-  height: auto;
+  width:100%;
 }
 
 .summaryTitle{

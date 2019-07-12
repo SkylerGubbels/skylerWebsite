@@ -17,12 +17,15 @@ class Education extends Component{
             <React.Fragment>
                 <h1>Education</h1>
                     <div className="row">
+                        <div className="col-1"></div>
                         <div className="col-4">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
                         </div>
+                        <div className="col-2"></div>
                         <div className="col-4">
                             <ImageHover image={carleton2} imageHover={code} dimensions={dimensions}/>
                         </div>
+                        <div className="col-1"></div>
                     </div>
             </React.Fragment>
         )
