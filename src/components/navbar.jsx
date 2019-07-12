@@ -13,29 +13,37 @@ class NavBar extends Component {
             { item.divider && <div className="dropdown-divider"/> }
           </React.Fragment>)
       }
+
+    /** Function: createNavbar() 
+     *  In: navClass, backgroundColor
+     *  Purpose: Returns the html to build the navbar. Should be called in Render method by
+     *           this class or NavBarDynamic */
+    createNavbar(navClass, bgColor=""){
+      return(
+        <nav className={navClass} style={{"backgroundColor":bgColor}}>
+        <img src={skylerImage} className="m-2" alt="" width="50"/>
+        <Link className="navbar-brand" to="/"> Skyler Gubbels </Link>
+        <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
+          <div className="navbar-nav"></div>
+            {(this.props.language === "french") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("english")}>English</button>}
+            {(this.props.language === "english") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("french")}>Français</button>}
+            <NavLink className="nav-item nav-link" to="/contact"> Contact</NavLink>
+            <NavLink className="nav-item nav-link" to="/projects"> Projects </NavLink>
+          <li className="nav-item dropdown">
+                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+                </Link>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  { getDropDownItems().links.map(i => this.createDropdown(i))}
+                </div>
+            </li>
+          </div>
+      </nav>    
+         )
+    }
     
     render() { 
-        return (
-            <nav className="navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background">
-            <img src={skylerImage} className="m-2" alt="" width="50"/>
-            <Link className="navbar-brand" to="/"> Skyler Gubbels </Link>
-            <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
-              <div className="navbar-nav"></div>
-                {(this.props.language === "french") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("english")}>English</button>}
-                {(this.props.language === "english") && <button className="nav-item nav-link" onClick={() => this.props.onLanguageChange("french")}>Français</button>}
-                <NavLink className="nav-item nav-link" to="/contact"> Contact</NavLink>
-                <NavLink className="nav-item nav-link" to="/projects"> Projects </NavLink>
-              <li className="nav-item dropdown">
-                    <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    About
-                    </Link>
-                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                      { getDropDownItems().links.map(i => this.createDropdown(i))}
-                    </div>
-                </li>
-              </div>
-          </nav>    
-             )
+        return this.createNavbar("navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background");
     }
 }
  
