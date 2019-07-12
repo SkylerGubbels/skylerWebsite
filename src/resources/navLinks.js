@@ -5,7 +5,8 @@
 export function getDropDownItems() {
     return (
         {title: "About", 
-            links: [{text: "Summary", to: "#", divider: true}, 
+            links: [{text: "Introduction", to:"#"},
+                    {text: "Summary", to: "#", divider: true}, 
                     {text: "Education", to:"#"},
                     {text: "Specialized Courses", to:"#", divider: true},
                     {text: "Technical Skills", to: "#"},

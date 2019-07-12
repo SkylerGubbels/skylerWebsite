@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './navbar';
+import NavBarDynamic from './navbardynamic';
 import Education from './education';
 import Introduction from './introduction';
 import Summary from './summary';
@@ -11,7 +11,7 @@ import SpecializedCourses from './specializedcourses';
 class AboutPage extends Component {
     state = {
         language: 'english',
-        imageHeight: 200
+        imageHeight: 0
       }
 
       handleLanguageChange = newLanguage => {
@@ -31,8 +31,8 @@ class AboutPage extends Component {
         const { language } = this.state;
         
         return (
-        <React.Fragment>
-          <NavBar language={language} onLanguageChange={this.handleLanguageChange} imageHeight={this.state.imageHeight}/>
+        <div className="pageContainer">
+          <NavBarDynamic language={language} onLanguageChange={this.handleLanguageChange} imageHeight={this.state.imageHeight}/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           <div className="container">
             <Summary language={language}/>
@@ -44,7 +44,7 @@ class AboutPage extends Component {
             <OtherSkills language={language}/>
           </div>
           <Footer/>
-        </React.Fragment>
+        </div>
       );
       }
 }

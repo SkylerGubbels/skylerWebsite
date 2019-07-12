@@ -108,3 +108,9 @@ body{
 .bwLogo{
   filter: grayscale(100%);
 }
+
+.footerSmall{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

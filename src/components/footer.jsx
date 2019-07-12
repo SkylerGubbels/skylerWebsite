@@ -20,8 +20,9 @@ class Footer extends Component {
     }
 
     render() { 
+      const {className} = this.props;
         return (
-            <div style={{"backgroundColor":"rgb(33,33,33)"}}>
+            <div className={className} style={{"backgroundColor":"rgb(33,33,33)"}}>
             <footer className="page-footer pt-4">
               <div className="container text-center text-md-left">
                 <div className="row">
