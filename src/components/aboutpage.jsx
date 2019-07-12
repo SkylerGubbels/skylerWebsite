@@ -34,11 +34,13 @@ class AboutPage extends Component {
         <React.Fragment>
           <NavBar language={language} onLanguageChange={this.handleLanguageChange} imageHeight={this.state.imageHeight}/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
-          <Summary language={language}/>
-          <Education/>
-          <SpecializedCourses language={language}/>
-          <TechnicalSkills language={language}/>
-          <OtherSkills language={language}/>
+          <div className="container">
+            <Summary language={language}/>
+            <Education/>
+            <SpecializedCourses language={language}/>
+            <TechnicalSkills language={language}/>
+            <OtherSkills language={language}/>
+          </div>
           <Footer/>
         </React.Fragment>
       );

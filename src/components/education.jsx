@@ -8,7 +8,7 @@ import code from "../resources/images/code.png";
 class Education extends Component{
     
     state = {
-        dimensions: {width: 800, height: 600}
+        dimensions: {width: 400, height: 300}
     }
 
     render(){
@@ -21,7 +21,7 @@ class Education extends Component{
                         <div className="col-4">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
                         </div>
-                        <div className="col-2"></div>
+                        <div className="col-1"></div>
                         <div className="col-4">
                             <ImageHover image={carleton2} imageHover={code} dimensions={dimensions}/>
                         </div>
