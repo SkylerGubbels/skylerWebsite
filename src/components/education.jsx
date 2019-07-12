@@ -8,7 +8,7 @@ import code from "../resources/images/code.png";
 class Education extends Component{
     
     state = {
-        dimensions: {width: 400, height: 300}
+        dimensions: {width: 600, height: 500}
     }
 
     render(){
@@ -16,17 +16,16 @@ class Education extends Component{
         return(
             <React.Fragment>
                 <h1>Education</h1>
+                <div className="container-fluid">
                     <div className="row">
-                        <div className="col-1"></div>
-                        <div className="col-4">
+                        <div className="col-6">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
-                        </div>
-                        <div className="col-1"></div>
-                        <div className="col-4">
+                            </div>
+                        <div className="col-6">
                             <ImageHover image={carleton2} imageHover={code} dimensions={dimensions}/>
                         </div>
-                        <div className="col-1"></div>
                     </div>
+                </div>
             </React.Fragment>
         )
     };

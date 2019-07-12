@@ -27,7 +27,7 @@ class ImageHover extends Component {
 
     render() { 
         const { currentImage, dimensions } = this.state;
-        return ( <img src={currentImage} onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave} height={dimensions.height} width={dimensions.width} alt=""/> );
+        return ( <img src={currentImage} className="img-fluid" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave} height={dimensions.height} width={dimensions.width} alt=""/> );
     }
 }
  
