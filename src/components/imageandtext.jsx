@@ -19,15 +19,13 @@ class ImageAndText extends Component {
         const {image, width, height, text, title, imageClass} = this.state;
         return ( 
         <div className="row">
-            <div className="col-2">
+            <div className="col-4">
                 <img className={imageClass} src={image} width={width} height={height}/>
             </div>
-            <div className="col-1"></div>
             <div className="col-8">
                 <p className="summaryTitle">{title}</p>
                 <p>{text}</p>
             </div>
-            <div className="col-1"></div>
         </div>);
     }
 }

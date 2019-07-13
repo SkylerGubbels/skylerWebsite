@@ -42,22 +42,23 @@ class Summary extends Component{
     render(){
         const { text} = this.state;
         const { width } = this.logoDetails;
+        const columnClass = "col-md-6 col-sm-12 col-xs-12";
         return(
             <React.Fragment>
                 <div className="container-fluid">
                 <div className="row">
-                    <div className="col-6">
+                    <div className={columnClass}>
                         <ImageAndText image={frontendLogo} imageClass="bwLogo" title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
-                    <div className="col-6">
+                    <div className={columnClass}>
                         <ImageAndText image={backendLogo} imageClass="bwLogo" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-6">
+                    <div className={columnClass}>
                         <ImageAndText image={softwareEngineeringLogo} imageClass="bwLogo" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
                     </div>
-                    <div className="col-6">
+                    <div className={columnClass}>
                         <ImageAndText image={computerScienceLogo} imageClass="bwLogo" title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
                 </div>
