@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import skylerImage from "../resources/images/skylerImage.png"
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import { getDropDownItems } from '../resources/navLinks';
 
 class NavBar extends Component {
     state = {  }
     
     createDropdown(item){
+      
         return (
           <React.Fragment key={`${item.text}-fragment`}>
             <Link className="dropdown-item" to={item.to}>{item.text}</Link>

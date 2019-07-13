@@ -3,12 +3,13 @@
  *  be put under that element */
 
 export function getDropDownItems() {
+    const path = `/about#`;
     return (
         {title: "About", 
-            links: [{text: "Introduction", to:"#"},
-                    {text: "Summary", to: "#", divider: true}, 
-                    {text: "Education", to:"#"},
-                    {text: "Specialized Courses", to:"#", divider: true},
-                    {text: "Technical Skills", to: "#"},
-                    {text: "Other Skills", to: "#"}]})
+            links: [{text: "Introduction", to: path + "introduction"},
+                    {text: "Summary", to: path + "summary", divider: true}, 
+                    {text: "Education", to:path + "education"},
+                    {text: "Specialized Courses", to:path + "specializedCourses", divider: true},
+                    {text: "Technical Skills", to: path + "technicalSkills"},
+                    {text: "Other Skills", to: path + "otherSkills"}]})
 }

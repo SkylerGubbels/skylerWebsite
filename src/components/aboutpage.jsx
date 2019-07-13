@@ -34,14 +34,20 @@ class AboutPage extends Component {
         return (
         <div className="pageContainer">
           <NavBarDynamic language={language} onLanguageChange={this.props.onLanguageChange} imageHeight={this.state.imageHeight}/>
+          <div id="introduction"/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           <div className="container">
+            <div id="summary"/>
             <Summary language={language}/>
             <hr/>
+            <div id="education"/>
             <Education/>
+            <div id="specializedCourses"/>
             <SpecializedCourses language={language}/>
             <hr/>
+            <div id="technicalSkills"/>
             <TechnicalSkills language={language}/>
+            <div id="otherSkills"/>
             <OtherSkills language={language}/>
           </div>
           <Footer/>
