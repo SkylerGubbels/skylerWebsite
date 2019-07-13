@@ -39,10 +39,10 @@ class Introduction extends Component {
     render() { 
         return ( 
         <div>
-            <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
-            <div className="imageTextContainer">
             <h1 className="introTitle imageSpan">Skyler Gubbels</h1>
             <h2 className="introSubtitle imageSpan">Software Developer</h2>
+            <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
+            <div className="imageTextContainer">
             </div>
         </div> );
     }

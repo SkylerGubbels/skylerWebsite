@@ -25,7 +25,7 @@ class EmailForm extends Component {
         return ( 
         <form onSubmit={this.handleSubmit}>
             <div className="form-group">
-                <label htmlFor="nameInput">Name</label>
+                <label htmlFor="nameInput">Name/Company</label>
                 <input id="nameInput" name="name" value={name} onChange={this.handleChange} type="name" className="form-control"/>
                 <label htmlFor="emailAddressInput">Email address</label>
                 <input id="emailAddressInput" name="emailAddress" value={emailAddress} onChange={this.handleChange} type="email" className="form-control" placeholder="name@example.com"/>

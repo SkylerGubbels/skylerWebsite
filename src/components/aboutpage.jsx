@@ -24,25 +24,27 @@ class AboutPage extends Component {
     
       render() { 
         const { language, onLanguageChange } = this.props;
+        const anchorClass = "pageAnchor";
         
         return (
         <div className="pageContainer">
           <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight}/>
-          <div id="introduction"/>
+          <div id="introduction" className=""/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           <div className="container">
-            <div id="summary"/>
+            <div id="summary" className={anchorClass}/>
             <Summary language={language}/>
             <hr/>
-            <div id="education"/>
+            <div id="education" className={anchorClass}/>
             <Education/>
-            <div id="specializedCourses"/>
+            <div id="specializedCourses" className={anchorClass}/>
             <SpecializedCourses language={language}/>
             <hr/>
-            <div id="technicalSkills"/>
+            <div id="technicalSkills" className={anchorClass}/>
             <TechnicalSkills language={language}/>
-            <div id="otherSkills"/>
+            <div id="otherSkills" className={anchorClass}/>
             <OtherSkills language={language}/>
+            <div id="otherSkills" className={anchorClass}/>
           </div>
           <Footer/>
         </div>
