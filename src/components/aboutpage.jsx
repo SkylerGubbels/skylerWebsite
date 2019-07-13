@@ -10,13 +10,7 @@ import SpecializedCourses from './specializedcourses';
 
 class AboutPage extends Component {
     state = {
-        language: "",
         imageHeight: 0
-      }
-
-      componentDidMount(){
-        console.log(this.props.language)
-        this.setState({language: this.props.language});
       }
     
       handleBackgroundImageResize = imageHeight =>{
@@ -29,11 +23,11 @@ class AboutPage extends Component {
       }
     
       render() { 
-        const { language } = this.state;
+        const { language, onLanguageChange } = this.props;
         
         return (
         <div className="pageContainer">
-          <NavBarDynamic language={language} onLanguageChange={this.props.onLanguageChange} imageHeight={this.state.imageHeight}/>
+          <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight}/>
           <div id="introduction"/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           <div className="container">

@@ -5,13 +5,6 @@ import Table from './common/table';
 import github from "../resources/languageLogos/github.svg"
 
 class ProjectsPage extends Component {
-    state = {
-        language: 'english',
-    }
-
-    componentDidMount(){
-        this.setState({language: this.props.language});
-    }
 
     projects = {
         headers: ["Name", "Description", "Github", "Link"],
@@ -23,15 +16,11 @@ class ProjectsPage extends Component {
         ]
     }
 
-    handleLanguageChange = newLanguage => {
-        this.setState({language: newLanguage});
-      }
-
     render() { 
-        const { language } = this.state;
+        const { language, onLanguageChange } = this.props;
         return ( 
             <div className="page-container">
-                <NavBar language={language} onLanguageChange={this.props.handleLanguageChange} imageHeight={0}/>
+                <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0}/>
                 <div className="container">
                     <Table className="table table-striped" content={this.projects}/>
                 </div>

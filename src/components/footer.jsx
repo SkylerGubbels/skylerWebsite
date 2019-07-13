@@ -5,7 +5,7 @@ import { getDropDownItems } from '../resources/navLinks';
 class Footer extends Component {
     state = {  }
 
-    contact = {title: "Contact", links: [{text: "skylermgubbels@gmail.com", to: "#"}, {text: "Contact Page", to:"#"}]}
+    contact = {title: "Contact", links: [{text: "skylermgubbels@gmail.com", to: "#"}, {text: "Email Form", to:"#"}]}
     online = {title: "Online", links: [{text: "GitHub", to: "#"}, {text: "LinkedIn", to: "#"} ]}
 
     createHeaderColumn = (col) => {
@@ -52,8 +52,8 @@ class Footer extends Component {
               </div>
             
               <div className="footer-copyright text-center py-3 whiteText">
-                Copyright Skyler Gubbels 2019 ©
-                <Link className="whiteText" to="#"> Source code</Link>
+                <span>Copyright Skyler Gubbels 2019 © </span>
+                <a className="whiteText" href="https://github.com/SkylerGubbels/skylerWebsite"><span style={{"textDecoration":"underline"}}>Source code</span></a>
               </div>
             
             </footer></div>)
