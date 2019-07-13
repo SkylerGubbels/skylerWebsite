@@ -38,10 +38,14 @@ class NavBarDynamic extends NavBar {
      *           the image height for the introduction background image and uses this to
      *           decide if we should fade the navbar background in or out */
     handleScroll = () => {
+      const {imageHeight} = this.props;
+      const {pageYOffset} = window;
+      if(pageYOffset < imageHeight/1.5){this.setState({opacity: 0})} // For edge case where user scrolls up too fast
+
       // Checks if our scrolling is in the range of the top image. If it is then we
       // handle fading the navbar in and out
-      if(window.pageYOffset < (this.props.imageHeight*1.1) && window.pageYOffset > (this.props.imageHeight/2)) { this.showNavbarBackground() }
-      else if (window.pageYOffset < (this.props.imageHeight/2)) { this.hideNavbarBackground(); }
+      if(pageYOffset < imageHeight*1.1 && pageYOffset > imageHeight/2) { this.showNavbarBackground() }
+      else if (pageYOffset < imageHeight) { this.hideNavbarBackground(); }
     }
 
     /** Function: handleMove()
