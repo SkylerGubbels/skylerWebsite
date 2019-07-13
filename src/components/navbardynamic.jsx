@@ -40,6 +40,17 @@ class NavBarDynamic extends NavBar {
       else if (window.pageYOffset < (this.props.imageHeight/2)) { this.hideNavbarBackground(); }
     }
 
+    handleLinkClick = index =>{
+      // Index 0 is top of page. Make navbar invisible
+      if(index === 0){
+        this.setState({opacity: 0})
+      }
+      // Any other index is not the picture so make a solid background
+      else{
+        this.setState({opacity: 1})
+      }
+    }
+
     showNavbarBackground(){
       let navbarClass = "navbar navbar-expand navbar-light fixed-top navbar-background";
       // Need to subtract 0.5 because it starts half way at the photo. This starts us at 0.
@@ -55,9 +66,10 @@ class NavBarDynamic extends NavBar {
     }
 
     render() {   
-        const bgColor = `rgba(255,255,255,${this.state.opacity})`
-        return(this.createNavbar(this.state.navbarClass, bgColor));
-    }
+      const { navbarClass } = this.state;
+      const bgColor = `rgba(255,255,255,${this.state.opacity})`
+      return <NavBar className={navbarClass} backgroundColor={bgColor} onClick={this.handleLinkClick}/>
+  }
 }
 
 export default NavBarDynamic;

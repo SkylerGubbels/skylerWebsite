@@ -6,23 +6,22 @@ import { getDropDownItems } from '../resources/navLinks';
 
 class NavBar extends Component {
     state = {  }
-    
-    createDropdown(item){
-      
+
+    createDropdown(item, index){
         return (
           <React.Fragment key={`${item.text}-fragment`}>
-            <Link className="dropdown-item" to={item.to}>{item.text}</Link>
+            <Link className="dropdown-item" to={item.to} onClick={() => this.props.onClick(index)}>{item.text}</Link>
             { item.divider && <div className="dropdown-divider"/> }
           </React.Fragment>)
       }
-
-    /** Function: createNavbar() 
-     *  In: navClass, backgroundColor
-     *  Purpose: Returns the html to build the navbar. Should be called in Render method by
-     *           this class or NavBarDynamic */
-    createNavbar(navClass, bgColor=""){
+    
+    render() { 
+      let { className, backgroundColor } = this.props
+      if(!className) className = "navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background";
+      if(!backgroundColor) backgroundColor = "rgb(255,255,255)";
+      
       return(
-        <nav className={navClass} style={{"backgroundColor":bgColor}}>
+        <nav className={className} style={{"backgroundColor":backgroundColor}}>
         <img src={skylerImage} className="m-2" alt="" width="50"/>
         <Link className="navbar-brand" to="/"> Skyler Gubbels </Link>
         <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
@@ -36,16 +35,12 @@ class NavBar extends Component {
                 About
                 </Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  { getDropDownItems().links.map(i => this.createDropdown(i))}
+                  { getDropDownItems().links.map((item, index) => this.createDropdown(item, index))}
                 </div>
             </li>
           </div>
       </nav>    
          )
-    }
-    
-    render() { 
-        return this.createNavbar("navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background");
     }
 }
  
