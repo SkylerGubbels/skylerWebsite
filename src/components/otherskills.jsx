@@ -27,10 +27,10 @@ class OtherSkills extends Skills {
         <React.Fragment>
             <h1>Other Skills</h1>
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <p>{paragraph}</p>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, "skillCategoryTitle", "skillCategoryText", key))}
                 </div>
             </div>

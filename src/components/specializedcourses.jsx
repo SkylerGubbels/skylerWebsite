@@ -21,13 +21,13 @@ class SpecializedCourses extends Component {
             <React.Fragment>
                 <div className="container-fluid">
                 <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <h4>Specialized Courses</h4>
                     <ul>
                         {this.state.courses.map(c => <li key={c}>{c}</li>)}
                     </ul>
                 </div>
-                    <div className="col-6">
+                    <div className="col-md-6 col-sm-12">
                         <ImageHover image={carleton2} imageHover={code} dimensions={this.dimensions}/>
                     </div>
                 </div>

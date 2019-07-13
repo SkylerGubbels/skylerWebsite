@@ -17,10 +17,10 @@ class Education extends Component{
                 <h1>Education</h1>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-md-6 col-sm-12">
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
                         </div>
-                        <div className="col-6">
+                        <div className="col-md-6 col-sm-12">
                             <p className="summaryTitle">BA Criminology and Criminal Justice</p>
                             <p className="summaryTitle">BS Computer Science</p>
                         </div>
