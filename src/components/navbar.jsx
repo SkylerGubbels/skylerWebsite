@@ -6,11 +6,18 @@ import { getDropDownItems } from '../resources/navLinks';
 
 class NavBar extends Component {
     state = {  }
+    path = "/about";
 
-    createDropdown(item, index){
+    createDropdown(item){
+      
+      const { onClick } = this.props;
+      let clickEvent;
+      if(!onClick){ clickEvent = () => {}}
+      else {clickEvent = onClick;}
+
         return (
           <React.Fragment key={`${item.text}-fragment`}>
-            <Link className="dropdown-item" to={item.to} onClick={() => this.props.onClick(index)}>{item.text}</Link>
+            <Link className="dropdown-item" to={this.path + item.to} onClick={() => clickEvent(item.to)}>{item.text}</Link>
             { item.divider && <div className="dropdown-divider"/> }
           </React.Fragment>)
       }
@@ -35,7 +42,7 @@ class NavBar extends Component {
                 About
                 </Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  { getDropDownItems().links.map((item, index) => this.createDropdown(item, index))}
+                  { getDropDownItems().links.map((item) => this.createDropdown(item))}
                 </div>
             </li>
           </div>

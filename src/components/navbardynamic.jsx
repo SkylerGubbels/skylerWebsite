@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from "react-router-dom";
-import { getDropDownItems } from '../resources/navLinks';
-import skylerImage from "../resources/images/skylerImage.png"
 import NavBar from './navbar';
+import { O_NONBLOCK } from 'constants';
 
 
 /** Creates the NavBar at the top of the website */
@@ -26,6 +24,8 @@ class NavBarDynamic extends NavBar {
         if(window.pageYOffset > (this.props.imageHeight)) { 
           this.showNavbarBackground(); clearInterval(this.interval) 
       }}, 100)
+      
+      this.handleMove();
     }
 
     componentWillUnmount(){
@@ -33,6 +33,10 @@ class NavBarDynamic extends NavBar {
       window.removeEventListener("scroll", this.handleScroll);
     }
 
+    /** Function: handleScroll()
+     *  Purpose: Gets the location of the users window on the webpage. Compares this to
+     *           the image height for the introduction background image and uses this to
+     *           decide if we should fade the navbar background in or out */
     handleScroll = () => {
       // Checks if our scrolling is in the range of the top image. If it is then we
       // handle fading the navbar in and out
@@ -40,17 +44,21 @@ class NavBarDynamic extends NavBar {
       else if (window.pageYOffset < (this.props.imageHeight/2)) { this.hideNavbarBackground(); }
     }
 
-    handleLinkClick = index =>{
-      // Index 0 is top of page. Make navbar invisible
-      if(index === 0){
-        this.setState({opacity: 0})
+    /** Function: handleMove()
+     *  In: destination in the form "#introduction" passed from navbar.jsx
+     *  Purpose: Checks if a destination is being passed by the parent function.
+     *           If yes we use that. Otherwise we use the hash from the url */
+    handleMove = (dest) =>{
+      const hash = dest || window.location.hash;
+      if(hash !== "" && hash !== "#introduction"){
+        this.setState({opacity:1});
       }
-      // Any other index is not the picture so make a solid background
-      else{
-        this.setState({opacity: 1})
-      }
+      else {this.setState({opacity:0})}
     }
 
+    /** Function: showNavbarBackground()
+     *  Purpose: Uses the user window location and image height to figure out
+     *           the opacity of the navbar background when fading in */
     showNavbarBackground(){
       let navbarClass = "navbar navbar-expand navbar-light fixed-top navbar-background";
       // Need to subtract 0.5 because it starts half way at the photo. This starts us at 0.
@@ -60,6 +68,9 @@ class NavBarDynamic extends NavBar {
       this.setState({navbarClass, opacity});
     }
 
+    /** Function: hideNavbarBackground()
+     *  Purpose: Uses the user window location and image height to figure out
+     *           the opacity of the navbar background when fading out */
     hideNavbarBackground(){
       const navbarClass = "navbar navbar-expand navbar-light fixed-top"
       this.setState({navbarClass});
@@ -68,7 +79,7 @@ class NavBarDynamic extends NavBar {
     render() {   
       const { navbarClass } = this.state;
       const bgColor = `rgba(255,255,255,${this.state.opacity})`
-      return <NavBar className={navbarClass} backgroundColor={bgColor} onClick={this.handleLinkClick}/>
+      return <NavBar className={navbarClass} backgroundColor={bgColor} onClick={this.handleMove}/>
   }
 }
 
