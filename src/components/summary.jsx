@@ -10,7 +10,8 @@ import ImageAndText from './imageandtext';
 class Summary extends Component{
     state = {
         language: "",
-        text: { frontend: "",
+        text: { paragraph: "",
+                frontend: "",
                 backend: "",
                 softwareEngineering: "",
                 computerScience: ""}
@@ -40,34 +41,39 @@ class Summary extends Component{
     }
 
     render(){
-        const { text} = this.state;
+        const { text } = this.state;
         const { width } = this.logoDetails;
         const columnClass = "col-md-6 col-sm-12 col-xs-12";
         return(
             <React.Fragment>
                 <div className="container-fluid">
-                <h1 className="whiteText">Summary</h1>
+                <div className="col-md-6 col-sm-12">
+                    <h1 className="whiteText">Summary</h1>
+                </div>
                 <div style={{"paddingBottom":"25px"}}/>
-                    <p className="whiteText">Placeholder</p>
-                <div style={{"paddingBottom":"250px"}}/>
-                <div className="row">
+                
+                <div className="col-md-8 col-sm-12">
+                    <p className="whiteText text">{text.paragraph}</p>
+                </div>
+                <div style={{"paddingBottom":"25px"}}/>
+                <div className="col-12"><div className="row">
                     <div className={columnClass}>
                         <ImageAndText image={frontendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
                     <div className={columnClass}>
                         <ImageAndText image={backendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
                     </div>
-                </div>
-                <div className="row">
+                    </div>
+                    <div className="row">
                     <div className={columnClass}>
                         <ImageAndText image={softwareEngineeringLogo} imageClass="summaryLogo" textClass="whiteText" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
                     </div>
                     <div className={columnClass}>
                         <ImageAndText image={computerScienceLogo} imageClass="summaryLogo" textClass="whiteText" title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
+                    </div></div>
                 </div>
-                </div>
-                <div style={{"paddingBottom":"100px"}}/>
+                <div style={{"paddingBottom":"25px"}}/>
 
             </React.Fragment>);
     }

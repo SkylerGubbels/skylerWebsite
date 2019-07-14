@@ -27,7 +27,7 @@ class TechnicalSkills extends Skills {
         <div>
             <h1 className="whiteText">Technical Skills</h1>
             <AnimatedLogos logos={getLogos()} logoSize={this.logoSize} displayTime={7000}/>
-            {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, "skillCategoryTitle whiteText", "skillCategoryText whiteText", key))}
+            {Object.keys(text).map(key => this.createSkillCategory(text[key].title, text[key].text, "categoryTitle skillCategoryTitle whiteText", "text skillCategoryText whiteText", key))}
         </div>
         );
     }

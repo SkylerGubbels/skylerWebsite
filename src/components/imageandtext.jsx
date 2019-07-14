@@ -23,7 +23,7 @@ class ImageAndText extends Component {
                 <img className={imageClass} src={image} width={width} height={height}/>
             </div>
             <div className="col-8">
-                <p className="summaryTitle whiteText">{title}</p>
+                <p className="categoryTitle summaryTitle whiteText">{title}</p>
                 <p className="whiteText">{text}</p>
             </div>
         </div>);

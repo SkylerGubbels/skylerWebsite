@@ -21,8 +21,8 @@ class Education extends Component{
                             <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
                         </div>
                         <div className="col-md-6 col-sm-12">
-                            <p className="summaryTitle">BA Criminology and Criminal Justice</p>
-                            <p className="summaryTitle">BS Computer Science</p>
+                            <p className="text summaryTitle">BA Criminology and Criminal Justice</p>
+                            <p className="text summaryTitle">BS Computer Science</p>
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ class SpecializedCourses extends Component {
                 <div className="col-md-6 col-sm-12">
                     <h4>Specialized Courses</h4>
                     <ul>
-                        {this.state.courses.map(c => <li key={c}>{c}</li>)}
+                        {this.state.courses.map(c => <li className="text" key={c}>{c}</li>)}
                     </ul>
                 </div>
                     <div className="col-md-6 col-sm-12">

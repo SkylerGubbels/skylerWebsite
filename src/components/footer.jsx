@@ -29,8 +29,8 @@ class Footer extends Component {
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
                     <h5 className="text-uppercase whiteText">Skyler Gubbels</h5>
-                    <p className="whiteText">Skylermgubbels@gmail.com</p>
-                    <p className="whiteText">Here is where I will write stuff about wanting to be hired.</p>
+                    <p className="text whiteText">Skylermgubbels@gmail.com</p>
+                    <p className="text whiteText">Here is where I will write stuff about wanting to be hired.</p>
             
                   </div>
                 </div>

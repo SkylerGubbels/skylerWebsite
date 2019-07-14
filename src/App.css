@@ -49,22 +49,30 @@ body{
 
 .introTitle{
   position: absolute;
-  text-align: center;
   color: white;
-  padding-top: 30%;
-  padding-left: 5%;
-  font: bold 100px Helvetica;
-  line-height: 0px;
+  padding-top: 20vh;
+  padding-left: 5vh;
+  font-size: 100px;
+  font: Helvetica;
+  font-weight: bold;
 }
 
 .introSubtitle{
   position: absolute;
-  text-align: center;
   color: white;
-  padding-top: 40%;
-  padding-left: 5%;
-  font: bold 60px Helvetica;
-  line-height: 0px;
+  padding-top: 30vh;
+  padding-left: 5vh;
+  font-size: 60px;
+  font: Helvetica;
+}
+
+@media only screen and (max-width:1000px){
+  .introTitle{
+    font-size: 50px;
+  }
+  .introSubtitle{
+    font-size: 30px;
+  }
 }
 
 .imageSpan{
@@ -137,4 +145,12 @@ body{
 
 .blackBackground{
   background-color: rgb(0,0,0);
+}
+
+.text{
+  font: 20px Helvetica;
+}
+
+.categoryTitle{
+
 }
