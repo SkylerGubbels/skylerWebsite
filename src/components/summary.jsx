@@ -46,23 +46,28 @@ class Summary extends Component{
         return(
             <React.Fragment>
                 <div className="container-fluid">
+                <h1 className="whiteText">Summary</h1>
+                <div style={{"paddingBottom":"25px"}}/>
+                    <p className="whiteText">Placeholder</p>
+                <div style={{"paddingBottom":"250px"}}/>
                 <div className="row">
                     <div className={columnClass}>
-                        <ImageAndText image={frontendLogo} imageClass="bwLogo" title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
+                        <ImageAndText image={frontendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
                     <div className={columnClass}>
-                        <ImageAndText image={backendLogo} imageClass="bwLogo" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
+                        <ImageAndText image={backendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className={columnClass}>
-                        <ImageAndText image={softwareEngineeringLogo} imageClass="bwLogo" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
+                        <ImageAndText image={softwareEngineeringLogo} imageClass="summaryLogo" textClass="whiteText" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
                     </div>
                     <div className={columnClass}>
-                        <ImageAndText image={computerScienceLogo} imageClass="bwLogo" title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
+                        <ImageAndText image={computerScienceLogo} imageClass="summaryLogo" textClass="whiteText" title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
                     </div>
                 </div>
                 </div>
+                <div style={{"paddingBottom":"100px"}}/>
 
             </React.Fragment>);
     }

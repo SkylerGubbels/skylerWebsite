@@ -23,7 +23,7 @@ class Footer extends Component {
       const {className} = this.props;
       const {  title, links } = getDropDownItems();
         return (
-            <div className={className} style={{"backgroundColor":"rgb(33,33,33)"}}>
+            <div className={className} style={{"backgroundColor":"rgb(0,0,0)"}}>
             <footer className="page-footer pt-4">
               <div className="container text-center text-md-left">
                 <div className="row">
