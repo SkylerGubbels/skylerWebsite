@@ -3,7 +3,7 @@ import horizon from "../resources/images/horizon.jpg"
 import "animate.css"
 
 class Introduction extends Component {
-    state = {  }
+    state = { text: "" }
 
     constructor(props){
         super(props);
@@ -13,6 +13,7 @@ class Introduction extends Component {
     componentDidMount(){
         window.addEventListener("resize", this.imageSizeChange);
         this.handleImageLoad();
+        this.loadText(this.props.language);
     }
 
     // Changed from anonymous function because removeEventListener needs a function to pass
@@ -36,11 +37,19 @@ class Introduction extends Component {
                 clearInterval(interval)}}, 100);
     }
 
+    /** Function: loadtext()
+     *  Input: Language string for the language with which to display the website
+     *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
+     loadText = async language => {
+        const text = (await import(`../resources/${language}Text`)).getIntroText();
+        this.setState({text, language});
+    }
+
     render() { 
+        const { text } = this.state;
         return ( 
         <div>
-            <h1 className="introTitle imageSpan">Skyler Gubbels</h1>
-            <h2 className="introSubtitle imageSpan">Software Developer</h2>
+            <p className="introText">{text}</p>
             <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
             <div className="imageTextContainer">
             </div>

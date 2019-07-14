@@ -26,11 +26,16 @@ class NavBar extends Component {
       let { className, backgroundColor,language, onLanguageChange } = this.props
       if(!className) className = "navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background";
       if(!backgroundColor) backgroundColor = "rgb(255,255,255)";
+      const textColor = (this.props.textColor) || "rgb(255,255,255)";
       
       return(
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
         <img src={skylerImage} className="m-2" alt="" width="50"/>
-        <Link className="navbar-brand" to="/about#introduction"> Skyler Gubbels </Link>
+        <Link className="navbar-brand" to="/about#introduction"> 
+          <span style={{"color":textColor, "font-weight":"bold"}}>Skyler Gubbels</span>
+          <br/>
+          <span style={{"color":textColor}}>Software Developer</span> 
+        </Link>
         <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
           <div className="navbar-nav"></div>
             {(language === "french") && <button className="nav-item nav-link" onClick={() => onLanguageChange("english")}>English</button>}
