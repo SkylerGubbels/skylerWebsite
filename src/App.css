@@ -93,6 +93,7 @@ body{
 
 .summaryLogo{
   filter: grayscale(100%) invert(1);
+  padding-top: 25%;
 }
 
 .footerSmall{

@@ -64,12 +64,13 @@ class Summary extends Component{
                         <ImageAndText image={backendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
                     </div>
                     </div>
+                    <div style={{"paddingBottom":"25px"}}/>
                     <div className="row">
                     <div className={columnClass}>
                         <ImageAndText image={softwareEngineeringLogo} imageClass="summaryLogo" textClass="whiteText" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
                     </div>
                     <div className={columnClass}>
-                        <ImageAndText image={computerScienceLogo} imageClass="summaryLogo" textClass="whiteText" title={text.computerScience.title} text={text.frontend.text} width={this.logoDetails.width}/>
+                        <ImageAndText image={computerScienceLogo} imageClass="summaryLogo" textClass="whiteText" title={text.computerScience.title} text={text.computerScience.text} width={this.logoDetails.width}/>
                     </div>
                     </div></div>
                 </div>
