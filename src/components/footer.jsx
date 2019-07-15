@@ -5,7 +5,6 @@ import { getDropDownItems } from '../resources/navLinks';
 class Footer extends Component {
     state = {  }
 
-    contact = {title: "Contact", links: [{text: "skylermgubbels@gmail.com", to: "#"}, {text: "Email Form", to:"#"}]}
     online = {title: "Online", links: [{text: "GitHub", to: "#"}, {text: "LinkedIn", to: "#"} ]}
 
     createHeaderColumn = (col) => {
@@ -13,7 +12,13 @@ class Footer extends Component {
             <div className="col-6">
             <h5 className="text-uppercase whiteText">{col.title}</h5>    
             <ul className="list-unstyled">
-            {col.links.map(l => <li key={`${col.title}-${l.text}`}><Link className="whiteText" to={l.to}>{l.text}</Link></li>)}
+            
+            {col.links.map(
+              l => <li key={`${col.title}-${l.text}`}>
+                    <Link className="whiteText navText" to={l.to}>
+                      <span>{l.text}</span>
+                    </Link>
+                  </li>)}
             </ul>
             </div>
         )
@@ -28,7 +33,7 @@ class Footer extends Component {
               <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
-                    <h5 className="text-uppercase whiteText">Skyler Gubbels</h5>
+                    <h5 className="text-uppercase whiteText text">Skyler Gubbels</h5>
                     <p className="text whiteText">Skylermgubbels@gmail.com</p>
                     <p className="text whiteText">Here is where I will write stuff about wanting to be hired.</p>
             
@@ -43,7 +48,7 @@ class Footer extends Component {
                   </div></div>
                   
                   <div className="col-md-6 col-sm-12"><div className="row">
-                    { this.createHeaderColumn(this.contact) }
+                    <div className="col-md-6 col-sm-0"></div>
                     { this.createHeaderColumn(this.online) }
                   </div></div>
             
@@ -53,7 +58,7 @@ class Footer extends Component {
             
               <div className="footer-copyright text-center py-3 whiteText">
                 <span>Copyright Skyler Gubbels 2019 © </span>
-                <a className="whiteText" href="https://github.com/SkylerGubbels/skylerWebsite"><span style={{"textDecoration":"underline"}}>Source code</span></a>
+                <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span>Source code</span></a>
               </div>
             
             </footer></div>)

@@ -32,21 +32,21 @@ class NavBar extends Component {
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
         <img src={skylerImage} className="m-2" alt="" width="50"/>
         
-        <Link className="navbar-brand" to="/about#introduction"> 
+        <Link className="navbar-brand navText" to="/about#introduction"> 
           <span className="navText" style={{"color":textColor, "font-weight":"bold"}}>Skyler Gubbels</span>
           <br/>
-          <span style={{"color":textColor}}>Software Developer</span> 
+          <p style={{"color":textColor}}>Software Developer</p>
         </Link>
         
         <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
           <div className="navbar-nav"></div>
-            {(language === "french") && <button className="nav-item nav-link" onClick={() => onLanguageChange("english")}>English</button>}
-            {(language === "english") && <button className="nav-item nav-link" onClick={() => onLanguageChange("french")}>Français</button>}
+            {(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}
+            {(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}
             <NavLink className="nav-item nav-link navText" to="/contact"> <span style={{"color":textColor}}>Contact</span></NavLink>
             <NavLink className="nav-item nav-link navText" to="/projects"> <span style={{"color":textColor}}>Projects</span> </NavLink>
           <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
-                  <span style={{"color":textColor}}>About</span>
+                  <span ystyle={{"color":textColor}}>About</span>
                 </Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                   { getDropDownItems().links.map((item) => this.createDropdown(item))}
