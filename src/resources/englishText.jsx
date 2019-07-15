@@ -4,16 +4,20 @@ import React from "react"
  *  saved in separate resource files that will be accessed depending on which language
  *  the user is accessing */
 
+const linkColor = {
+    "color":"white"
+}
+
 export function getIntroText(){
     return (
     <React.Fragment><span>
-        Hi<br/>
-        This website was created using <a href="https://reactjs.org">React</a>, <a href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> and a few other npm modules.
+        <u>Hello</u><br/>
+        This website was created using <a style={linkColor} href="https://reactjs.org">React</a>, <a style={linkColor} href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> and a few other npm modules.
         Whether you’re an employer interested in seeing my approach to writing code 
         or another web-developer wanting to use my website as a
-        learning tool, the source can be found <a href="https://github.com/SkylerGubbels/skylerWebsite">here.</a>
+        learning tool, the source can be found <a style={linkColor} href="https://github.com/SkylerGubbels/skylerWebsite">here.</a>
         <br/><br/>
-        You can also reach me at skylermgubbels@gmail.com</span>
+        You can also reach me at <a style={linkColor} href="mailto:skylermgubbels@gmail.com">skylermgubbels@gmail.com</a></span>
     </React.Fragment>)
 }
 
@@ -21,8 +25,7 @@ export function getSummaryText(){
     return {
             paragraph: 
                 (<React.Fragment>
-                    <span>As a recent Computer Science graduate from Carleton University I learned a wide variety of skills.<br/><br/>
-                    Here are a few of them:</span>
+                    <span>As a recent Computer Science graduate from Carleton University I learned a wide variety of skills.</span>
                 </React.Fragment>),
             
             frontend: {title: "Front End Development", text: <React.Fragment><span>Whether it’s using vanilla Javascript, React or frameworks such as Qt I am able to create dynamic, reactive and aesthetically pleasing front-end user experiences that are easily understood and scale well to any device or screen size.</span></React.Fragment>},   

@@ -28,19 +28,17 @@ class Footer extends Component {
       const {className} = this.props;
       const {  title, links } = getDropDownItems();
         return (
-            <div className={className} style={{"backgroundColor":"rgb(0,0,0)"}}>
+            <div className={className} style={{"backgroundColor":"black"}}>
             <footer className="page-footer pt-4">
               <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
-                    <h5 className="text-uppercase whiteText text">Skyler Gubbels</h5>
-                    <p className="text whiteText">Skylermgubbels@gmail.com</p>
-                    <p className="text whiteText">Here is where I will write stuff about wanting to be hired.</p>
-            
+                    <p className="text-uppercase whiteText">Skyler Gubbels</p>
+                    <a style={{"color":"white"}} href="https://github.com/SkylerGubbels/skylerWebsite">skylermgubbels@gmail.com</a>
                   </div>
                 </div>
+                <div className="padding50"></div>
                 <div className="row">
-                  <hr className="clearfix w-100 d-md-none pb-3"/>
                   
                   <div className="col-md-6 col-sm-12"><div className="row">
                     { this.createHeaderColumn({title, links: links.splice(0, links.length/2)}) }
@@ -56,9 +54,9 @@ class Footer extends Component {
             
               </div>
             
-              <div className="footer-copyright text-center py-3 whiteText">
-                <span>Copyright Skyler Gubbels 2019 © </span>
-                <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span>Source code</span></a>
+              <div className="text-center py-3 whiteText">
+                <span>Skyler Gubbels 2019 △ </span>
+                <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
               </div>
             
             </footer></div>)

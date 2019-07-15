@@ -8,25 +8,29 @@ class Education extends Component{
         dimensions: {width: 600, height: 500}
     }
 
-    render(){
-        const { dimensions } = this.state;
+    createDegree(degree, university, gpa)
+    {
         return(
             <React.Fragment>
-                <h1>Education</h1>
+                <p className="text summaryTitle">Honours BA Criminology and Criminal Justice</p>
+                <p>Carleton University 2012 - 2016</p>
+                <p>3.3 GPA - Deans Honour List 2012</p>
+            </React.Fragment>
+        )
+    }
+
+    render(){
+        return(
+            <React.Fragment>
                 <div className="container-fluid">
+                    <h1 className="componentTitle">Education</h1>
                     <div className="row">
                         <div className="col-md-6 col-sm-12">
                             <img src={carletonPhoto} width="100%"/>
                         </div>
                         <div className="col-md-6 col-sm-12">
-
-                            <div className="crimDegree"><p className="text summaryTitle">Honours BA Criminology and Criminal Justice</p>
-                            <p>Carleton University 2012 - 2016</p>
-                            <p>3.3 GPA - Deans Honour List 2012</p></div>
-
-                            <div className="csDegree"><p className="text summaryTitle">BS Computer Science</p>
-                            <p>Carleton University 2018 - 2019</p>
-                            <p>3.7 GPA - Deans Honour List 2019</p></div>
+                            {this.createDegree("Honours BA Criminology and Criminal Justice", "Carleton University 2012 - 2016", "3.3 GPA - Deans Honour List 2012")}
+                            {this.createDegree("BS Computer Science", "Carleton University 2018 - 2019", "3.7 GPA - Deans Honour List 2019")}
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ class AboutPage extends Component {
     
       render() { 
         const { language, onLanguageChange } = this.props;
-        const divMargin = "sectionMargin";
+        const divMargin = {"paddingBottom":"50px"}; //Change this value to change margin between components
         
         return (
         <div className="pageContainer">
@@ -33,33 +33,33 @@ class AboutPage extends Component {
           <div id="introduction" className=""/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           
-          <div className="blackBackground">
-            <div className="container">
-              <div id="summary" className={divMargin}/>
-                <Summary language={language}/>
-              <div className={divMargin}/>
-          </div>
-            </div>
+          <div className="blackBackground"><div className="container"><div id="summary" style={divMargin}/>
+            <Summary language={language}/>
+          <div style={divMargin}/></div></div>
+          
           <div className="container">
-            <div id="education" className={divMargin}/>
+            <div id="education" style={divMargin}/>
             <Education/>
-            <div id="specializedCourses" className={divMargin}/>
+            
+            <div id="specializedCourses" style={divMargin}/>
             <SpecializedCourses language={language}/>
-            <div className={divMargin}/>
-            </div>
-            <div className="blackBackground"><div className="container"><div id="technicalSkills" className={divMargin}/>
-            <TechnicalSkills language={language}/>
-            <div className={divMargin}/></div></div>
-            <div className="container">
-            <div id="otherSkills" className={divMargin}/>
-            <OtherSkills language={language}/>
-            <div id="otherSkills" className={divMargin}/>
-            </div>
-            <div className="blackBackground"><div className="container">
-            <div className={divMargin}/>
-            <img src={downhill} width="100%"/>
-            </div>
+            
+            <div style={divMargin}/>
           </div>
+          
+          <div className="blackBackground"><div className="container"><div id="technicalSkills" style={divMargin}/>
+            <TechnicalSkills language={language}/>
+          <div style={divMargin}/></div></div>
+          
+          <div className="container"><div id="otherSkills" style={divMargin}/>
+            <OtherSkills language={language}/>
+          </div>
+          <div style={divMargin}></div>
+            
+          <div className="blackBackground"><div className="container"><div style={divMargin}/>
+            <img src={downhill} width="100%"/>
+          </div></div>
+        
           <Footer/>
         </div>
       );

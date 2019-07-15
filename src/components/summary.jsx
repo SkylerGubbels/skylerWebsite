@@ -40,41 +40,42 @@ class Summary extends Component{
         this.setState({text, language});
     }
 
+    /** Function: createImageAndText()
+     *  Purpose: Creates a component where there is a small image on the left and a text paragraph on the right
+     */
+    createImageAndText(columnClass, imgSrc, title, text){
+        return(
+        <div className={columnClass}>
+            <ImageAndText image={imgSrc} imageClass="summaryLogo" textClass="whiteText" title={title} text={text} width={this.logoDetails.width}/>
+        </div>);
+    }
+
     render(){
         const { text } = this.state;
-        const { width } = this.logoDetails;
         const columnClass = "col-md-6 col-sm-12 col-xs-12";
         return(
             <React.Fragment>
                 <div className="container-fluid">
-                <div className="col-md-6 col-sm-12">
-                    <h1 className="whiteText">Summary</h1>
+                    
+                    <h1 className="whiteText componentTitle">Summary</h1>
+                    <div className="padding25"/>
+                    <center><p className="whiteText text">{text.paragraph}</p></center>
+                    <div className="padding50"/>
+                    
+                    <div className="col-12">
+                        <div className="row">
+                            {this.createImageAndText(columnClass, frontendLogo, text.frontend.title, text.frontend.text)}
+                            {this.createImageAndText(columnClass, backendLogo, text.backend.title, text.backend.text)}
+                        </div>
+
+                        <div className="padding25"/>
+                        
+                        <div className="row">
+                            {this.createImageAndText(columnClass, softwareEngineeringLogo, text.softwareEngineering.title, text.softwareEngineering.text)}
+                            {this.createImageAndText(columnClass, computerScienceLogo, text.computerScience.title, text.computerScience.text)}
+                        </div>
+                    </div>
                 </div>
-                <div style={{"paddingBottom":"25px"}}/>
-                
-                <div className="col-md-8 col-sm-12">
-                    <p className="whiteText text">{text.paragraph}</p>
-                </div>
-                <div style={{"paddingBottom":"25px"}}/>
-                <div className="col-12"><div className="row">
-                    <div className={columnClass}>
-                        <ImageAndText image={frontendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.frontend.title} text={text.frontend.text} width={this.logoDetails.width}/>
-                    </div>
-                    <div className={columnClass}>
-                        <ImageAndText image={backendLogo} imageClass="summaryLogo" textClass="whiteText" title={text.backend.title} text={text.backend.text} width={this.logoDetails.width}/>
-                    </div>
-                    </div>
-                    <div style={{"paddingBottom":"25px"}}/>
-                    <div className="row">
-                    <div className={columnClass}>
-                        <ImageAndText image={softwareEngineeringLogo} imageClass="summaryLogo" textClass="whiteText" title={text.softwareEngineering.title} text={text.softwareEngineering.text} width={this.logoDetails.width}/>
-                    </div>
-                    <div className={columnClass}>
-                        <ImageAndText image={computerScienceLogo} imageClass="summaryLogo" textClass="whiteText" title={text.computerScience.title} text={text.computerScience.text} width={this.logoDetails.width}/>
-                    </div>
-                    </div></div>
-                </div>
-                <div style={{"paddingBottom":"25px"}}/>
 
             </React.Fragment>);
     }

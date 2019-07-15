@@ -18,11 +18,10 @@ class SpecializedCourses extends Component {
 
     render() { 
         return ( 
-            <React.Fragment>
-                <div className="container-fluid">
+            <div className="container-fluid">
+                <h1 className="componentTitle">Specialized Courses</h1>
                 <div className="row">
                 <div className="col-md-6 col-sm-12">
-                    <h4>Specialized Courses</h4>
                     <ul>
                         {this.state.courses.map(c => <li className="text" key={c}>{c}</li>)}
                     </ul>
@@ -31,8 +30,7 @@ class SpecializedCourses extends Component {
                         <img src={carleton2} width="100%"/>
                     </div>
                 </div>
-                </div>
-            </React.Fragment>
+            </div>
          );
     }
 }
