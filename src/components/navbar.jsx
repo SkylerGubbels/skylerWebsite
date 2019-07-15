@@ -30,7 +30,7 @@ class NavBar extends Component {
       
       return(
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
-        <img src={skylerImage} className="m-2" alt="" width="50"/>
+        <img src={skylerImage} style={{"paddingBottom":"15px"}} className="m-2" alt="" width="50"/>
         
         <Link className="navbar-brand navText" to="/about#introduction"> 
           <span className="navText" style={{"color":textColor, "font-weight":"bold"}}>Skyler Gubbels</span>

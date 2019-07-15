@@ -8,10 +8,10 @@ export function getIntroText(){
     return (
     <React.Fragment><span>
         Hi<br/>
-        This website was created using React, Bootstrap and a few other npm modules.
-        Whether you’re an employer interested in seeing how I can write clean, reusable
-        and easily-modifiable code or another web-developer wanting to use my website as a
-        learning tool the source can be found <a href="https://github.com/SkylerGubbels/skylerWebsite">here.</a>
+        This website was created using <a href="https://reactjs.org">React</a>, <a href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> and a few other npm modules.
+        Whether you’re an employer interested in seeing my approach to writing code 
+        or another web-developer wanting to use my website as a
+        learning tool, the source can be found <a href="https://github.com/SkylerGubbels/skylerWebsite">here.</a>
         <br/><br/>
         You can also reach me at skylermgubbels@gmail.com</span>
     </React.Fragment>)
@@ -44,13 +44,13 @@ export function getTechSkillsText(){
 
 export function getOtherSkillsText(){
     return {
-        languages: {title: "Problem Solving", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
-        libraries: {title: "Fast Learner", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
-        webTechnologies: {title: "Teamwork", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
-        versionControl: {title: "Organization", text: "Lorem ipsum dolor sit amet, consectetur adipiscing"},
+        languages: {title: "Problem Solving", text: <React.Fragment><span>Given a large task to complete, I can break it down into smaller and more manageable parts. This also allows me to reuse parts should the project requirements change.</span></React.Fragment>},
+        libraries: {title: "Quick Learner", text: <React.Fragment><span>Whether it is a new language, framework or library I am very adept at learning the ins and outs of the topic. This has made me very receptive to learning new things and expand my programming knowledge.</span></React.Fragment>},
+        webTechnologies: {title: "Teamwork", text: <React.Fragment><span>Having worked on a variety of group projects I have gotten especially comfortable with coordinating work with my peers and taking part in meetings to review our code and plan our next move.</span></React.Fragment>},
+        versionControl: {title: "Organization", text: <React.Fragment><span>I am very effective at managing my time and prioritizing tasks. This also allows me to be very effective at meeting deadlines, even when working on multiple projects.</span></React.Fragment>},
     }
 }
 
-export function getParagraphText(){
-    return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+export function getOtherSkillsParagraphText(){
+    return <React.Fragment><span>Here are a few non-programming skills help me be good at the things that I do.</span></React.Fragment>
 }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ImageHover from './common/imagehover';
-import carleton1 from "../resources/images/carleton1.jpg";
-import monash from "../resources/images/monash.jpg";
+import carletonPhoto from "../resources/images/carletonPhoto.jpg";
 
 
 class Education extends Component{
@@ -18,11 +16,17 @@ class Education extends Component{
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-6 col-sm-12">
-                            <ImageHover image={carleton1} imageHover={monash} dimensions={dimensions}/>
+                            <img src={carletonPhoto} width="100%"/>
                         </div>
                         <div className="col-md-6 col-sm-12">
-                            <p className="text summaryTitle">BA Criminology and Criminal Justice</p>
-                            <p className="text summaryTitle">BS Computer Science</p>
+
+                            <div className="crimDegree"><p className="text summaryTitle">Honours BA Criminology and Criminal Justice</p>
+                            <p>Carleton University 2012 - 2016</p>
+                            <p>3.3 GPA - Deans Honour List 2012</p></div>
+
+                            <div className="csDegree"><p className="text summaryTitle">BS Computer Science</p>
+                            <p>Carleton University 2018 - 2019</p>
+                            <p>3.7 GPA - Deans Honour List 2019</p></div>
                         </div>
                     </div>
                 </div>

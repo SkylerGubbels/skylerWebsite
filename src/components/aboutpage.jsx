@@ -7,6 +7,7 @@ import TechnicalSkills from './technicalskills';
 import Footer from './footer';
 import OtherSkills from './otherskills';
 import SpecializedCourses from './specializedcourses';
+import downhill from '../resources/images/downhill.jpg';
 
 class AboutPage extends Component {
     state = {
@@ -53,6 +54,11 @@ class AboutPage extends Component {
             <div id="otherSkills" className={divMargin}/>
             <OtherSkills language={language}/>
             <div id="otherSkills" className={divMargin}/>
+            </div>
+            <div className="blackBackground"><div className="container">
+            <div className={divMargin}/>
+            <img src={downhill} width="100%"/>
+            </div>
           </div>
           <Footer/>
         </div>

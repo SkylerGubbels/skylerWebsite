@@ -28,7 +28,7 @@ class SpecializedCourses extends Component {
                     </ul>
                 </div>
                     <div className="col-md-6 col-sm-12">
-                        <ImageHover image={carleton2} imageHover={code} dimensions={this.dimensions}/>
+                        <img src={carleton2} width="100%"/>
                     </div>
                 </div>
                 </div>

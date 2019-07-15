@@ -11,7 +11,7 @@ class OtherSkills extends Skills {
      loadText = async language => {
         const lang = (await import(`../resources/${language}Text`));
         const text = lang.getOtherSkillsText();
-        const paragraph = lang.getParagraphText();
+        const paragraph = lang.getOtherSkillsParagraphText();
         this.setState({text, language, paragraph});
     }
     
