@@ -16,10 +16,10 @@ body{
 .introText{
   position: absolute;
   color: white;
-  padding-top: 60vh;
+  padding-top: 40vh;
   padding-left: 5vh;
-  font-size: 30px;
-  font: Helvetica;
+  font-size: 35px;
+  font-family: "Helvetica";
   max-width: 75vw;
 }
 
@@ -29,7 +29,7 @@ body{
   }
 }
 
-@media only screen and (max-width:1050px){
+@media only screen and (max-width:1000px){
   .introText{
     font-size: 25px;
   }
@@ -94,6 +94,7 @@ body{
 .summaryLogo{
   filter: grayscale(100%) invert(1);
   padding-top: 25%;
+  opacity: 0.8;
 }
 
 .footerSmall{
@@ -119,7 +120,11 @@ body{
 }
 
 .text{
-  font: 20px Helvetica;
+  font: 22px Helvetica;
+}
+
+.smText{
+  font: 18px Helvetica;
 }
 
 .padding25{
@@ -130,8 +135,17 @@ body{
   padding-bottom: 50px;
 }
 
+.padding100{
+  padding-bottom: 100px;
+}
+
 .componentTitle{
   text-decoration: underline;
   font-size: 25px;
   font-weight: bold;
+}
+
+ul{
+  list-style-type: circle;
+  padding-left: 20px;
 }

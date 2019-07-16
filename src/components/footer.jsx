@@ -5,7 +5,7 @@ import { getDropDownItems } from '../resources/navLinks';
 class Footer extends Component {
     state = {  }
 
-    online = {title: "Online", links: [{text: "GitHub", to: "#"}, {text: "LinkedIn", to: "#"} ]}
+    online = {title: "Online", links: [{text: "GitHub", to: "https://github.com/"}, {text: "LinkedIn", to: "https://www.linkedin.com/in/skylergubbels/"} ]}
 
     createHeaderColumn = (col) => {
         return (
@@ -15,9 +15,9 @@ class Footer extends Component {
             
             {col.links.map(
               l => <li key={`${col.title}-${l.text}`}>
-                    <Link className="whiteText navText" to={l.to}>
+                    <a className="whiteText navText" href={l.to}>
                       <span>{l.text}</span>
-                    </Link>
+                    </a>
                   </li>)}
             </ul>
             </div>
@@ -33,7 +33,7 @@ class Footer extends Component {
               <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
-                    <p className="text-uppercase whiteText">Skyler Gubbels</p>
+                    <p className="whiteText" style={{"font-weight":"bold"}}>SKYLER GUBBELS</p>
                     <a style={{"color":"white"}} href="https://github.com/SkylerGubbels/skylerWebsite">skylermgubbels@gmail.com</a>
                   </div>
                 </div>

@@ -46,7 +46,7 @@ class Summary extends Component{
     createImageAndText(columnClass, imgSrc, title, text){
         return(
         <div className={columnClass}>
-            <ImageAndText image={imgSrc} imageClass="summaryLogo" textClass="whiteText" title={title} text={text} width={this.logoDetails.width}/>
+            <ImageAndText image={imgSrc} imageClass="summaryLogo" textClass="whiteText smText" title={title} text={text} width={this.logoDetails.width}/>
         </div>);
     }
 

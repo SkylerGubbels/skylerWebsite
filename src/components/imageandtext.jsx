@@ -4,9 +4,7 @@ class ImageAndText extends Component {
     state = { image: null, width: null, height: null, text: "", title: "", imageClass:"" }
     
     componentDidMount(){
-        const {image, width, height, text, title, imageClass} = this.props;
-        console.log(text)
-        this.setState({image, width, height, text, title, imageClass});
+        this.setState(this.props);
     }
 
     componentDidUpdate(){
@@ -16,7 +14,7 @@ class ImageAndText extends Component {
     }
 
     render() { 
-        const {image, width, height, text, title, imageClass} = this.state;
+        const {image, width, height, text, title, imageClass, textClass} = this.state;
         return ( 
         <div className="row">
             <div className="col-4">
@@ -24,7 +22,7 @@ class ImageAndText extends Component {
             </div>
             <div className="col-8">
                 <p className="categoryTitle summaryTitle whiteText">{title}</p>
-                <p className="whiteText">{text}</p>
+                <p className={textClass}>{text}</p>
             </div>
         </div>);
     }

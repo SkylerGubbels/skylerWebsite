@@ -25,7 +25,6 @@ class AboutPage extends Component {
     
       render() { 
         const { language, onLanguageChange } = this.props;
-        const divMargin = {"paddingBottom":"50px"}; //Change this value to change margin between components
         
         return (
         <div className="pageContainer">
@@ -33,30 +32,30 @@ class AboutPage extends Component {
           <div id="introduction" className=""/>
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           
-          <div className="blackBackground"><div className="container"><div id="summary" style={divMargin}/>
+          <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>
             <Summary language={language}/>
-          <div style={divMargin}/></div></div>
+          <div className="padding100"/></div></div>
           
           <div className="container">
-            <div id="education" style={divMargin}/>
+            <div id="education" className="padding100"/>
             <Education/>
             
-            <div id="specializedCourses" style={divMargin}/>
+            <div id="specializedCourses" className="padding100"/>
             <SpecializedCourses language={language}/>
             
-            <div style={divMargin}/>
+            <div className="padding100"/>
           </div>
           
-          <div className="blackBackground"><div className="container"><div id="technicalSkills" style={divMargin}/>
+          <div className="blackBackground"><div className="container"><div id="technicalSkills" className="padding100"/>
             <TechnicalSkills language={language}/>
-          <div style={divMargin}/></div></div>
+          <div className="padding100"/></div></div>
           
-          <div className="container"><div id="otherSkills" style={divMargin}/>
+          <div className="container"><div id="otherSkills" className="padding100"/>
             <OtherSkills language={language}/>
           </div>
-          <div style={divMargin}></div>
+          <div className="padding50"></div>
             
-          <div className="blackBackground"><div className="container"><div style={divMargin}/>
+          <div className="blackBackground"><div className="container"><div className="padding100"/>
             <img src={downhill} width="100%"/>
           </div></div>
         
