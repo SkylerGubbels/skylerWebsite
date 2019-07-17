@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AnimatedLogos from './common/animatedlogos';
 import { getLogos } from '../resources/logos';
 import Skills from './skills';

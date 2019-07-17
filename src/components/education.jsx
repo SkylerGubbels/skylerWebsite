@@ -32,7 +32,7 @@ class Education extends Component{
                             {this.createDegree("BS Computer Science", "Carleton University 2018 - 2019", "3.7 GPA - Deans Honour List 2019")}
                         </div>
                         <div className="col-md-6 col-sm-12">
-                            <img src={carleton} width="100%"/>
+                            <img src={carleton} width="100%" alt=""/>
                         </div>
                     </div>
                 </div>

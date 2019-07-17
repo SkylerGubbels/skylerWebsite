@@ -24,8 +24,8 @@ class Table extends Component{
     createDataItem(item, index){
         if(item.image){
             // If we don't have a path, grey out the image
-            if(item.path === "") {return <td key={index}><img className="tableImageNoLink" src={item.image}/></td>}
-            else { return<td key={index}><a href={item.path}><img className="tableImageWithLink" src={item.image}/></a></td>}
+            if(item.path === "") {return <td key={index}><img className="tableImageNoLink" src={item.image} alt=""/></td>}
+            else { return<td key={index}><a href={item.path}><img className="tableImageWithLink" src={item.image} alt=""/></a></td>}
         }
 
         if(item.text){

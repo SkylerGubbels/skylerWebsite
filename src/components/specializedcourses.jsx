@@ -25,7 +25,7 @@ class SpecializedCourses extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-6 col-sm-12">
-                        <img src={carletonPhotoshoot} width="100%"/>
+                        <img src={carletonPhotoshoot} width="100%" alt=""/>
                     </div>
                 <div className="col-md-6 col-sm-12">
                     <div className="padding25"></div>

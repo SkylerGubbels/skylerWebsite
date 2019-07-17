@@ -18,7 +18,7 @@ class ImageAndText extends Component {
         return ( 
         <div className="row">
             <div className="col-4">
-                <img className={imageClass} src={image} width={width} height={height}/>
+                <img className={imageClass} src={image} width={width} height={height} alt=""/>
             </div>
             <div className="col-8">
                 <p className="categoryTitle summaryTitle whiteText">{title}</p>

@@ -28,7 +28,7 @@ export function getSummaryText(){
                     <span>As a recent Computer Science graduate from Carleton University I learned a wide variety of skills.</span>
                 </React.Fragment>),
             
-            frontend: {title: "Front End Development", text: <React.Fragment><span>I am able to create dynamic, reactive and aesthetically pleasing front-end user experiences that are easily understood and scale well to any device or screen size.</span></React.Fragment>},   
+            frontend: {title: "Front End Development", text: <React.Fragment><span>I am able to create dynamic, reactive and easily understood front-end user experiences that are easily understood and scale well to any device or screen size.</span></React.Fragment>},   
             backend:  {title: "Back End Development", text: <React.Fragment><span>I know how to properly store data without data redundancy or expensive search times and can write code that will remain efficient and can scale your needs.</span></React.Fragment>},
             softwareEngineering:  {title: "Software Engineering", text: <React.Fragment><span>I can quickly pick it up and start contributing to the project. I am adept at determining edge cases and writing robust code.</span></React.Fragment>},
             computerScience:  {title: "Computer Science", text: <React.Fragment><span>I am able to determine what parts of a program can be computationally expensive and how to refactor code to be cleaner, more concise and more efficient.</span></React.Fragment>}
@@ -39,7 +39,7 @@ export function getTechSkillsText(){
     return {
         languages: {title: "Languages", text: "Java, Python, Javascript, C, C++, Haskell, Smalltalk"},
         libraries: {title: "Libraries", text: "React, OpenCV"},
-        webTechnologies: {title: "Web Technologies", text: "HTML5, CSS3, Node.js, RESTful API, npm"},
+        webTechnologies: {title: "Web Technologies", text: "HTML5, CSS3, Node.js, RESTful API, npm, Bootstrap"},
         versionControl: {title: "Version Control", text: "Git, Sourcetree, GitHub"},
         other: {title: "Other", text: "Unreal Engine 4, Qt, SQL, noSQL"}
     }

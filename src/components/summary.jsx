@@ -59,7 +59,7 @@ class Summary extends Component{
                     
                     <h1 className="whiteText componentTitle">Summary</h1>
                     <div className="padding25"/>
-                    <center><p className="whiteText text">{text.paragraph}</p></center>
+                    <p className="whiteText text">{text.paragraph}</p>
                     <div className="padding50"/>
                     
                     <div className="col-12">

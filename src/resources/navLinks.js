@@ -3,7 +3,6 @@
  *  be put under that element */
 
 export function getDropDownItems() {
-    const path = `/about`;
     return (
         {title: "About", 
             links: [{text: "Introduction", to:  "#introduction"},

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavBar from './navbar';
-import { O_NONBLOCK } from 'constants';
 
 
 /** Creates the NavBar at the top of the website */

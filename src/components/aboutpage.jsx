@@ -19,7 +19,6 @@ class AboutPage extends Component {
       }
     
       handleLoadImage = image =>{
-        console.log(image)
         this.setState({imageHeight: image})
       }
     
@@ -56,7 +55,7 @@ class AboutPage extends Component {
           <div className="padding50"></div>
             
           <div className="blackBackground"><div className="container"><div className="padding100"/>
-            <img src={downhill} width="100%"/>
+            <img src={downhill} width="100%" alt=""/>
           </div></div>
         
           <Footer/>

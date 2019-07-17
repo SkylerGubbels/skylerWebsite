@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { HashLink as Link } from "react-router-hash-link";
 import { getDropDownItems } from '../resources/navLinks';
 
 class Footer extends Component {
@@ -33,7 +32,7 @@ class Footer extends Component {
               <div className="container text-center text-md-left">
                 <div className="row">
                   <div className="col-md-6 mt-md-0 mt-3">
-                    <p className="whiteText" style={{"font-weight":"bold"}}>SKYLER GUBBELS</p>
+                    <p className="whiteText"><b>SKYLER GUBBELS</b></p>
                     <a style={{"color":"white"}} href="https://github.com/SkylerGubbels/skylerWebsite">skylermgubbels@gmail.com</a>
                   </div>
                 </div>
