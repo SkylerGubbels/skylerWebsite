@@ -2,8 +2,8 @@
   "name": "skylerwebsite",
   "version": "0.1.0",
   "private": true,
-  "engines":{
-	"node" : "12.4.0"
+  "engines": {
+    "node": "12.4.0"
   },
   "dependencies": {
     "animate.css": "^3.7.2",

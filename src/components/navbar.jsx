@@ -23,6 +23,15 @@ class NavBar extends Component {
             { item.divider && <div className="dropdown-divider"/> }
           </React.Fragment>)
       }
+
+    /** Function: getJustification()
+     *  Purpose: Ensures the navbar items are to the right on large windows but the dropdown items from
+     *           the button on small windows end up on the right side of the window */
+    getJustification(){
+      console.log(window.innerWidth)
+      if(window.innerWidth < 576){ return "mr-auto"; } //576 is the bootstrap size for col-sm. TODO: Find way to get this value at runtime instead of hardcoding the value
+      else { return "ml-auto";}
+    }
     
     render() { 
       let { className, backgroundColor,language, onLanguageChange } = this.props
@@ -46,7 +55,7 @@ class NavBar extends Component {
           </button>
 
           <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
-            <ul className={`navbar-nav ${this.state.textJustify}`}>
+            <ul className={`navbar-nav ${this.getJustification()}`}>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
               <span style={{"color":textColor}}>About</span>
