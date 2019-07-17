@@ -49,10 +49,10 @@ class Introduction extends Component {
         const { text } = this.state;
         return ( 
         <div>
-            <p className="introText">{text}</p>
-            <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
-            <div className="imageTextContainer">
+            <div className="container">
+                <p className="introText">{text}</p>
             </div>
+            <img className="backgroundImage" ref={this.imgRef} src={horizon} alt=""></img>
         </div> );
     }
 }

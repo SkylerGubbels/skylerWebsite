@@ -9,7 +9,7 @@ class ProjectsPage extends Component {
     projects = {
         headers: ["Name", "Description", "Github", "Link"],
         data: [
-            {name: "Drum Metronome", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, link: {text: "Link", path: ""}},
+            {name: "Drum Metronome", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
             {name: "Portfolio Website", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, link: {text: "Link", path: ""}},
             {name: "Curling Game", description: "Text", github: {image: github, path: ""}, link: {text: "Link", path: ""}}
             

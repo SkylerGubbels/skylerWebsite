@@ -5,7 +5,9 @@ import { HashLink as Link } from "react-router-hash-link";
 import { getDropDownItems } from '../resources/navLinks';
 
 class NavBar extends Component {
-    state = {  }
+    state = { 
+      textJustify: "ml-auto"
+     }
     path = "/about";
 
     createDropdown(item){
@@ -24,35 +26,53 @@ class NavBar extends Component {
     
     render() { 
       let { className, backgroundColor,language, onLanguageChange } = this.props
-      if(!className) className = "navbar navbar-expand navbar-light bg-light navbar-static-top navbar-background";
+      if(!className) className = "navbar navbar-expand-sm navbar-light bg-light navbar-static-top navbar-background";
       if(!backgroundColor) backgroundColor = "rgb(255,255,255)";
       const textColor = (this.props.textColor) || "rgb(0,0,0)"; // If no value for textcolor then we make it black
       
       return(
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
-        <img src={skylerImage} style={{"paddingBottom":"15px"}} className="m-2" alt="" width="50"/>
+        <div className="container">
+          <img src={skylerImage} style={{"paddingBottom":"15px"}} className="m-2" alt="" width="50"/>
         
-        <Link className="navbar-brand navText" to="/about#introduction"> 
+          <Link className="navbar-brand navText" to="/about#introduction">
           <span className="navText" style={{"color":textColor, "fontWeight":"bold"}}>Skyler Gubbels</span>
           <br/>
           <p style={{"color":textColor}}>Software Developer</p>
-        </Link>
-        
-        <div className="collapse navbar-collapse navbar-nav flex-row-reverse" id="navbar">
-          <div className="navbar-nav"></div>
-            {(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}
-            {(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}
-            <NavLink className="nav-item nav-link navText" to="/contact"> <span style={{"color":textColor}}>Contact</span></NavLink>
-            <NavLink className="nav-item nav-link navText" to="/projects"> <span style={{"color":textColor}}>Projects</span> </NavLink>
-          <li className="nav-item dropdown">
-                <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
-                  <span ystyle={{"color":textColor}}>About</span>
-                </Link>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  { getDropDownItems().links.map((item) => this.createDropdown(item))}
-                </div>
+          </Link>
+          
+          <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
+            <ul className={`navbar-nav ${this.state.textJustify}`}>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
+              <span style={{"color":textColor}}>About</span>
+              </Link>
+              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              { getDropDownItems().links.map((item) => this.createDropdown(item))}
+              </div>
             </li>
+            
+            <li>
+              <NavLink className="nav-item nav-link navText" to="/projects"> <span style={{"color":textColor}}>Projects</span> </NavLink>
+            </li>
+            <li>
+              <NavLink className="nav-item nav-link navText" to="/contact"> <span style={{"color":textColor}}>Contact</span></NavLink>
+            </li>
+            
+            <li>
+              {(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}
+            </li>
+            <li>
+              {(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}
+            </li>
+            
+            </ul>
           </div>
+        </div>
       </nav>    
          )
     }

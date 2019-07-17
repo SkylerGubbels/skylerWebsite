@@ -6,7 +6,7 @@ import NavBar from './navbar';
 class NavBarDynamic extends NavBar {
 
     state = {
-      navbarClass: "navbar navbar-expand navbar-light fixed-top navbar-background",
+      navbarClass: "navbar navbar-expand-sm navbar-light fixed-top navbar-background",
       opacity: 0
     }
 
