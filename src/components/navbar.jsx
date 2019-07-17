@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import skylerImage from "../resources/images/skylerImage.png"
+import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import { getDropDownItems } from '../resources/navLinks';
