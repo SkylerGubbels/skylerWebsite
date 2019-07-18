@@ -11,13 +11,11 @@ const linkColor = {
 export function getIntroText(){
     return (
     <React.Fragment><span>
-        <u>Hello</u><br/>
-        This website was created using <a style={linkColor} href="https://reactjs.org">React</a>, <a style={linkColor} href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> and a few other npm modules.
-        Whether you’re an employer interested in seeing my approach to writing code 
-        or another web-developer wanting to use my website as a
-        learning tool, the source can be found <a style={linkColor} href="https://github.com/SkylerGubbels/skylerWebsite">here.</a>
+        <u>Bonjour</u><br/>
+        Cette site web a été construit utiliser <a style={linkColor} href="https://reactjs.org">React</a>, <a style={linkColor} href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> et plusieurs modules npm.
+        Si t’est un employeur out juste un autre programmeur qui veut utiliser mon code pour étudier tu peu le trouver <a style={linkColor} href="https://github.com/SkylerGubbels/skylerWebsite">ici.</a>
         <br/><br/>
-        You can also reach me at <a style={linkColor} href="mailto:skylermgubbels@gmail.com">skylermgubbels@gmail.com</a></span>
+        Il est aussi possible de m’atteindre à  <a style={linkColor} href="mailto:skylermgubbels@gmail.com">skylermgubbels@gmail.com</a></span>
     </React.Fragment>)
 }
 
@@ -25,35 +23,46 @@ export function getSummaryText(){
     return {
             paragraph: 
                 (<React.Fragment>
-                    <span>As a recent Computer Science graduate from Carleton University I learned a wide variety of skills.</span>
+                    <span>Au cours de mon éducation j’ai développer plusieurs compétences. Voice quelques-uns:</span>
                 </React.Fragment>),
             
-            frontend: {title: "Front End Development", text: <React.Fragment><span>I am able to create dynamic, reactive and aesthetically pleasing front-end user experiences that are easily understood and scale well to any device or screen size.</span></React.Fragment>},   
-            backend:  {title: "Back End Development", text: <React.Fragment><span>I know how to properly store data without data redundancy or expensive search times and can write code that will remain efficient and can scale your needs.</span></React.Fragment>},
-            softwareEngineering:  {title: "Software Engineering", text: <React.Fragment><span>I can quickly pick it up and start contributing to the project. I am adept at determining edge cases and writing robust code.</span></React.Fragment>},
-            computerScience:  {title: "Computer Science", text: <React.Fragment><span>I am able to determine what parts of a program can be computationally expensive and how to refactor code to be cleaner, more concise and more efficient.</span></React.Fragment>}
+            frontend: {title: "Développeur du Front End", text: <React.Fragment><span>Je peux créer des expériences de front end dynamique, réactif et facile a comprendre qui fonctionne sur toutes écrans.</span></React.Fragment>},   
+            backend:  {title: "Développeur du Back End", text: <React.Fragment><span>Je sais comment éviter la redondance d’information et créer des programmes qui s’ont efficace sous l’utilisation lourd.</span></React.Fragment>},
+            softwareEngineering:  {title: "Ingénieur logiciel", text: <React.Fragment><span>Je peux rapidement comprendre et contribuer a votre project. Je sais comment déterminer les cas do bord et écrire du code robuste.</span></React.Fragment>},
+            computerScience:  {title: "L’informatique théorique", text: <React.Fragment><span>Je peux déterminer quelles pièces d’un program s’ont inefficace et peut améliorer le code pour le faire plus rapide.</span></React.Fragment>}
     }
 }
 
 export function getTechSkillsText(){
     return {
-        languages: {title: "Languages", text: "Java, Python, Javascript, C, C++, Haskell, Smalltalk"},
+        languages: {title: "Langues", text: "Java, Python, Javascript, C, C++, Haskell, Smalltalk"},
         libraries: {title: "Libraries", text: "React, OpenCV"},
-        webTechnologies: {title: "Web Technologies", text: "HTML5, CSS3, Node.js, RESTful API, npm"},
-        versionControl: {title: "Version Control", text: "Git, Sourcetree, GitHub"},
-        other: {title: "Other", text: "Unreal Engine 4, Qt, SQL, noSQL"}
+        webTechnologies: {title: "Technologies d'Internet", text: "HTML5, CSS3, Node.js, RESTful API, npm, Bootstrap"},
+        versionControl: {title: "Contrôle  de Version", text: "Git, Sourcetree, GitHub"},
+        other: {title: "Autre", text: "Unreal Engine 4, Qt, SQL, noSQL"}
     }
 }
 
 export function getOtherSkillsText(){
     return {
-        languages: {title: "Problem Solving", text: <React.Fragment><span>Given a large task to complete, I can break it down into smaller and more manageable parts. This also allows me to reuse parts should the project requirements change.</span></React.Fragment>},
-        libraries: {title: "Quick Learner", text: <React.Fragment><span>Whether it is a new language, framework or library I am very adept at learning the ins and outs of the topic. This has made me very receptive to learning new things and expand my programming knowledge.</span></React.Fragment>},
-        webTechnologies: {title: "Teamwork", text: <React.Fragment><span>Having worked on a variety of group projects I have gotten especially comfortable with coordinating work with my peers and taking part in meetings to review our code and plan our next move.</span></React.Fragment>},
-        versionControl: {title: "Organization", text: <React.Fragment><span>I am very effective at managing my time and prioritizing tasks. This also allows me to be very effective at meeting deadlines, even when working on multiple projects.</span></React.Fragment>},
+        languages: {title: "Résolution de Problème", text: <React.Fragment><span>Je suis capable de désassembler des gros problèmes et travailler sur les partis maniables. Ces partis peuvent aussi être réutiliser si la direction du projet change.  </span></React.Fragment>},
+        libraries: {title: "Apprenant Rapide", text: <React.Fragment><span>Je sais comment apprendre les détails d’un sujet. Ceci me fait vraiment réceptif a apprendre des nouveaux compétences et améliorer mon travail de programmeur.</span></React.Fragment>},
+        webTechnologies: {title: "Travail en Équipe", text: <React.Fragment><span>J’ai travaillé sur plusieurs projets de groupe et je sais comment coordonner le travaille avec plusieurs autre personnes pour faire le produit final le mieux que ça peut être.</span></React.Fragment>},
+        versionControl: {title: "Organisation", text: <React.Fragment><span>IJe sais comment gérer mon temp et hiérarchiser les taches pour respecter les délais et soumettre du travail de qualité.</span></React.Fragment>},
     }
 }
 
 export function getOtherSkillsParagraphText(){
-    return <React.Fragment><span>Here are a few non-programming skills that help me be good at the things that I do.</span></React.Fragment>
+    return <React.Fragment><span>Voici quelques-uns de mes autres compétences:</span></React.Fragment>
+}
+
+export function getDropDownItems() {
+    return (
+        {title: "About", 
+            linksEnglish: [{text: "Introduction", to:  "#introduction"},
+                    {text: "Résumé", to:  "#summary", divider: true}, 
+                    {text: "Éducation", to: "#education"},
+                    {text: "Cours spécialisés", to: "#specializedCourses", divider: true},
+                    {text: "Compétences techniques", to:  "#technicalSkills"},
+                    {text: "Autres compétences", to:  "#otherSkills"}]})
 }

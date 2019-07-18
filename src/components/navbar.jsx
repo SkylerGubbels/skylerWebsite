@@ -6,7 +6,9 @@ import { getDropDownItems } from '../resources/navLinks';
 
 class NavBar extends Component {
     state = { 
-      textJustify: "ml-auto"
+      textJustify: "ml-auto",
+      navbarItems: null,
+      dropdownItems: null
      }
     path = "/about";
 
@@ -31,6 +33,11 @@ class NavBar extends Component {
     componentWillUnmount(){
         window.removeEventListener("resize", this.handleResize);
     }
+
+    loadText = async language => {
+      const dropdownItems = (await import(`../resources/${language}Text`)).getDropDownItems();
+      this.setState({dropdownItems});
+  }
 
     /** Function: handleResize()
      *  Purpose: Calls render() when the render is resized so we can check whether navbar options
