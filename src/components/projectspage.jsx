@@ -24,7 +24,7 @@ class ProjectsPage extends Component {
                 <div className="container">
                 <Table className="table table-striped" content={this.projects}/>
                 </div></div>
-                <Footer className="footerSmall"/>
+                <Footer className="footerSmall" language={language}/>
             </div>
          );
     }

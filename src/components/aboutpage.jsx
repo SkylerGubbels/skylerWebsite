@@ -58,7 +58,7 @@ class AboutPage extends Component {
             <img src={downhill} width="100%" alt=""/>
           </div></div>
         
-          <Footer/>
+          <Footer language={language}/>
         </div>
       );
       }

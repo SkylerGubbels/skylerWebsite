@@ -57,21 +57,3 @@ export function getOtherSkillsText(){
 export function getOtherSkillsParagraphText(){
     return <React.Fragment><span>Here are a few non-programming skills that help me be good at the things that I do.</span></React.Fragment>
 }
-
-export function getDropDownItems() {
-    return (
-        {title: "About", 
-            linksEnglish: [{text: "Introduction", to:  "#introduction"},
-                    {text: "Summary", to:  "#summary", divider: true}, 
-                    {text: "Education", to: "#education"},
-                    {text: "Specialized Courses", to: "#specializedCourses", divider: true},
-                    {text: "Technical Skills", to:  "#technicalSkills"},
-                    {text: "Other Skills", to:  "#otherSkills"}]})
-}
-
-export function getNavbarItems() {
-    return (
-        {title: "About", 
-            linksEnglish: [{text: "Projects", to:  "/projects"},
-                    {text: "Contact", to:  "/contact", divider: true}]})
-}

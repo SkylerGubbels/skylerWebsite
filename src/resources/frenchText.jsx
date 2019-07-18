@@ -55,14 +55,3 @@ export function getOtherSkillsText(){
 export function getOtherSkillsParagraphText(){
     return <React.Fragment><span>Voici quelques-uns de mes autres compétences:</span></React.Fragment>
 }
-
-export function getDropDownItems() {
-    return (
-        {title: "About", 
-            linksEnglish: [{text: "Introduction", to:  "#introduction"},
-                    {text: "Résumé", to:  "#summary", divider: true}, 
-                    {text: "Éducation", to: "#education"},
-                    {text: "Cours spécialisés", to: "#specializedCourses", divider: true},
-                    {text: "Compétences techniques", to:  "#technicalSkills"},
-                    {text: "Autres compétences", to:  "#otherSkills"}]})
-}

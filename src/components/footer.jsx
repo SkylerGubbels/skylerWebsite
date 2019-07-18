@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { getDropDownItems } from '../resources/navLinks';
+import { getDropdownItemsFrench, getDropdownItemsEnglish } from '../resources/navLinks'; // Needs to be loaded in early
+
 
 class Footer extends Component {
-    state = {  }
+    state = { 
+      dropdownItems: {}
+     }
 
     online = {title: "Online", links: [{text: "GitHub", to: "https://github.com/"}, {text: "LinkedIn", to: "https://www.linkedin.com/in/skylergubbels/"} ]}
+
+    loadText = language => {
+      if(language === "french"){
+        return getDropdownItemsFrench();
+      }
+      else{
+        return getDropdownItemsEnglish();
+      }
+    }
 
     createHeaderColumn = (col) => {
         return (
@@ -24,41 +36,41 @@ class Footer extends Component {
     }
 
     render() { 
-      const {className} = this.props;
-      const {  title, links } = getDropDownItems();
-        return (
-            <div className={className} style={{"backgroundColor":"black"}}>
-            <footer className="page-footer pt-4">
-              <div className="container text-center text-md-left">
-                <div className="row">
-                  <div className="col-md-6 mt-md-0 mt-3">
-                    <p className="whiteText"><b>SKYLER GUBBELS</b></p>
-                    <a style={{"color":"white"}} href="https://github.com/SkylerGubbels/skylerWebsite">skylermgubbels@gmail.com</a>
-                  </div>
+      const {className, language} = this.props;
+      const {  title, links } = this.loadText(language);
+      return (
+          <div className={className} style={{"backgroundColor":"black"}}>
+          <footer className="page-footer pt-4">
+            <div className="container text-center text-md-left">
+              <div className="row">
+                <div className="col-md-6 mt-md-0 mt-3">
+                  <p className="whiteText"><b>SKYLER GUBBELS</b></p>
+                  <a style={{"color":"white"}} href="https://github.com/SkylerGubbels/skylerWebsite">skylermgubbels@gmail.com</a>
                 </div>
-                <div className="padding50"></div>
-                <div className="row">
-                  
-                  <div className="col-md-6 col-sm-12"><div className="row">
-                    { this.createHeaderColumn({title, links: links.splice(0, links.length/2)}) }
-                    { this.createHeaderColumn({title: "___", links: links.splice(links.length/2 - 1, links.length)}) }
-                  </div></div>
-                  
-                  <div className="col-md-6 col-sm-12"><div className="row">
-                    <div className="col-md-6 col-sm-0"></div>
-                    { this.createHeaderColumn(this.online) }
-                  </div></div>
-            
-                </div>
-            
               </div>
-            
-              <div className="text-center py-3 whiteText">
-                <span>Skyler Gubbels 2019 △ </span>
-                <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
+              <div className="padding50"></div>
+              <div className="row">
+                
+                <div className="col-md-6 col-sm-12"><div className="row">
+                  { this.createHeaderColumn({title, links: links.splice(0, links.length/2)}) }
+                  { this.createHeaderColumn({title: "___", links: links.splice(links.length/2 - 1, links.length)}) }
+                </div></div>
+                
+                <div className="col-md-6 col-sm-12"><div className="row">
+                  <div className="col-md-6 col-sm-0"></div>
+                  { this.createHeaderColumn(this.online) }
+                </div></div>
+          
               </div>
-            
-            </footer></div>)
+          
+            </div>
+          
+            <div className="text-center py-3 whiteText">
+              <span>Skyler Gubbels 2019 △ </span>
+              <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
+            </div>
+          
+          </footer></div>)
 
     }
 }

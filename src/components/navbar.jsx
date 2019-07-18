@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import { getDropDownItems } from '../resources/navLinks';
+import { getDropdownItemsFrench, getNavbarItemsFrench, getDropdownItemsEnglish, getNavbarItemsEnglish } from '../resources/navLinks';
 
 class NavBar extends Component {
     state = { 
@@ -28,15 +28,20 @@ class NavBar extends Component {
 
     componentDidMount(){
       window.addEventListener("resize", this.handleResize);
+      this.loadText(this.props.language);
     }
 
     componentWillUnmount(){
         window.removeEventListener("resize", this.handleResize);
     }
 
-    loadText = async language => {
-      const dropdownItems = (await import(`../resources/${language}Text`)).getDropDownItems();
-      this.setState({dropdownItems});
+    loadText = language => {
+      if(language === "french"){
+        this.setState({navbarItems: getNavbarItemsFrench(), dropdownItems: getDropdownItemsFrench()});
+      }
+      else{
+        this.setState({navbarItems: getNavbarItemsEnglish(), dropdownItems: getDropdownItemsEnglish()})
+      }
   }
 
     /** Function: handleResize()
@@ -55,7 +60,10 @@ class NavBar extends Component {
     }
     
     render() { 
-      let { className, backgroundColor,language, onLanguageChange } = this.props
+      let { className, backgroundColor, language, onLanguageChange } = this.props
+      const { navbarItems, dropdownItems } = this.state;
+      if(!dropdownItems || !navbarItems) { return <p></p>}
+
       if(!className) className = "navbar navbar-expand-sm navbar-light bg-light navbar-static-top navbar-background";
       if(!backgroundColor) backgroundColor = "rgb(255,255,255)";
       const textColor = (this.props.textColor) || "rgb(0,0,0)"; // If no value for textcolor then we make it black
@@ -78,19 +86,14 @@ class NavBar extends Component {
             <ul className={`navbar-nav ${this.getJustification()}`}>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
-              <span style={{"color":textColor}}>About</span>
+              <span style={{"color":textColor}}>{dropdownItems.title}</span>
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              { getDropDownItems().links.map((item) => this.createDropdown(item))}
+              { dropdownItems.links.map((item) => this.createDropdown(item))}
               </div>
             </li>
             
-            <li>
-              <NavLink className="nav-item nav-link navText" to="/projects"> <span style={{"color":textColor}}>Projects</span> </NavLink>
-            </li>
-            <li>
-              <NavLink className="nav-item nav-link navText" to="/contact"> <span style={{"color":textColor}}>Contact</span></NavLink>
-            </li>
+            { navbarItems.map(i => {return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)})}
             
             <li>
               {(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}

@@ -14,7 +14,7 @@ class ContactPage extends Component {
                     <h1 className="">Contact Me</h1>
                     <EmailForm/>
                 </div>
-                <Footer className="footerSmall"/>
+                <Footer className="footerSmall" language={language}/>
             </div>
          );
     }
