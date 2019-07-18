@@ -4,26 +4,38 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import AboutPage from './components/aboutpage';
 import ContactPage from './components/contactpage';
 import ProjectsPage from './components/projectspage';
+import * as englishFile from './resources/englishText';
+import * as frenchFile from './resources/frenchText';
 
 
 class App extends Component {
 
   state = {
-    language: "english"
+    language: "english",
+    textFile: null
+  }
+
+  textFiles = {
+    english: englishFile,
+    french: frenchFile
+  }
+
+  componentWillMount(){
+    this.setState({textFile: englishFile});
   }
 
   handleLanguageChange = newLanguage => {
-    this.setState({language: newLanguage});
+    this.setState({language: newLanguage, textFile: this.textFiles[newLanguage]});
   }
 
   render() { 
     
-    const {language} = this.state;
+    const {language, textFile} = this.state;
 
     return (
     <React.Fragment>
       <Switch>
-        <Route path="/about" component={() => <AboutPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
+        <Route path="/about" component={() => <AboutPage language={language} onLanguageChange={this.handleLanguageChange} textFile={textFile}/>}/>
         <Route path="/contact" component={() => <ContactPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
         <Route path="/projects" component={() => <ProjectsPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
         <Redirect from="/" exact to="/about"/>

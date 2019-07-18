@@ -12,11 +12,13 @@ import downhill from '../resources/images/downhill.jpg';
 class AboutPage extends Component {
     state = {
         imageHeight: 0,
-        sectionTitles: {}
+        sectionTitles: {},
+        textFile: null
       }
     
-      componentDidMount(){
-        this.loadText(this.props.language);
+      componentWillMount(){
+        console.log(this.props)
+        this.setState({textFile: this.props.textFile})
       }
 
       handleBackgroundImageResize = imageHeight =>{
@@ -26,15 +28,10 @@ class AboutPage extends Component {
       handleLoadImage = image =>{
         this.setState({imageHeight: image})
       }
-
-      loadText = async language => {
-        const sectionTitles = (await import(`../resources/${language}Text`)).getSectionTitles();
-        this.setState({sectionTitles});
-    }
     
       render() { 
         const { language, onLanguageChange } = this.props;
-        const { sectionTitles } = this.state;
+        const { sectionTitles, textFile } = this.state;
         
         return (
         <div className="pageContainer">
@@ -44,7 +41,7 @@ class AboutPage extends Component {
           
           <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>
             <h1 className="whiteText componentTitle">{sectionTitles.summary}</h1>
-            <Summary language={language}/>
+            <Summary language={language} text={textFile.getSummaryText()}/>
           <div className="padding100"/></div></div>
           
           <div className="container">

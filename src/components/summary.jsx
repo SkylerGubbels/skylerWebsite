@@ -9,7 +9,6 @@ import ImageAndText from './imageandtext';
 
 class Summary extends Component{
     state = {
-        language: "",
         text: { paragraph: "",
                 frontend: "",
                 backend: "",
@@ -21,23 +20,8 @@ class Summary extends Component{
         width: "100",
     }
 
-    componentDidUpdate(){
-        // If the language has changed get new text
-        if(this.state.language !== this.props.language && this.props.language !== ""){
-            this.loadText(this.props.language);
-        }
-    }
-
-    componentDidMount(){
-        if(this.props.language !== "") { this.loadText(this.props.language);}
-    }
-
-    /** Function: loadtext()
-     *  Input: Language string for the language with which to display the website
-     *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
-    loadText = async language => {
-        const text = (await import(`../resources/${language}Text`)).getSummaryText();
-        this.setState({text, language});
+    componentWillMount(){
+        this.text = this.props.text;
     }
 
     /** Function: createImageAndText()
