@@ -96,10 +96,15 @@ body{
   opacity: 0.8;
 }
 
+.page-container{
+  padding-bottom: 300px;
+}
+
 .footerSmall{
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  bottom:0px;
+  width:100%;
+  height: 300px;
 }
 
 .tableImageWithLink{

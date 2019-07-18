@@ -24,11 +24,25 @@ class NavBar extends Component {
           </React.Fragment>)
       }
 
+    componentDidMount(){
+      window.addEventListener("resize", this.handleResize);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener("resize", this.handleResize);
+    }
+
+    /** Function: handleResize()
+     *  Purpose: Calls render() when the render is resized so we can check whether navbar options
+     *           should be positioned right or center */
+    handleResize = () => {
+      this.render();
+    }
+
     /** Function: getJustification()
      *  Purpose: Ensures the navbar items are to the right on large windows but the dropdown items from
      *           the button on small windows end up on the right side of the window */
     getJustification(){
-      console.log(window.innerWidth)
       if(window.innerWidth < 576){ return "mr-auto"; } //576 is the bootstrap size for col-sm. TODO: Find way to get this value at runtime instead of hardcoding the value
       else { return "ml-auto";}
     }
@@ -38,7 +52,6 @@ class NavBar extends Component {
       if(!className) className = "navbar navbar-expand-sm navbar-light bg-light navbar-static-top navbar-background";
       if(!backgroundColor) backgroundColor = "rgb(255,255,255)";
       const textColor = (this.props.textColor) || "rgb(0,0,0)"; // If no value for textcolor then we make it black
-      
       return(
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
         <div className="container">
@@ -51,7 +64,7 @@ class NavBar extends Component {
           </Link>
           
           <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
@@ -60,7 +73,7 @@ class NavBar extends Component {
               <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
               <span style={{"color":textColor}}>About</span>
               </Link>
-              <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               { getDropDownItems().links.map((item) => this.createDropdown(item))}
               </div>
             </li>

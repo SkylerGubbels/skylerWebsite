@@ -20,10 +20,10 @@ class ProjectsPage extends Component {
         const { language, onLanguageChange } = this.props;
         return ( 
             <div className="page-container">
-                <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0}/>
+                <div className="page-c"><NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0}/>
                 <div className="container">
-                    <Table className="table table-striped" content={this.projects}/>
-                </div>
+                <Table className="table table-striped" content={this.projects}/>
+                </div></div>
                 <Footer className="footerSmall"/>
             </div>
          );
