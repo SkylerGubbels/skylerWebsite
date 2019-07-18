@@ -25,7 +25,6 @@ class TechnicalSkills extends Skills {
         
         return ( 
         <div>
-            <h1 className="whiteText componentTitle">Technical Skills</h1>
             <div className="padding50"/>
             <AnimatedLogos logos={getLogos()} logoSize={this.logoSize} displayTime={7000}/>
             <div className="padding50"/>

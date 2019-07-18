@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import { getDropdownItemsFrench, getNavbarItemsFrench, getDropdownItemsEnglish, getNavbarItemsEnglish } from '../resources/navLinks';
+import { getDropdownItemsFrench, getNavbarItemsFrench, getDropdownItemsEnglish, getNavbarItemsEnglish } from '../resources/navLinks'; // Needs to be loaded in early
 
 class NavBar extends Component {
     state = { 

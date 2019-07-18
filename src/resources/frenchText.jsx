@@ -55,3 +55,13 @@ export function getOtherSkillsText(){
 export function getOtherSkillsParagraphText(){
     return <React.Fragment><span>Voici quelques-uns de mes autres compétences:</span></React.Fragment>
 }
+
+export function getSectionTitles(){
+    return {
+        summary: "Résumé",
+        education: "Éducation",
+        specializedCourses: "Cours Spécialisés",
+        technicalSkills: "Compétences Techniques",
+        otherSkills: "Autres compétences"
+    }
+}

@@ -18,9 +18,8 @@ class SpecializedCourses extends Component {
         return ( 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-6 col-sm-12"/>
+                    
                     <div className="col-md-6 col-sm-12">
-                        <h1 className="componentTitle">Specialized Courses</h1>
                     </div>
                 </div>
                 <div className="row">

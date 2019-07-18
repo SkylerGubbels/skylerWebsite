@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Footer from './footer';
 import NavBar from './navbar';
 import Table from './common/table';
-import github from "../resources/languageLogos/github.svg"
+import github from "../resources/languageLogos/github-dark.svg"
 
 class ProjectsPage extends Component {
 

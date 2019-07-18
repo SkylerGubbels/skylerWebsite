@@ -25,7 +25,6 @@ class OtherSkills extends Skills {
 
         return ( 
         <React.Fragment>
-            <h1 className="componentTitle">Other Skills</h1>
             <div className="row">
                 <div className="col-md-6 col-sm-12">
                     <p className="text">{paragraph}</p>

@@ -57,3 +57,13 @@ export function getOtherSkillsText(){
 export function getOtherSkillsParagraphText(){
     return <React.Fragment><span>Here are a few non-programming skills that help me be good at the things that I do.</span></React.Fragment>
 }
+
+export function getSectionTitles(){
+    return {
+        summary: "Summary",
+        education: "Education",
+        specializedCourses: "Specialized Courses",
+        technicalSkills: "Technical Skills",
+        otherSkills: "Other Skills"
+    }
+}

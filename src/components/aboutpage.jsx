@@ -11,9 +11,14 @@ import downhill from '../resources/images/downhill.jpg';
 
 class AboutPage extends Component {
     state = {
-        imageHeight: 0
+        imageHeight: 0,
+        sectionTitles: {}
       }
     
+      componentDidMount(){
+        this.loadText(this.props.language);
+      }
+
       handleBackgroundImageResize = imageHeight =>{
         this.setState({imageHeight});
       }
@@ -21,9 +26,15 @@ class AboutPage extends Component {
       handleLoadImage = image =>{
         this.setState({imageHeight: image})
       }
+
+      loadText = async language => {
+        const sectionTitles = (await import(`../resources/${language}Text`)).getSectionTitles();
+        this.setState({sectionTitles});
+    }
     
       render() { 
         const { language, onLanguageChange } = this.props;
+        const { sectionTitles } = this.state;
         
         return (
         <div className="pageContainer">
@@ -32,24 +43,30 @@ class AboutPage extends Component {
           <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
           
           <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>
+            <h1 className="whiteText componentTitle">{sectionTitles.summary}</h1>
             <Summary language={language}/>
           <div className="padding100"/></div></div>
           
           <div className="container">
             <div id="education" className="padding100"/>
+            <h1 className="componentTitle">{sectionTitles.education}</h1>
             <Education/>
             
             <div id="specializedCourses" className="padding100"/>
+              <div className="row"><div className="col-md-6 col-sm-12"/>
+              <h1 className="componentTitle">{sectionTitles.specializedCourses}</h1></div>
             <SpecializedCourses language={language}/>
             
             <div className="padding100"/>
           </div>
           
           <div className="blackBackground"><div className="container"><div id="technicalSkills" className="padding100"/>
+            <h1 className="whiteText componentTitle">{sectionTitles.technicalSkills}</h1>
             <TechnicalSkills language={language}/>
           <div className="padding100"/></div></div>
           
           <div className="container"><div id="otherSkills" className="padding100"/>
+            <h1 className="componentTitle">{sectionTitles.otherSkills}</h1>
             <OtherSkills language={language}/>
           </div>
           <div className="padding50"></div>

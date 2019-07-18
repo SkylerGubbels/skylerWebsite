@@ -21,22 +21,17 @@ class Education extends Component{
 
     render(){
         return(
-            <React.Fragment>
-                <div className="container-fluid">
-                    <h1 className="componentTitle">Education</h1>
-                    <div className="row">
-                        <div className="col-md-6 col-sm-12">
-                            <div className="padding25"/>
-                            {this.createDegree("Honours BA Criminology and Criminal Justice", "Carleton University 2012 - 2016", "3.3 GPA - Deans Honour List 2012")}
-                            <div className="padding25"/>
-                            {this.createDegree("BS Computer Science", "Carleton University 2018 - 2019", "3.7 GPA - Deans Honour List 2019")}
-                        </div>
-                        <div className="col-md-6 col-sm-12">
-                            <img src={carleton} width="100%" alt=""/>
-                        </div>
-                    </div>
+            <div className="row">
+                <div className="col-md-6 col-sm-12">
+                    <div className="padding25"/>
+                    {this.createDegree("Honours BA Criminology and Criminal Justice", "Carleton University 2012 - 2016", "3.3 GPA - Deans Honour List 2012")}
+                    <div className="padding25"/>
+                    {this.createDegree("BS Computer Science", "Carleton University 2018 - 2019", "3.7 GPA - Deans Honour List 2019")}
                 </div>
-            </React.Fragment>
+                <div className="col-md-6 col-sm-12">
+                    <img src={carleton} width="100%" alt=""/>
+                </div>
+            </div>
         )
     };
 }

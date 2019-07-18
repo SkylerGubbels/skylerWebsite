@@ -55,10 +55,6 @@ class Summary extends Component{
         const columnClass = "col-md-6 col-sm-12 col-xs-12";
         return(
             <React.Fragment>
-                <div className="container-fluid">
-                    
-                    <h1 className="whiteText componentTitle">Summary</h1>
-                    <div className="padding25"/>
                     <p className="whiteText text">{text.paragraph}</p>
                     <div className="padding50"/>
                     
@@ -75,7 +71,6 @@ class Summary extends Component{
                             {this.createImageAndText(columnClass, computerScienceLogo, text.computerScience.title, text.computerScience.text)}
                         </div>
                     </div>
-                </div>
 
             </React.Fragment>);
     }
