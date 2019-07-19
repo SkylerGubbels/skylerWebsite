@@ -17,10 +17,6 @@ class NavbarDropdown extends Component{
         
         return ( 
             <React.Fragment>
-                <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
                 <li className="nav-item dropdown">
                     <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{"color":textColor}}>
                         <span style={{"color":textColor}}>{dropdownItems.title}</span>

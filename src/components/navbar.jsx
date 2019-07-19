@@ -37,6 +37,41 @@ class NavBar extends Component {
       if(window.innerWidth < 576){ return "mr-auto"; } //576 is the bootstrap size for col-sm. TODO: Find way to get this value at runtime instead of hardcoding the value
       else { return "ml-auto";}
     }
+
+    createNavbarImage = (textColor) => {
+      return(
+      <React.Fragment>
+      <img src={skylerImage} style={{"paddingBottom":"15px"}} className="m-2" alt="" width="50"/>
+        
+      <Link className="navbar-brand navText" to="/about#introduction">
+        <span className="navText" style={{"color":textColor, "fontWeight":"bold"}}>Skyler Gubbels</span>
+        <br/>
+        <p style={{"color":textColor}}>Software Developer</p>
+      </Link>
+      </React.Fragment>
+      )
+    }
+
+    createNavbarContent = (textColor, dropdownItems, navbarItems, language, onLanguageChange) =>{
+      return(
+      <React.Fragment>
+        <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
+          <ul className={`navbar-nav ${this.getJustification()}`}>
+
+          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/> 
+          { navbarItems.map(i => {return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)})}
+          <li>{(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}</li>
+          <li>{(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}</li>
+          
+          </ul>
+        </div>
+      </React.Fragment>)
+    }
+
     
     render() { 
       let { className, backgroundColor, language, onLanguageChange } = this.props
@@ -50,30 +85,10 @@ class NavBar extends Component {
       return(
         <nav className={className} style={{"backgroundColor":backgroundColor}}>
         <div className="container">
-          <img src={skylerImage} style={{"paddingBottom":"15px"}} className="m-2" alt="" width="50"/>
-        
-          <Link className="navbar-brand navText" to="/about#introduction">
-            <span className="navText" style={{"color":textColor, "fontWeight":"bold"}}>Skyler Gubbels</span>
-            <br/>
-            <p style={{"color":textColor}}>Software Developer</p>
-          </Link>
-
-          <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
-            <ul className={`navbar-nav ${this.getJustification()}`}>
-
-            <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/>
-            
-            { navbarItems.map(i => {return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)})}
-            
-            <li>
-              {(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}
-            </li>
-            <li>
-              {(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}
-            </li>
-            
-            </ul>
-          </div>
+          
+          {this.createNavbarImage(textColor)}
+          {this.createNavbarContent(textColor, dropdownItems, navbarItems, language, onLanguageChange)}
+           
         </div>
       </nav>    
          )
