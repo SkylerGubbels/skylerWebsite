@@ -14,10 +14,14 @@ class AboutPage extends Component {
         imageHeight: 0,
       }
   
+      // Updates information when background image is resized.
       handleBackgroundImageResize = imageHeight =>{
         this.setState({imageHeight});
       }
     
+      // Gets image dimensions on image load
+      // This information needs to be passed to navbarDynamic so it knows
+      // the point at which it needs to start fading in the background
       handleLoadImage = image =>{
         this.setState({imageHeight: image})
       }

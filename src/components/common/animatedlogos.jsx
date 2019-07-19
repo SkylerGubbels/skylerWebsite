@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+/** Component: AnimatedLogos
+ *  Props: logos, logoSize, displayTime
+ *  Purpose: Takes a 1d or 2d list of images and animates their entrance based on the displayTime
+ *           prop value. If a 2d list was passed this comonent will display the logos in each list
+ *           in the order in which they were passed. */
 class AnimatedLogos extends Component {
     state = { 
         currentLogos: [],
@@ -18,10 +23,13 @@ class AnimatedLogos extends Component {
         const {logoSize, displayTime} = this.props;
         this.allLogos = this.props.logos;
         this.displayTime = displayTime;
+
         // Allows for 1d list to be passed
         if (typeof(this.props.logos[0]) === "string") this.allLogos = [this.allLogos];
+
         this.maxIndex = this.allLogos.length;
         this.setState({logoSize, currentLogos: this.allLogos[0]})
+
         if(this.maxIndex > 1){
             this.interval = setInterval(()=>{this.loadNextLogos()}, this.displayTime);
         }
@@ -73,6 +81,10 @@ class AnimatedLogos extends Component {
                     height={this.logoSize}/>);
     }
 
+    /** Function: calculateAnimationDelayEntrance
+     *  In: Index of logo
+     *  Purpose: Uses the index, animation time and number of elements in list
+     *           to calculate how much time each logo has to fade in */
     calculateAnimationDelayEntrance(index){
         const { currentLogos } = this.state;
         // Divides display time in half so it has time to display then animate leaving
@@ -81,7 +93,8 @@ class AnimatedLogos extends Component {
         return index * ((this.displayTime/2)/1000)/currentLogos.length;   
     }
 
-    calculateAnimationDelayLeave(index){
+    // Currently hardcoded to give all logos 1 second to fade out
+    calculateAnimationDelayLeave(){
         return this.displayTime/1000-1;
     }
     

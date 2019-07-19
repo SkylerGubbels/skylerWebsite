@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import CollapsableText from './collapsabletext';
 
+/** Component: Table
+ *  Props: content
+ *  Purpose: Creates a table using the data passed in the Content prop */
 class Table extends Component{
 
     cols = 0;
@@ -30,6 +33,7 @@ class Table extends Component{
             else { return<td key={index}><a href={item.path} target="_blank" rel="noopener noreferrer"><img className="tableImageWithLink" src={item.image} alt=""/></a></td>}
         }
 
+        // For objects passed that contain a link and a text value. Creates a hyperlink to the dest
         if(item.text){
             return<td key={index}><a href={item.path} target="_blank" rel="noopener noreferrer">{item.text}</a></td>
         }
@@ -40,20 +44,19 @@ class Table extends Component{
     }
 
     render(){
-    const { headers, data } = this.props.content;
-    this.cols = headers.length;
+        const { headers, data } = this.props.content;
+        this.cols = headers.length;
 
-    return(
-        <table className={this.props.className}>
-        <thead>
-            <tr>
+        return(
+            <table className={this.props.className}>
+            <thead><tr>
                 {headers.map(h => <th key={h}>{h}</th>)}
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
                 {data.map((d, i) => this.createRows(d,i))}
-        </tbody>
-        </table>)
+            </tbody>
+            </table>)
     }
 }
  

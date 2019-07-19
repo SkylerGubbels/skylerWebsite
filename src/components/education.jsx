@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import carleton from "../resources/images/carleton2.jpg";
 
-
+/** Component: Education
+ *  Purpose: Displays university image and my education background */
 class Education extends Component{
     
     state = {
         dimensions: {width: 600, height: 500}
     }
 
+    // Creates formatted text based on valus passed in parameters
     createDegree(degree, university, gpa)
     {
         return(
