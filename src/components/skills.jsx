@@ -12,7 +12,6 @@ class Skills extends Component {
                     <p key={`${key}text`}className={classNameText}>{text}</p>
                 </React.Fragment>)
     }
-
 }
  
 export default Skills;

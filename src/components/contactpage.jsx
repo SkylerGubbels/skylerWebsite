@@ -9,12 +9,13 @@ class ContactPage extends Component {
         const { language, onLanguageChange, textFile } = this.props;
         return ( 
             <div className="page-container">
-                <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()}/>
-                <div className="container">
+                <div className="content">
+                    <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()}/>
+                    <div className="container">
                     <h1 className="">Contact Me</h1>
                     <EmailForm/>
-                </div>
-                <Footer className="footerSmall" text={textFile.getDropdownItems()}/>
+                </div></div>
+                <Footer className="footer" text={textFile.getDropdownItems()}/>
             </div>
          );
     }

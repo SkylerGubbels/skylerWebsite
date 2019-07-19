@@ -63,7 +63,9 @@ class NavBar extends Component {
           <ul className={`navbar-nav ${this.getJustification()}`}>
 
           <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/> 
+          
           { navbarItems.map(i => {return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)})}
+          
           <li>{(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}</li>
           <li>{(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}</li>
           
