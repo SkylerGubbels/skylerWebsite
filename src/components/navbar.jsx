@@ -66,7 +66,7 @@ class NavBar extends Component {
           
           { navbarItems.map(i => 
               { if(i.to) { return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)}
-                else if (i.href){return (<li key={i.text}><a className="nav-item nav-link navText" href={i.href} target="_blank"> <span style={{"color":textColor}}>{i.text}</span> </a></li>)}})
+                else {return (<li key={i.text}><a className="nav-item nav-link navText" href={i.href} target="_blank" rel="noopener noreferrer"> <span style={{"color":textColor}}>{i.text}</span> </a></li>)}})
           }
           
           

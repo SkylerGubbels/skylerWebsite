@@ -42,7 +42,7 @@ class Footer extends Component {
      */
     getCorrectLink = (item) => {
       if(item.to.charAt(0) === "#") { return (<Link className="whiteText navText" to={"/about" + item.to}><span>{item.text}</span></Link>); }
-      else {  return (<a className="whiteText navText" href={item.to} target="_blank"><span>{item.text}</span></a>) }
+      else {  return (<a className="whiteText navText" href={item.to} target="_blank" rel="noopener noreferrer"><span>{item.text}</span></a>) }
     }
 
     render() { 
@@ -77,7 +77,7 @@ class Footer extends Component {
           
             <div className="text-center py-3 whiteText">
               <span>Skyler Gubbels 2019 △ </span>
-              <a className="whiteText navText" target="_blank" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
+              <a className="whiteText navText" target="_blank" href="https://github.com/SkylerGubbels/skylerWebsite" rel="noopener noreferrer"><span><u>Source code</u></span></a>
             </div>
           
           </footer></div>)

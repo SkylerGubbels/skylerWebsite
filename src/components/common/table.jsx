@@ -27,14 +27,14 @@ class Table extends Component{
         if(item.image){
             // If we don't have a path, grey out the image
             if(item.path === "") {return <td key={index}><img className="tableImageNoLink" src={item.image} alt=""/></td>}
-            else { return<td key={index}><a href={item.path} target="_blank"><img className="tableImageWithLink" src={item.image} alt=""/></a></td>}
+            else { return<td key={index}><a href={item.path} target="_blank" rel="noopener noreferrer"><img className="tableImageWithLink" src={item.image} alt=""/></a></td>}
         }
 
         if(item.text){
-            return<td key={index}><a href={item.path} target="_blank">{item.text}</a></td>
+            return<td key={index}><a href={item.path} target="_blank" rel="noopener noreferrer">{item.text}</a></td>
         }
 
-        if(item.length > 25){return <CollapsableText text={item} numOfChars={25}/>}
+        if(item.length > 25){return <CollapsableText key={item} text={item} numOfChars={25}/>}
 
         return<td key={index}>{item}</td>
     }
