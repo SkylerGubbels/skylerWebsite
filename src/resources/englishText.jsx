@@ -91,9 +91,13 @@ export function getProjects(){
             data: [
                 {name: "Drum Metronome", 
                 description: "Drum metronome written using only Javascript, HTML and Node.js. Each row of boxes corresponds to a certain part of a drumkit and each column represents a beat. Users can save and load drumbeats they’ve written, these are stored on the server as JSON objects.", 
-                github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
-                {name: "Portfolio Website", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, link: {text: "Link", path: ""}},
-                {name: "Curling Game", description: "Text", github: {image: github, path: ""}, link: {text: "Link", path: ""}}
+                github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, 
+                link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
+                
+                {name: "Portfolio Website", 
+                description: "This website. Written using React, Bootstrap and a few other npm modules. Created as both an opportunity to demonstrate my credentials and to improve my front-end web development skills.", 
+                github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, 
+                link: {text: "Link", path: ""}},
                 
             ]
         }

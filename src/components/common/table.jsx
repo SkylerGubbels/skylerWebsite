@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CollapsableText from './collapsabletext';
 
 class Table extends Component{
 
@@ -11,10 +12,11 @@ class Table extends Component{
         if(Object.keys(data).length !== this.cols){
             throw(new Error("Error: Number of data elements must match number of columns in header"));
         }
+        
         return(
-        <tr key={index1}>
-            {Object.keys(data).map((key, index2) => this.createDataItem(data[key], `${index1}-${index2}`))}
-        </tr>)
+            <tr key={index1}>
+                {Object.keys(data).map((key, index2) => this.createDataItem(data[key], `${index1}-${index2}`))}
+            </tr>)
     }
 
     /** createDataItem() 
@@ -31,6 +33,8 @@ class Table extends Component{
         if(item.text){
             return<td key={index}><a href={item.path} target="_blank">{item.text}</a></td>
         }
+
+        if(item.length > 25){return <CollapsableText text={item} numOfChars={25}/>}
 
         return<td key={index}>{item}</td>
     }
