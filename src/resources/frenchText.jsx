@@ -1,4 +1,6 @@
 import React from "react"
+import pdf from '../resources/websiteResume.pdf';
+import github from "../resources/languageLogos/github-dark.svg"
 
 /** Becuase my website will support both english and french languages I have all the text and formatting
  *  saved in separate resource files that will be accessed depending on which language
@@ -78,5 +80,20 @@ export function getDropdownItems() {
 }
 
 export function getNavbarItems() {
-    return ([{text: "Projets", to:  "/projects"}, {text: "Contact", to:  "/contact", divider: true}]);
+    return ([{text: "Projets", to:  "/projects"}, {text: "CV", href:  pdf, divider: true}]);
+}
+
+export function getProjects(){
+    return ({
+            headers: ["Nom", "Description", "Github", "Link"],
+            data: [
+                {name: "Drum Metronome", 
+                description: "Francais", 
+                github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
+                {name: "Portfolio Website", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, link: {text: "Link", path: ""}},
+                {name: "Curling Game", description: "Text", github: {image: github, path: ""}, link: {text: "Link", path: ""}}
+                
+            ]
+        }
+    )
 }

@@ -13,7 +13,7 @@ class ContactPage extends Component {
                     <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()}/>
                     <div className="container">
                     <h1 className="">Contact Me</h1>
-                    <EmailForm/>
+                    <EmailForm emailAddress='skylermgubbels@gmail.com'/>
                 </div></div>
                 <Footer className="footer" text={textFile.getDropdownItems()}/>
             </div>
