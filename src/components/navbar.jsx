@@ -4,6 +4,12 @@ import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import NavbarDropdown from "./common/navbardropdown";
 
+/** Component: NavBar
+ *  Props:  language, onLanguageChange, imageHeight, navbarItems, dropdownItems
+ *  Purpose: Creates a navbar based on navbarItems prop. If dropdown menu is included then
+ *           it will use dropdownItems prop
+ * 
+ *           Handles a lot of the general navbar behaviour for child component NavBarDynamic */
 class NavBar extends Component {
     state = { 
       textJustify: "ml-auto",
@@ -38,6 +44,9 @@ class NavBar extends Component {
       else { return "ml-auto";}
     }
 
+    /** Function: createNavbarImage()
+     *  In: textColor
+     *  Purpose: Creates navbar images with text link to the right of it */
     createNavbarImage = (textColor) => {
       return(
       <React.Fragment>
@@ -52,6 +61,9 @@ class NavBar extends Component {
       )
     }
 
+    /** Function: createNavbarContent()
+     *  In: textColor, dropdownItems, navbarItems, language, onLanguageChange
+     *  Purpose: Creates navbar clickable options. */
     createNavbarContent = (textColor, dropdownItems, navbarItems, language, onLanguageChange) =>{
       return(
       <React.Fragment>
@@ -69,7 +81,7 @@ class NavBar extends Component {
                 else {return (<li key={i.text}><a className="nav-item nav-link navText" href={i.href} target="_blank" rel="noopener noreferrer"> <span style={{"color":textColor}}>{i.text}</span> </a></li>)}})
           }
           
-          
+          {/** Only one is displayed depending on language prop */}
           <li>{(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}</li>
           <li>{(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}</li>
           

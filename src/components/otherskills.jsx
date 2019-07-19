@@ -1,6 +1,10 @@
 import React from 'react';
 import Skills from './skills';
 
+/** Component: OtherSkills
+ *  In: text
+ *  Purpose: Creates and formats text to display correctly on any screen-size
+ *           Child component of Skills */
 class OtherSkills extends Skills {
     
     render() { 

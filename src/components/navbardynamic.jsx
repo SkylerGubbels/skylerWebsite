@@ -2,7 +2,13 @@ import React from 'react';
 import NavBar from './navbar';
 
 
-/** Creates the NavBar at the top of the website */
+/** Component: NavBarDynamic
+ *  Props: language, onLanguageChange, imageHeight, navbarItems, dropdownItems
+ *  Purpose: Creates a navbar that changes opacity and colour based on the location of the
+ *           user on the webpage.
+ *           Currently it is written to support having an image at the top of the page and
+ *           when the user scrolls below the image the navbar background becomes solid to make
+ *           it visible over page content */
 class NavBarDynamic extends NavBar {
 
     state = {

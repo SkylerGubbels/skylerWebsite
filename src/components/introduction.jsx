@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import horizon from "../resources/images/horizon.jpg"
 import "animate.css"
 
+/** Component: Introduction
+ *  Props: onImageSizeChange, onImageLoad, text
+    Purpose: Displays main image with introduction text. */
 class Introduction extends Component {
 
     constructor(props){

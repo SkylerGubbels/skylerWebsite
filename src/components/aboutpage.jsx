@@ -56,7 +56,7 @@ class AboutPage extends Component {
           
           <div className="blackBackground"><div className="container"><div id="technicalSkills" className="padding100"/>
             <h1 className="whiteText componentTitle">{sectionTitles.technicalSkills}</h1>
-            <TechnicalSkills text={textFile.getTechSkillsText()}/>
+            <TechnicalSkills text={textFile.getTechSkillsText()} logoSize={100}/>
           <div className="padding100"/></div></div>
           
           <div className="container"><div id="otherSkills" className="padding100"/>

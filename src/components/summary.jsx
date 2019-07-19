@@ -7,6 +7,10 @@ import ImageAndText from './imageandtext';
 
 // Icons from https://www.iconfinder.com/free_icons
 
+/** Component: Summary 
+ *  Props: text
+ *  Purpose: Creates ImageAndText components to have descriptions of my programming skills 
+ *           Uses bootstrap to allow them to resize properly on different screen sizes */
 class Summary extends Component{
 
     logoDetails = {
@@ -14,8 +18,8 @@ class Summary extends Component{
     }
 
     /** Function: createImageAndText()
-     *  Purpose: Creates a component where there is a small image on the left and a text paragraph on the right
-     */
+     *  Purpose: Creates a component where there is a small image on the left and a 
+     *           text paragraph on the right  */
     createImageAndText(columnClass, imgSrc, title, text){
         return(
         <div className={columnClass}>
