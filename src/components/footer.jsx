@@ -67,7 +67,7 @@ class Footer extends Component {
           
             <div className="text-center py-3 whiteText">
               <span>Skyler Gubbels 2019 △ </span>
-              <a className="whiteText navText" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
+              <a className="whiteText navText" target="_blank" href="https://github.com/SkylerGubbels/skylerWebsite"><span><u>Source code</u></span></a>
             </div>
           
           </footer></div>)

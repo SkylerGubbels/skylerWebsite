@@ -10,6 +10,7 @@ const linkColor = {
     "color":"white"
 }
 
+// Intro text is in JSX instead of a string to make formatting over the image easier
 export function getIntroText(){
     return (
     <React.Fragment><span>
@@ -88,10 +89,14 @@ export function getProjects(){
             headers: ["Nom", "Description", "Github", "Link"],
             data: [
                 {name: "Drum Metronome", 
-                description: "Francais", 
-                github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
-                {name: "Portfolio Website", description: "Text", github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, link: {text: "Link", path: ""}},
-                {name: "Curling Game", description: "Text", github: {image: github, path: ""}, link: {text: "Link", path: ""}}
+                description: "Métronome de tambour écrit avec Javascript, HTML et Node.js. Chaque rangée de boite représente un instrument et chaque colonne est un division de temps. L’utilisateur peut enregistrer et charger des battements qui s’ont conservée sur le serveur en forme JSON.", 
+                github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, 
+                link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
+                
+                {name: "Portfolio Website", 
+                description: "Ce site web. Écrit avec React, Bootstrap et plusieurs modules de npm. Créer pour démontrée mon expérience et pour développer mes compétences de développement du front end.", 
+                github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, 
+                link: {text: "Link", path: "/"}},
                 
             ]
         }

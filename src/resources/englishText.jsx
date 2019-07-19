@@ -10,6 +10,7 @@ const linkColor = {
     "color":"white"
 }
 
+// Intro text is in JSX instead of a string to make formatting over the image easier
 export function getIntroText(){
     return (
     <React.Fragment><span>
@@ -97,7 +98,7 @@ export function getProjects(){
                 {name: "Portfolio Website", 
                 description: "This website. Written using React, Bootstrap and a few other npm modules. Created as both an opportunity to demonstrate my credentials and to improve my front-end web development skills.", 
                 github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, 
-                link: {text: "Link", path: ""}},
+                link: {text: "Link", path: "/"}},
                 
             ]
         }
