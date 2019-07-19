@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HashLink as Link } from "react-router-hash-link";
 import { getDropdownItemsFrench, getDropdownItemsEnglish } from '../resources/navLinks'; // Needs to be loaded in early
 
 
@@ -19,20 +20,29 @@ class Footer extends Component {
     }
 
     createHeaderColumn = (col) => {
-        return (
+
+      return (
             <div className="col-6">
             <h5 className="text-uppercase whiteText">{col.title}</h5>    
             <ul className="list-unstyled">
             
             {col.links.map(
               l => <li key={`${col.title}-${l.text}`}>
-                    <a className="whiteText navText" href={l.to}>
-                      <span>{l.text}</span>
-                    </a>
+                      { this.getCorrectLink(l) }
                   </li>)}
             </ul>
             </div>
         )
+    }
+
+    /** Function: getCorrectLink()
+     *  In: Link information
+     *  Purpose: Creates a navlink if the destination is somewhere on this page.
+     *           Creates a hyperlink with an href value if destination is somewhere else
+     */
+    getCorrectLink = (item) => {
+      if(item.to.charAt(0) === "#") { return (<Link className="whiteText navText" to={"/about" + item.to}><span>{item.text}</span></Link>); }
+      else {  return (<a className="whiteText navText" href={item.to} target="_blank"><span>{item.text}</span></a>) }
     }
 
     render() { 
