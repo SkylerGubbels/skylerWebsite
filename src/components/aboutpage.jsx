@@ -48,7 +48,7 @@ class AboutPage extends Component {
             
             <div id="specializedCourses" className="padding100"/>
               <div className="row"><div className="col-md-6 col-sm-12"/>
-              <h1 className="componentTitle">{sectionTitles.specializedCourses}</h1></div>
+              <h1 className="componentTitle" style={{"paddingLeft":"20px"}}>{sectionTitles.specializedCourses}</h1></div>
             <SpecializedCourses/>
             
             <div className="padding100"/>
