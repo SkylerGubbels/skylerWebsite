@@ -36,8 +36,8 @@ class Footer extends Component {
     }
 
     render() { 
-      const {className, language} = this.props;
-      const {  title, links } = this.loadText(language);
+      const {className, text} = this.props;
+      const {  title, links } = text;
       return (
           <div className={className} style={{"backgroundColor":"black"}}>
           <footer className="page-footer pt-4">

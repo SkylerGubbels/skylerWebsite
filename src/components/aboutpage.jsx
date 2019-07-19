@@ -12,15 +12,8 @@ import downhill from '../resources/images/downhill.jpg';
 class AboutPage extends Component {
     state = {
         imageHeight: 0,
-        sectionTitles: {},
-        textFile: null
       }
-    
-      componentWillMount(){
-        console.log(this.props)
-        this.setState({textFile: this.props.textFile})
-      }
-
+  
       handleBackgroundImageResize = imageHeight =>{
         this.setState({imageHeight});
       }
@@ -30,18 +23,18 @@ class AboutPage extends Component {
       }
     
       render() { 
-        const { language, onLanguageChange } = this.props;
-        const { sectionTitles, textFile } = this.state;
+        const { language, onLanguageChange, textFile } = this.props;
+        const sectionTitles = textFile.getSectionTitles();
         
         return (
         <div className="pageContainer">
-          <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight}/>
+          <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()}/>
           <div id="introduction" className=""/>
-          <Introduction language={language} onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage}/>
+          <Introduction onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage} text={textFile.getIntroText()}/>
           
           <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>
             <h1 className="whiteText componentTitle">{sectionTitles.summary}</h1>
-            <Summary language={language} text={textFile.getSummaryText()}/>
+            <Summary text={textFile.getSummaryText()}/>
           <div className="padding100"/></div></div>
           
           <div className="container">
@@ -52,19 +45,19 @@ class AboutPage extends Component {
             <div id="specializedCourses" className="padding100"/>
               <div className="row"><div className="col-md-6 col-sm-12"/>
               <h1 className="componentTitle">{sectionTitles.specializedCourses}</h1></div>
-            <SpecializedCourses language={language}/>
+            <SpecializedCourses/>
             
             <div className="padding100"/>
           </div>
           
           <div className="blackBackground"><div className="container"><div id="technicalSkills" className="padding100"/>
             <h1 className="whiteText componentTitle">{sectionTitles.technicalSkills}</h1>
-            <TechnicalSkills language={language}/>
+            <TechnicalSkills text={textFile.getTechSkillsText()}/>
           <div className="padding100"/></div></div>
           
           <div className="container"><div id="otherSkills" className="padding100"/>
             <h1 className="componentTitle">{sectionTitles.otherSkills}</h1>
-            <OtherSkills language={language}/>
+            <OtherSkills text={textFile.getOtherSkillsText()} paragraph={textFile.getOtherSkillsParagraphText()}/>
           </div>
           <div className="padding50"></div>
             
@@ -72,7 +65,7 @@ class AboutPage extends Component {
             <img src={downhill} width="100%" alt=""/>
           </div></div>
         
-          <Footer language={language}/>
+          <Footer text={textFile.getDropdownItems()}/>
         </div>
       );
       }

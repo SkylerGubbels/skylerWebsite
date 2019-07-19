@@ -67,3 +67,18 @@ export function getSectionTitles(){
         otherSkills: "Other Skills"
     }
 }
+
+export function getDropdownItems() {
+    return (
+        {title: "About", 
+            links: [{text: "Introduction", to:  "#introduction"},
+                    {text: "Summary", to:  "#summary", divider: true}, 
+                    {text: "Education", to: "#education"},
+                    {text: "Specialized Courses", to: "#specializedCourses", divider: true},
+                    {text: "Technical Skills", to:  "#technicalSkills"},
+                    {text: "Other Skills", to:  "#otherSkills"}]})
+}
+
+export function getNavbarItems() {
+    return ([{text: "Projects", to:  "/projects"}, {text: "Contact", to:  "/contact", divider: true}]);
+}

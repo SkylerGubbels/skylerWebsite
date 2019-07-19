@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
 
 class Skills extends Component {
-    
-    state = { text: null, language: "", paragraph: "" }
-    
-    componentDidUpdate(){
-        if(this.state.language !== this.props.language && this.props.language !== ""){
-            this.loadText(this.props.language);
-        }
-    }
-
-    componentDidMount(){
-        if(this.props.language !== "") { this.loadText(this.props.language);}
-    }
 
     /** Function: createSkillCategory()
      *  Input: Title, text, (optional)classNameTitle, (optional)classNameText, (optional)key
@@ -24,10 +12,7 @@ class Skills extends Component {
                     <p key={`${key}text`}className={classNameText}>{text}</p>
                 </React.Fragment>)
     }
-    
-    render() { 
-        return ("");
-    }
+
 }
  
 export default Skills;

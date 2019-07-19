@@ -8,20 +8,9 @@ import ImageAndText from './imageandtext';
 // Icons from https://www.iconfinder.com/free_icons
 
 class Summary extends Component{
-    state = {
-        text: { paragraph: "",
-                frontend: "",
-                backend: "",
-                softwareEngineering: "",
-                computerScience: ""}
-    }
 
     logoDetails = {
         width: "100",
-    }
-
-    componentWillMount(){
-        this.text = this.props.text;
     }
 
     /** Function: createImageAndText()
@@ -35,7 +24,7 @@ class Summary extends Component{
     }
 
     render(){
-        const { text } = this.state;
+        const { text } = this.props;
         const columnClass = "col-md-6 col-sm-12 col-xs-12";
         return(
             <React.Fragment>

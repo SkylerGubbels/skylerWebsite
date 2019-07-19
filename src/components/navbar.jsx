@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import { getDropdownItemsFrench, getNavbarItemsFrench, getDropdownItemsEnglish, getNavbarItemsEnglish } from '../resources/navLinks'; // Needs to be loaded in early
 
 class NavBar extends Component {
     state = { 
@@ -26,23 +25,15 @@ class NavBar extends Component {
           </React.Fragment>)
       }
 
-    componentDidMount(){
+    componentWillMount(){
+      const {dropdownItems, navbarItems} = this.props;
       window.addEventListener("resize", this.handleResize);
-      this.loadText(this.props.language);
+      this.setState({navbarItems, dropdownItems})
     }
 
     componentWillUnmount(){
         window.removeEventListener("resize", this.handleResize);
     }
-
-    loadText = language => {
-      if(language === "french"){
-        this.setState({navbarItems: getNavbarItemsFrench(), dropdownItems: getDropdownItemsFrench()});
-      }
-      else{
-        this.setState({navbarItems: getNavbarItemsEnglish(), dropdownItems: getDropdownItemsEnglish()})
-      }
-  }
 
     /** Function: handleResize()
      *  Purpose: Calls render() when the render is resized so we can check whether navbar options

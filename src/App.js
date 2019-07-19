@@ -36,8 +36,8 @@ class App extends Component {
     <React.Fragment>
       <Switch>
         <Route path="/about" component={() => <AboutPage language={language} onLanguageChange={this.handleLanguageChange} textFile={textFile}/>}/>
-        <Route path="/contact" component={() => <ContactPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
-        <Route path="/projects" component={() => <ProjectsPage language={language} onLanguageChange={this.handleLanguageChange}/>}/>
+        <Route path="/contact" component={() => <ContactPage language={language} onLanguageChange={this.handleLanguageChange} textFile={textFile}/>}/>
+        <Route path="/projects" component={() => <ProjectsPage language={language} onLanguageChange={this.handleLanguageChange} textFile={textFile}/>}/>
         <Redirect from="/" exact to="/about"/>
       </Switch>
     </React.Fragment>

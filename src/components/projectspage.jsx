@@ -17,14 +17,15 @@ class ProjectsPage extends Component {
     }
 
     render() { 
-        const { language, onLanguageChange } = this.props;
+        const { language, onLanguageChange, textFile } = this.props;
         return ( 
             <div className="page-container">
-                <div className="page-c"><NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0}/>
-                <div className="container">
-                <Table className="table table-striped" content={this.projects}/>
+                <div className="page-c">
+                    <NavBar language={language} onLanguageChange={onLanguageChange} imageHeight={0} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()}/>
+                    <div className="container">
+                    <Table className="table table-striped" content={this.projects}/>
                 </div></div>
-                <Footer className="footerSmall" language={language}/>
+                <Footer className="footerSmall" text={textFile.getDropdownItems()}/>
             </div>
          );
     }

@@ -7,21 +7,8 @@ class TechnicalSkills extends Skills {
 
     logoSize = 100;
 
-    /** Function: loadtext()
-     *  Input: Language string for the language with which to display the website
-     *  Purpose: Gets the language text from the relevant file in the resources/ folder and sets the state */
-     loadText = async language => {
-        const text = (await import(`../resources/${language}Text`)).getTechSkillsText();
-        this.setState({text, language});
-    }
-
     render() { 
-        const { text } = this.state;
-        
-        // Because text is loaded asynchronously, render might be called before
-        // the text is loaded. If this happens we don't load the text. Once the
-        // async function returns the new text then it will be rendered
-        if(text === null) return "";
+        const { text } = this.props;
         
         return ( 
         <div>
