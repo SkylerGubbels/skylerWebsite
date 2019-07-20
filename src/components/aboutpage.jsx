@@ -45,7 +45,7 @@ class AboutPage extends Component {
         <div className="pageContainer">
           <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()} onMobileMenu={this.handleMobileMenu}/>
             <div id="introduction" className=""/>
-            {modal && <ModalMenu onCloseModal={this.handleCloseModal}/>}
+            {modal && <ModalMenu language={language} onLanguageChange={onLanguageChange} onCloseModal={this.handleCloseModal} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()} onMobileMenu={this.handleMobileMenu}/>}
             <Introduction onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage} text={textFile.getIntroText()}/>
             
             <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>

@@ -49,7 +49,9 @@ body{
 .navText span:hover{
   text-decoration: underline;
   color: white;
+  cursor: pointer;
 }
+
 
 .summaryText{
   position: relative;
@@ -153,4 +155,29 @@ ul{
 .navbar{
   padding-right: 10px !important; /** Prevents Bootstrap bug where when closing the modal menu it shifts
                                       the navbar button to the left */
+}
+
+.modal-backdrop.show{
+  opacity: 0.9;
+}
+
+.dropdown-item:hover{
+  background-color: rgb(240,240,240);
+}
+
+.dropdown-item:hover span{
+  color: black;
+}
+
+.modalMenu{
+  text-align: center;
+}
+
+.modalClose{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }

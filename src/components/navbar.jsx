@@ -13,15 +13,11 @@ import NavbarDropdown from "./common/navbardropdown";
 class NavBar extends Component {
     state = { 
       textJustify: "ml-auto",
-      navbarItems: null,
-      dropdownItems: null
      }
     path = "/about";
 
     componentWillMount(){
-      const {dropdownItems, navbarItems} = this.props;
       window.addEventListener("resize", this.handleResize);
-      this.setState({navbarItems, dropdownItems})
     }
 
     componentWillUnmount(){
@@ -33,15 +29,6 @@ class NavBar extends Component {
      *           should be positioned right or center */
     handleResize = () => {
       this.render();
-    }
-
-    
-    /** Function: getJustification()
-     *  Purpose: Ensures the navbar items are to the right on large windows but the dropdown items from
-     *           the button on small windows end up on the right side of the window */
-    getJustification = () => {
-      if(window.innerWidth < 576){ return "mr-auto"; } //576 is the bootstrap size for col-sm. TODO: Find way to get this value at runtime instead of hardcoding the value
-      else { return "ml-auto";}
     }
 
     /** Function: createNavbarImage()
@@ -72,7 +59,7 @@ class NavBar extends Component {
         </button>
         
         <div className="collapse navbar-collapse navbar-nav">
-          <ul className={`navbar-nav ${this.getJustification()}`}>
+          <ul className={`navbar-nav ml-auto`}>
 
           <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path}/> 
           
@@ -92,8 +79,7 @@ class NavBar extends Component {
 
     
     render() { 
-      let { className, backgroundColor, language, onLanguageChange } = this.props
-      const { navbarItems, dropdownItems } = this.state;
+      let { className, backgroundColor, language, onLanguageChange, navbarItems, dropdownItems } = this.props
       if(!dropdownItems || !navbarItems) { return <p></p>}
 
       if(!className) className = "navbar navbar-expand-sm navbar-light bg-light navbar-static-top navbar-background"; // If no custom classname make it the following
