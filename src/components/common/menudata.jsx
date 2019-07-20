@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
 
 class MenuData extends Component {
     

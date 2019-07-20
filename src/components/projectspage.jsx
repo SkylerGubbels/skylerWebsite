@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Footer from './footer';
 import Table from './common/table';
-import ModalMenu from './common/modalmenu';
 import PageMenu from './pagemenu';
 
 /** Component: ProjectsPage

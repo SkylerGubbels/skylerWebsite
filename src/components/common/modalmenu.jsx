@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import $ from 'jquery';
 import NavbarCollapse from './navbarcollapse';
 import MenuData from './menudata';
