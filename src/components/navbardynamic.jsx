@@ -18,6 +18,11 @@ class NavBarDynamic extends NavBar {
 
     interval;
 
+    componentWillReceiveProps(){
+      if(this.props.modal) { this.handleMove("#modal"); } // Sets opacity when this.props.modal changes. Needs a string passed
+    }                                                     // for opacity to be set correctly at top of page
+    
+
     componentDidMount(){
       window.addEventListener("scroll", this.handleScroll);
       

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 
-class Menu extends Component {
+class MenuData extends Component {
     
     createNavbarItems = (navbarItems, textColor="", className="") => { 
         return(
@@ -21,4 +21,4 @@ class Menu extends Component {
     }
 }
  
-export default Menu;
+export default MenuData;

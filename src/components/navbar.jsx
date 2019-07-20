@@ -3,7 +3,7 @@ import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import NavbarDropdown from "./common/navbardropdown";
-import Menu from './common/menu';
+import MenuData from './common/menudata';
 
 /** Component: NavBar
  *  Props:  language, onLanguageChange, imageHeight, navbarItems, dropdownItems
@@ -11,7 +11,7 @@ import Menu from './common/menu';
  *           it will use dropdownItems prop
  * 
  *           Handles a lot of the general navbar behaviour for child component NavBarDynamic */
-class NavBar extends Menu {
+class NavBar extends MenuData {
     state = { 
       textJustify: "ml-auto",
      }

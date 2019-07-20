@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import NavbarCollapse from './navbarcollapse';
-import Menu from './menu';
+import MenuData from './menudata';
 
-class ModalMenu extends Menu {
+class ModalMenu extends MenuData {
 
     componentDidMount = () =>{
         $('#myModal').modal('show');

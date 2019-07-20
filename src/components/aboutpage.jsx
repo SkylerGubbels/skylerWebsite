@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBarDynamic from './navbardynamic';
 import Education from './education';
 import Introduction from './introduction';
 import Summary from './summary';
@@ -8,11 +7,12 @@ import Footer from './footer';
 import OtherSkills from './otherskills';
 import SpecializedCourses from './specializedcourses';
 import downhill from '../resources/images/downhill.jpg';
-import ModalMenu from './common/modalmenu';
-import Page from './common/page';
+import PageMenu from './pagemenu';
 
-class AboutPage extends Page {
+class AboutPage extends Component {
  
+      state = { imageHeight: 0 }
+
       // Updates information when background image is resized.
       handleBackgroundImageResize = imageHeight =>{
         this.setState({imageHeight});
@@ -27,14 +27,12 @@ class AboutPage extends Page {
     
       render() { 
         const { language, onLanguageChange, textFile } = this.props;
-        const { modal } = this.state;
         const sectionTitles = textFile.getSectionTitles();
         
         return (
         <div className="pageContainer">
-          <NavBarDynamic language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()} onMobileMenu={this.handleMobileMenu}/>
             <div id="introduction" className=""/>
-            {modal && <ModalMenu language={language} onLanguageChange={onLanguageChange} onCloseModal={this.handleCloseModal} navbarItems={textFile.getNavbarItems()} dropdownItems={textFile.getDropdownItems()} onMobileMenu={this.handleMobileMenu}/>}
+            <PageMenu language={language} onLanguageChange={onLanguageChange} imageHeight={this.state.imageHeight} textFile={textFile} isDynamic={true}/>
             <Introduction onImageSizeChange={this.handleBackgroundImageResize} onImageLoad={this.handleLoadImage} text={textFile.getIntroText()}/>
             
             <div className="blackBackground"><div className="container"><div className="padding100" id="summary"/>
