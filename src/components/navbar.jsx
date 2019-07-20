@@ -67,14 +67,14 @@ class NavBar extends Component {
     createNavbarContent = (textColor, dropdownItems, navbarItems, language, onLanguageChange) =>{
       return(
       <React.Fragment>
-        <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+        <button type="button" className="navbar-toggler" onClick={this.props.onMobileMenu}>
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        <div className="collapse navbar-collapse navbar-nav" id="navCollapse">
+        
+        <div className="collapse navbar-collapse navbar-nav">
           <ul className={`navbar-nav ${this.getJustification()}`}>
 
-          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/> 
+          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path}/> 
           
           { navbarItems.map(i => 
               { if(i.to) { return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)}

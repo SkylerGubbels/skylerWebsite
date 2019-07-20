@@ -46,7 +46,6 @@ body{
   }
 }
 
-
 .navText span:hover{
   text-decoration: underline;
   color: white;
@@ -149,4 +148,9 @@ ul{
 
 .footer {
   height: 325px;
+}
+
+.navbar{
+  padding-right: 10px !important; /** Prevents Bootstrap bug where when closing the modal menu it shifts
+                                      the navbar button to the left */
 }

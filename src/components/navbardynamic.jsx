@@ -75,7 +75,7 @@ class NavBarDynamic extends NavBar {
     }
 
     render() {   
-      const {language, onLanguageChange, navbarItems, dropdownItems} = this.props;
+      const {language, onLanguageChange, navbarItems, dropdownItems, onMobileMenu} = this.props;
       const { navbarClass } = this.state;
       const bgColor = `rgba(255,255,255,${this.state.opacity})`
       const colorValue = 255 - (255 * this.state.opacity)
@@ -87,7 +87,8 @@ class NavBarDynamic extends NavBar {
                      onLanguageChange={onLanguageChange} 
                      textColor={textColor}
                      navbarItems={navbarItems}
-                     dropdownItems={dropdownItems}/>
+                     dropdownItems={dropdownItems}
+                     onMobileMenu={onMobileMenu}/>
   }
 }
 
