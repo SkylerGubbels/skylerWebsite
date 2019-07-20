@@ -9,24 +9,24 @@ import { HashLink as Link } from "react-router-hash-link";
 class NavbarCollapse extends Component{
     
     // Creates a singular dropdown item using the data supplied in the items param
-    createDropdown = (item, path) => {
+    createDropdown = (item, path, className="") => {
         return (
             <React.Fragment key={`${item.text}-fragment`}>
-                <Link className="dropdown-item" to={path + item.to} onClick={this.props.onClick}><span className="whiteText">{item.text}</span></Link>
+                <Link className={`dropdown-item ${className}`} to={path + item.to} onClick={this.props.onClick}><span className="whiteText">{item.text}</span></Link>
             </React.Fragment>)
     }
     
     render(){
-        const { textColor, dropdownItems, path} = this.props;  
+        const { textColor, dropdownItems, path, classNameTitle, classCollapseText} = this.props;  
         return ( 
             <React.Fragment>
 
                     <Link className="nav-link dropdown-toggle navText" to="#" id="navbarDropdown" role="button" data-toggle="collapse" data-target="#myCollapse" style={{"color":textColor}}>
-                        <span style={{"color":textColor}}>{dropdownItems.title}</span>
+                        <span className={classNameTitle} style={{"color":textColor}}>{dropdownItems.title}</span>
                     </Link>
 
                     <div className="collapse" id="myCollapse">
-                        { dropdownItems.links.map((item) => this.createDropdown(item, path))}
+                        { dropdownItems.links.map((item) => this.createDropdown(item, path, classCollapseText))}
                     </div>
                     
             </React.Fragment>

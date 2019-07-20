@@ -9,13 +9,10 @@ import OtherSkills from './otherskills';
 import SpecializedCourses from './specializedcourses';
 import downhill from '../resources/images/downhill.jpg';
 import ModalMenu from './common/modalmenu';
+import Page from './common/page';
 
-class AboutPage extends Component {
-    state = {
-        imageHeight: 0,
-        modal: false
-      }
-  
+class AboutPage extends Page {
+ 
       // Updates information when background image is resized.
       handleBackgroundImageResize = imageHeight =>{
         this.setState({imageHeight});
@@ -26,14 +23,6 @@ class AboutPage extends Component {
       // the point at which it needs to start fading in the background
       handleLoadImage = image =>{
         this.setState({imageHeight: image})
-      }
-
-      handleMobileMenu = () =>{
-        this.setState({modal: true})
-      }
-
-      handleCloseModal = () => {
-        this.setState({modal: false})
       }
     
       render() { 

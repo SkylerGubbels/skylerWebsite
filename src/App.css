@@ -171,6 +171,7 @@ ul{
 
 .modalMenu{
   text-align: center;
+  padding-top: 15vh;
 }
 
 .modalClose{
@@ -180,4 +181,12 @@ ul{
   cursor:pointer;
   overflow: hidden;
   outline:none;
+}
+
+.modalText{
+  font-size: 30px;
+}
+
+.collapseText{
+  font-size: 20px;
 }

@@ -3,6 +3,7 @@ import skylerImage from "../resources/images/SkylerImage.png"
 import { NavLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import NavbarDropdown from "./common/navbardropdown";
+import Menu from './common/menu';
 
 /** Component: NavBar
  *  Props:  language, onLanguageChange, imageHeight, navbarItems, dropdownItems
@@ -10,7 +11,7 @@ import NavbarDropdown from "./common/navbardropdown";
  *           it will use dropdownItems prop
  * 
  *           Handles a lot of the general navbar behaviour for child component NavBarDynamic */
-class NavBar extends Component {
+class NavBar extends Menu {
     state = { 
       textJustify: "ml-auto",
      }
@@ -63,14 +64,8 @@ class NavBar extends Component {
 
           <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path}/> 
           
-          { navbarItems.map(i => 
-              { if(i.to) { return (<li key={i.text}><NavLink className="nav-item nav-link navText" to={i.to}> <span style={{"color":textColor}}>{i.text}</span> </NavLink></li>)}
-                else {return (<li key={i.text}><a className="nav-item nav-link navText" href={i.href} target="_blank" rel="noopener noreferrer"> <span style={{"color":textColor}}>{i.text}</span> </a></li>)}})
-          }
-          
-          {/** Only one is displayed depending on language prop */}
-          <li>{(language === "french") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span style={{"color":textColor}}>English</span></button>}</li>
-          <li>{(language === "english") && <button className="nav-item nav-link btn navText" onClick={() => onLanguageChange("french")}><span style={{"color":textColor}}>Français </span></button>}</li>
+          {this.createNavbarItems(navbarItems, textColor)}
+          <li>{this.createLanguageButton(language, textColor, onLanguageChange)}</li>
           
           </ul>
         </div>
