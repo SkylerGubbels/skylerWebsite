@@ -10,7 +10,7 @@ class Page extends Component {
 
     // Sets state back to normal when mobile menu is closed
     handleCloseModal = () => {
-    this.setState({modal: false})
+        this.setState({modal: false})
     }
 }
  

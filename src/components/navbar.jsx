@@ -62,7 +62,7 @@ class NavBar extends Menu {
         <div className="collapse navbar-collapse navbar-nav">
           <ul className={`navbar-nav ml-auto`}>
 
-          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path}/> 
+          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/> 
           
           {this.createNavbarItems(navbarItems, textColor)}
           <li>{this.createLanguageButton(language, textColor, onLanguageChange)}</li>

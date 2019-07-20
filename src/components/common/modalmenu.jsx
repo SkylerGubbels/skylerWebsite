@@ -15,7 +15,10 @@ class ModalMenu extends Menu {
         $(".modal-backdrop").remove(); // Needed to remove darkened background
         $('body').removeClass('modal-open'); // Needed to have scrollbar return after closing
         $("#myModal").hide();
+    }
 
+    handleMove = () => {
+        
     }
 
     render() { 
