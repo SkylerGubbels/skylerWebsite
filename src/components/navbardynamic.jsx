@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from './navbar';
 
-
 /** Component: NavBarDynamic
  *  Props: language, onLanguageChange, imageHeight, navbarItems, dropdownItems
  *  Purpose: Creates a navbar that changes opacity and colour based on the location of the
@@ -31,7 +30,9 @@ class NavBarDynamic extends NavBar {
       //once they have we can calculate the navbar opacity
       this.interval = setInterval(()=>{
         if(window.pageYOffset !== 0 && this.props.imageHeight !== 0) { 
-          this.changeNavbarOpacity(); clearInterval(this.interval) }
+          this.changeNavbarOpacity(); 
+          clearInterval(this.interval);
+        }
           
         // Handles case where everything is loaded but user is just sitting at top of page
         else if(window.pageYOffset === 0 && this.props.imageHeight !== 0) { clearInterval(this.interval); }
@@ -50,12 +51,10 @@ class NavBarDynamic extends NavBar {
     handleScroll = () => {
       const {imageHeight} = this.props;
       const {pageYOffset} = window;
+
       if(pageYOffset < imageHeight/8){this.setState({opacity: 0})} // For edge case where user scrolls up too fast
-
-      // Checks if our scrolling is in the range of the top image. If it is then we
-      // handle fading the navbar in and out
-
-      if(pageYOffset < imageHeight*1.1 && pageYOffset > imageHeight/2) { this.changeNavbarOpacity() }
+      else if(pageYOffset < imageHeight*1.1 && pageYOffset > imageHeight/2) { this.changeNavbarOpacity() } // General case for regular scrolling
+      else if(pageYOffset > imageHeight) { this.setState({opacity: 1})} // For case where user scrolls down too fast
     }
 
     /** Function: handleMove()

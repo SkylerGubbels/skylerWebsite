@@ -9,6 +9,15 @@ import SpecializedCourses from './specializedcourses';
 import downhill from '../resources/images/downhill.jpg';
 import PageMenu from './pagemenu';
 
+/** Component: AboutPage 
+ *  Props: language: current website language
+ *         onLanguageChange: event to call when the page changes languages
+ *         textFile: The textFile object that contains all the text for the chosen langauge
+ *                   this object has functions that retrieve the text for each component that has
+ *                   text in multiple languages
+ * 
+ *  Purpose: This component displays the main about page for the website 
+ *           Also handles the background color changes and bootstrap containers */
 class AboutPage extends Component {
  
       state = { imageHeight: 0 }

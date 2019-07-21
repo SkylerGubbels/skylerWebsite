@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 
+/** Component: MenuData 
+ *  Purpose: Contains functions for populating menus with the data passed to functions. */
 class MenuData extends Component {
     
+    /** Function: createNavbarItems()
+     *  In: navbarItems[], textColor, className
+     *  Purpose: Creates a link for each item in the list. Depending on if the object has a .to or .href
+     *           it will create a link to the same webpage or to an external page */
     createNavbarItems = (navbarItems, textColor="", className="") => { 
         return(
             <React.Fragment>{navbarItems.map(i =>
@@ -11,6 +17,10 @@ class MenuData extends Component {
             </React.Fragment>
     )}
 
+    /** Function: createLanguageButton()
+     *  In: (current)Language, textColor, onLanguageChange, className
+     *  Purpose: Creates a button that when clicked calls the onLanguageChange event with the new langauge 
+     *           passed as an argument */
     createLanguageButton(language, textColor, onLanguageChange, className=""){
         return (<React.Fragment>
             <React.Fragment>{(language === "french") && <span className="nav-item nav-link btn navText" onClick={() => onLanguageChange("english")}><span className={className} style={{"color":textColor}}>English</span></span>}</React.Fragment>

@@ -27,11 +27,12 @@ class CollapsableText extends Component {
     }
     
     render() { 
-        return ( <td>
-                    {this.state.currentText}
-                    <span style={{"cursor":"pointer"}} onClick={() => {this.handleClick()}}>[...]</span>
-                    <p/>
-                </td> );
+        return ( 
+            <td>
+                {this.state.currentText}
+                <span style={{"cursor":"pointer"}} onClick={() => {this.handleClick()}}>[...]</span>
+                <p/>
+            </td> );
     }
 }
  

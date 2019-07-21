@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { HashLink as Link } from "react-router-hash-link";
 
+/** Component: Footer
+ *  In: className, text
+ *  Purpose: Creates the footer at the bottom of page with all the links */
 class Footer extends Component {
 
     online = {title: "Online", links: [{text: "GitHub", to: "https://github.com/"}, {text: "LinkedIn", to: "https://www.linkedin.com/in/skylergubbels/"} ]}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+/** Component: Skills
+ *  Purpose: Parent class for TechnicalSkills and OtherSkills which both use the createSkillCategory function */
 class Skills extends Component {
 
     /** Function: createSkillCategory()

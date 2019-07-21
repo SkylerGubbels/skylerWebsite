@@ -3,6 +3,12 @@ import NavBarDynamic from './navbardynamic';
 import ModalMenu from './common/modalmenu';
 import NavBar from './navbar';
 
+/** Component: PageMenu
+ *  In: language, onLanguageChange, imageHeight, textFile, isDynamic
+ *  Purpose: Handles the creation of the navbar and the modal menu.
+ *           This increases cohesion between these two elements
+ * 
+ *           Note: isDynamic decides if we create a NavBarDynamic or just a NavBar */
 class PageMenu extends Component {
     state = { modal: false }
     
