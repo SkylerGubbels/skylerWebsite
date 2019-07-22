@@ -55,7 +55,7 @@ class NavBar extends MenuData {
       let onClick = clickEvent ? clickEvent : () => {}; // Makes on click a blank function if one hasn't been passed
       return(
       <React.Fragment>
-        <button type="button" className="navbar-toggler" onClick={() => this.props.onMobileMenu}>
+        <button type="button" className="navbar-toggler" onClick={this.props.onMobileMenu}>
           <span className="navbar-toggler-icon"></span>
         </button>
         
