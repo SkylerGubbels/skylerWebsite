@@ -53,7 +53,7 @@ export function getOtherSkillsText(){
         languages: {title: "Problem Solving", text: <React.Fragment><span>Given a large task to complete, I can break it down into smaller and more manageable parts. This also allows me to reuse parts should the project requirements change.</span></React.Fragment>},
         libraries: {title: "Quick Learner", text: <React.Fragment><span>Whether it is a new language, framework or library I am very adept at learning the ins and outs of the topic. This has made me very receptive to learning new things and expand my programming knowledge.</span></React.Fragment>},
         webTechnologies: {title: "Teamwork", text: <React.Fragment><span>Having worked on a variety of group projects I have gotten especially comfortable with coordinating work with my peers and taking part in meetings to review our code and plan our next move.</span></React.Fragment>},
-        versionControl: {title: "Organization", text: <React.Fragment><span>I am very effective at managing my time and prioritizing tasks. This also allows me to be very effective at meeting deadlines, even when working on multiple projects.</span></React.Fragment>},
+        versionControl: {title: "Organization", text: <React.Fragment><span>I am very skilled at managing my time and prioritizing tasks. This also allows me to be very effective at meeting deadlines, even when working on multiple projects.</span></React.Fragment>},
     }
 }
 
@@ -91,12 +91,12 @@ export function getProjects(){
             headers: ["Name", "Description", "Github", "Link"],
             data: [
                 {name: "Drum Metronome", 
-                description: "Drum metronome written using only Javascript, HTML and Node.js. Each row of boxes corresponds to a certain part of a drumkit and each column represents a beat. Users can save and load drumbeats they’ve written, these are stored on the server as JSON objects.", 
+                description: "Written using only Javascript, HTML and Node.js. Each row of boxes corresponds to a certain part of a drumkit and each column represents a beat. Users can save and load drumbeats they’ve previously written which are stored on the server as JSON objects.", 
                 github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, 
                 link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
                 
                 {name: "Portfolio Website", 
-                description: "This website. Written using React, Bootstrap and a few other npm modules. Created as both an opportunity to demonstrate my credentials and to improve my front-end web development skills.", 
+                description: "Written using React, Bootstrap and a few other npm modules. Created as both an opportunity to demonstrate my experience and to improve my front-end web development skills.", 
                 github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, 
                 link: {text: "Link", path: "/"}},
                 
