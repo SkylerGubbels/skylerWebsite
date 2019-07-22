@@ -51,17 +51,18 @@ class NavBar extends MenuData {
     /** Function: createNavbarContent()
      *  In: textColor, dropdownItems, navbarItems, language, onLanguageChange
      *  Purpose: Creates navbar clickable options. */
-    createNavbarContent = (textColor, dropdownItems, navbarItems, language, onLanguageChange) =>{
+    createNavbarContent = (textColor, dropdownItems, navbarItems, language, onLanguageChange, clickEvent) =>{
+      let onClick = clickEvent ? clickEvent : () => {}; // Makes on click a blank function if one hasn't been passed
       return(
       <React.Fragment>
-        <button type="button" className="navbar-toggler" onClick={this.props.onMobileMenu}>
+        <button type="button" className="navbar-toggler" onClick={() => this.props.onMobileMenu}>
           <span className="navbar-toggler-icon"></span>
         </button>
         
         <div className="collapse navbar-collapse navbar-nav">
           <ul className={`navbar-nav ml-auto`}>
 
-          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={this.props.onClick}/> 
+          <NavbarDropdown textColor={textColor} dropdownItems={dropdownItems} path={this.path} onClick={onClick}/> 
           
           {this.createNavbarItems(navbarItems, textColor)}
           <li>{this.createLanguageButton(language, textColor, onLanguageChange)}</li>
@@ -73,7 +74,7 @@ class NavBar extends MenuData {
 
     
     render() { 
-      let { className, backgroundColor, language, onLanguageChange, navbarItems, dropdownItems } = this.props
+      let { className, backgroundColor, language, onLanguageChange, navbarItems, dropdownItems, onClick } = this.props
       if(!dropdownItems || !navbarItems) { return <p></p>}
 
       if(!className) className = "navbar navbar-expand-sm navbar-light bg-light navbar-static-top navbar-background"; // If no custom classname make it the following
@@ -85,7 +86,7 @@ class NavBar extends MenuData {
         <div className="container">
           
           {this.createNavbarImage(textColor)}
-          {this.createNavbarContent(textColor, dropdownItems, navbarItems, language, onLanguageChange)}
+          {this.createNavbarContent(textColor, dropdownItems, navbarItems, language, onLanguageChange, onClick)}
            
         </div>
       </nav>    

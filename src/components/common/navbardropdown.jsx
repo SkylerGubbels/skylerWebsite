@@ -11,9 +11,10 @@ class NavbarDropdown extends Component{
     
     // Creates a singular dropdown item using the data supplied in the items param
     createDropdown = (item, path) => {
+        
         return (
             <React.Fragment key={`${item.text}-fragment`}>
-                <Link className="dropdown-item" to={path + item.to} onClick={this.props.onClick}>{item.text}</Link>
+                <Link className="dropdown-item" to={path + item.to} onClick={() => this.props.onClick(item.to)}>{item.text}</Link>
                 { item.divider && <div className="dropdown-divider"/> }
             </React.Fragment>)
     }

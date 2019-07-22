@@ -52,7 +52,7 @@ class NavBarDynamic extends NavBar {
       const {imageHeight} = this.props;
       const {pageYOffset} = window;
 
-      if(pageYOffset < imageHeight/8){this.setState({opacity: 0})} // For edge case where user scrolls up too fast
+      if(pageYOffset < imageHeight/4){this.setState({opacity: 0})} // For edge case where user scrolls up too fast
       else if(pageYOffset < imageHeight*1.1 && pageYOffset > imageHeight/2) { this.changeNavbarOpacity() } // General case for regular scrolling
       else if(pageYOffset > imageHeight) { this.setState({opacity: 1})} // For case where user scrolls down too fast
     }
