@@ -15,10 +15,10 @@ export function getIntroText(){
     return (
     <React.Fragment><span>
         <u>Bonjour</u><br/>
-        Cette site web a été construit utiliser <a style={linkColor} href="https://reactjs.org">React</a>, <a style={linkColor} href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> et plusieurs modules npm.
-        Si t’est un employeur out juste un autre programmeur qui veut utiliser mon code pour étudier tu peu le trouver <a style={linkColor} href="https://github.com/SkylerGubbels/skylerWebsite">ici.</a>
+        Ce site web a été construit en utilisant <a style={linkColor} href="https://reactjs.org">React</a>, <a style={linkColor} href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap</a> ainsi que d’autres modules npm.
+        Que tu sois un employeur intéressé d’en apprendre davantage sur mon approche ou un programmeur qui aimerait utiliser mon site comme outil d’apprentissage, il est possible pour toi de le faire par l’entremise de mon code <a style={linkColor} href="https://github.com/SkylerGubbels/skylerWebsite">ici.</a>
         <br/><br/>
-        Il est aussi possible de m’atteindre à  <a style={linkColor} href="mailto:skylermgubbels@gmail.com">skylermgubbels@gmail.com</a></span>
+        Il est aussi possible de me rejoindre par courriel à l’adresse suivante <a style={linkColor} href="mailto:skylermgubbels@gmail.com">skylermgubbels@gmail.com</a></span>
     </React.Fragment>)
 }
 
@@ -26,13 +26,13 @@ export function getSummaryText(){
     return {
             paragraph: 
                 (<React.Fragment>
-                    <span>Au cours de mon éducation j’ai développer plusieurs compétences. Voice quelques-uns:</span>
+                    <span>Au cours de mon éducation,  j’ai eu l’occasion de développer plusieurs compétences. En voici quelques-unes:</span>
                 </React.Fragment>),
             
-            frontend: {title: "Développeur du Front End", text: <React.Fragment><span>Je peux créer des expériences de front end dynamique, réactif et facile a comprendre qui fonctionne sur toutes écrans.</span></React.Fragment>},   
-            backend:  {title: "Développeur du Back End", text: <React.Fragment><span>Je sais comment éviter la redondance d’information et créer des programmes qui s’ont efficace sous l’utilisation lourd.</span></React.Fragment>},
-            softwareEngineering:  {title: "Ingénieur logiciel", text: <React.Fragment><span>Je peux rapidement comprendre et contribuer a votre project. Je sais comment déterminer les cas do bord et écrire du code robuste.</span></React.Fragment>},
-            computerScience:  {title: "L’informatique théorique", text: <React.Fragment><span>Je peux déterminer quelles pièces d’un program s’ont inefficace et peut améliorer le code pour le faire plus rapide.</span></React.Fragment>}
+            frontend: {title: "Développeur frontal (Front-End)", text: <React.Fragment><span>Je peux créer des expériences frontales dynamiques, réactives, faciles à comprendre et qui fonctionnent sur tous les écrans.</span></React.Fragment>},   
+            backend:  {title: "Développeur interne (Back-End)", text: <React.Fragment><span>Je sais comment éviter la redondance d’information, diminuer le temps de recherche tout en créant des programmes qui demeurent efficaces et performants.</span></React.Fragment>},
+            softwareEngineering:  {title: "Ingénieur logiciel", text: <React.Fragment><span>Je sais comment déterminer les cas les plus complexes ainsi qu’écrire des codes sûrs et robustes. Ainsi, je pourrai rapidement comprendre et commencer à contribuer à votre projet.</span></React.Fragment>},
+            computerScience:  {title: "L’informatique", text: <React.Fragment><span>Je sais comment déterminer les cas les plus complexes ainsi qu’écrire des codes sûrs et robustes. Ainsi, je pourrai rapidement comprendre et commencer à contribuer à votre projet.</span></React.Fragment>}
     }
 }
 
@@ -48,15 +48,15 @@ export function getTechSkillsText(){
 
 export function getOtherSkillsText(){
     return {
-        languages: {title: "Résolution de Problème", text: <React.Fragment><span>Je suis capable de désassembler des gros problèmes et travailler sur les partis maniables. Ces partis peuvent aussi être réutiliser si la direction du projet change.  </span></React.Fragment>},
-        libraries: {title: "Apprenant Rapide", text: <React.Fragment><span>Je sais comment apprendre les détails d’un sujet. Ceci me fait vraiment réceptif a apprendre des nouveaux compétences et améliorer mon travail de programmeur.</span></React.Fragment>},
-        webTechnologies: {title: "Travail en Équipe", text: <React.Fragment><span>J’ai travaillé sur plusieurs projets de groupe et je sais comment coordonner le travaille avec plusieurs autre personnes pour faire le produit final le mieux que ça peut être.</span></React.Fragment>},
-        versionControl: {title: "Organisation", text: <React.Fragment><span>IJe sais comment gérer mon temp et hiérarchiser les taches pour respecter les délais et soumettre du travail de qualité.</span></React.Fragment>},
+        languages: {title: "Résolution de problème", text: <React.Fragment><span>Lorsqu’une tâche de grande envergure se présente, je morcelle cette dernière afin de travailler étape par étape.  Cette technique me permet aussi de maximiser mon temps selon la direction que prend la tâche.</span></React.Fragment>},
+        libraries: {title: "Apprenant rapide", text: <React.Fragment><span>Peu importe le sujet, j’aime connaître tous les détails de ce dernier afin de mieux le maîtriser.  Cette ouverture à l’apprentissage me permet d’acquérir de nouvelles compétences et de m’améliorer dans mon travail de programmeur.</span></React.Fragment>},
+        webTechnologies: {title: "Travail d’équipe", text: <React.Fragment><span>J’ai eu la chance d’organiser des rencontres de collaboration avec des collègues, en présentiel ou à distance, dans le but de travailler ensemble sur plusieurs projets afin de réaliser des produits finaux de qualité.</span></React.Fragment>},
+        versionControl: {title: "Organisation", text: <React.Fragment><span>Je sais comment bien gérer mon temps tout un priorisant les tâches afin de toujours soumettre un travail de qualité qui respecte les délais prescrits.</span></React.Fragment>},
     }
 }
 
 export function getOtherSkillsParagraphText(){
-    return <React.Fragment><span>Voici quelques-uns de mes autres compétences:</span></React.Fragment>
+    return <React.Fragment><span>Voici quelques-unes de mes compétences non liées à la programmation qui me permettent d’être efficace dans mes diverses tâches: </span></React.Fragment>
 }
 
 export function getSectionTitles(){
@@ -88,13 +88,13 @@ export function getProjects(){
     return ({
             headers: ["Nom", "Description", "Github", "Link"],
             data: [
-                {name: "Drum Metronome", 
-                description: "Métronome de tambour écrit avec Javascript, HTML et Node.js. Chaque rangée de boite représente un instrument et chaque colonne est un division de temps. L’utilisateur peut enregistrer et charger des battements qui s’ont conservée sur le serveur en forme JSON.", 
+                {name: "Métronome pour tambour:", 
+                description: "Le métronome pour tambour est écrit en utilisant seulement Javascript, HTML et Node.js.  Chaque rangée de boîtes représente une partie de la batterie et chaque colonne représente un battement.  L’utilisateur peut choisir d’enregistrer ou de télécharger des battements de tambour qui seront conservés sur le serveur sous format JSON.", 
                 github: {image: github, path: "https://github.com/SkylerGubbels/DrumMetronome"}, 
                 link: {text: "Link", path: "https://warm-badlands-54209.herokuapp.com/"}},
                 
                 {name: "Portfolio Website", 
-                description: "Ce site web. Écrit avec React, Bootstrap et plusieurs modules de npm. Créer pour démontrée mon expérience et pour développer mes compétences de développement du front end.", 
+                description: "Ce site web est écrit en utilisant React, Boostrap ainsi que d’autres modules npm afin de démontrer mes habiletés acquises et dans l’intention d’améliorer mes compétences de développeur interne.", 
                 github: {image: github, path: "https://github.com/SkylerGubbels/skylerWebsite"}, 
                 link: {text: "Link", path: "/"}},
                 
